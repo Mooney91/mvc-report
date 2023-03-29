@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lucky{% endblock %}
+
+{% block body %}
+    <h1>This is your lucky page!</h1>
+    <p class="lucky">Please take the following magic number.</p>
+    <p class="lucky">{{ number }}</p>
+    <a href="{{ asset('img/books1.jpg') }}">
+        <img src="{{ asset('img/books1.jpg') }}" alt="">
+    </a>
+    <a href="{{ asset('img/books2.jpg') }}">
+        <img src="{{ asset('img/books2.jpg') }}" alt="">
+    </a>
+    <a href="{{ asset('img/books3.jpg') }}">
+        <img src="{{ asset('img/books3.jpg') }}" alt="">
+    </a>
+{% endblock %}

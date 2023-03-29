@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <h1>About</h1>
+    <a href="{{ asset('img/symfony.png') }}">
+        <img src="{{ asset('img/symfony.png') }}" alt="">
+    </a>
+    <p>This is a report website for the course <b><a href="https://dbwebb.se/kurser/mvc-v2">mvc</a></b> (<i>DV1608 V23 lp4 Objektorienterade webbteknologier</i>).</p>
+    <p>This course explores Object Relational Mapping (ORM), database connections, code quality, unit testing, and
+        web frameworks all through object-oriented PHP programming.</p>
+    <p> MVC stands for Model View Controller. It is a design pattern used within software engineering to split your code into three distinct parts.</p>
+    <p><a href="https://github.com/dbwebb-se/mvc">Git Repository for this course</a></p>
+    <p><a href="">Git Repository for this website</a></p>
+
+{% endblock %}
