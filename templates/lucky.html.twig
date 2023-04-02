@@ -4,15 +4,18 @@
 
 {% block body %}
     <h1>This is your lucky page!</h1>
+    <div class="parent">
+        <a href="{{ asset('img/books1.jpg') }}">
+            <img src="{{ asset('img/books1.jpg') }}" alt="">
+        </a>
+        <a href="{{ asset('img/books2.jpg') }}">
+            <img src="{{ asset('img/books2.jpg') }}" alt="">
+        </a>
+        <a href="{{ asset('img/books3.jpg') }}">
+            <img src="{{ asset('img/books3.jpg') }}" alt="">
+        </a>
+    </div>
     <p class="lucky">Please take the following magic number.</p>
-    <p class="lucky">{{ number }}</p>
-    <a href="{{ asset('img/books1.jpg') }}">
-        <img src="{{ asset('img/books1.jpg') }}" alt="">
-    </a>
-    <a href="{{ asset('img/books2.jpg') }}">
-        <img src="{{ asset('img/books2.jpg') }}" alt="">
-    </a>
-    <a href="{{ asset('img/books3.jpg') }}">
-        <img src="{{ asset('img/books3.jpg') }}" alt="">
-    </a>
+    <p class="lucky-number">{{ number }}</p>
+
 {% endblock %}

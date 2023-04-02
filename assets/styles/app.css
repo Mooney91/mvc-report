@@ -32,15 +32,38 @@ img {
     margin: 5px;
     width: 180px;
     height: auto;
-  }
+}
+
+.myimg {
+    width: 100%;
+    height: auto;
+}
 
 p {
-text-align: justify;
+  text-align: justify;
+}
+
+/* SITE SPECIFIC */
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.child {
+    flex-basis: 50%;
 }
 
 .lucky {
-   font-size: 2rem;
-   text-align: center;
+    font-size: 2rem;
+    text-align: center;
+} 
+
+.lucky-number {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 800;
 } 
 
 /* NAVBAR */

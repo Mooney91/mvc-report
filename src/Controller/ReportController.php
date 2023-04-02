@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+// require __DIR__ . "/vendor/autoload.php";
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,14 +26,16 @@ class ReportController extends AbstractController
     #[Route("/report", name: "report")]
     public function report(): Response
     {
-        // require __DIR__ . "/vendor/autoload.php";
-
-        // $filename = __DIR__ . "/kmom01.md";
+        
+        // $filename = __DIR__ . "/../../templates/kmom.md";
         // $text     = file_get_contents($filename);
         // $filter   = new \Anax\TextFilter\TextFilter();
         // $parsed   = $filter->parse($text, ["shortcode", "markdown"]);
         // echo $parsed->text;
 
+        // $data = [
+        //     'parsed_text' => $parsed->text
+        // ];
 
         return $this->render('report.html.twig');
     }
