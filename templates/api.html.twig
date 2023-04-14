@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block title %}API{% endblock %}
+
+{% block body %}
+<h1>API</h1>
+
+<p>This is the landing page for the API.</p>
+    <ul>
+        <li><a href="{{ path('api_start') }}">Home</a></li>
+        <li><a href="{{ path('quote') }}">Quote</a>: Gives a random quote and today's date.</li>
+    </ul>
+
+    <button><a href="{{ path('api_deck') }}">Deck of Cards</a></button>
+
+
+    <form method="post" action="">
+    <p>
+        <input type="submit" name="shuffle" value="Shuffle"
+            onClick="this.form.action='{{ path('api_deck_shuffle')}}';">
+    </p>
+    </form>
+    {# <form method="post" action="{{ path('api_deck_shuffle')}}">
+        <input type="submit" name="shuffle" value="Shuffle">
+    </form> #}
+
+    <form method="post" action="{{ path('api_deck_draw_num')}}">
+        <label for="num2"><b>Cards:</b></label>
+        <input type="number" name="num1" min="1" max="52" value="1">
+        <input type="submit" name="do_it" value="Draw Cards!">
+    </form>
+
+    <form method="post" action="{{ path('api_deal')}}">
+        <label for="num1"><b>Players:</b></label>
+        <input type="number" name="num1" min="1" max="52" value="1">
+        <label for="num2"><b>Cards:</b></label>
+        <input type="number" name="num2" min="1" max="52" value="1">
+        <input type="submit" name="do_it" value="Deal Cards!">
+    </form>
+
+{% endblock %}
