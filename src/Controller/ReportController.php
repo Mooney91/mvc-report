@@ -26,7 +26,7 @@ class ReportController extends AbstractController
     #[Route("/report", name: "report")]
     public function report(): Response
     {
-        
+
         // $filename = __DIR__ . "/../../templates/kmom.md";
         // $text     = file_get_contents($filename);
         // $filter   = new \Anax\TextFilter\TextFilter();
@@ -40,7 +40,7 @@ class ReportController extends AbstractController
         return $this->render('report.html.twig');
     }
 
-    #[Route("/api/quote", name: "quote")] 
+    #[Route("/api/quote", name: "quote")]
     public function quote(): Response
     {
         $quotes = [

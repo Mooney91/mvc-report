@@ -97,6 +97,6 @@ class __TwigTemplate_15b583ade01ec606daeeb6769eb41202 extends Template
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }

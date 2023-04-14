@@ -73,6 +73,6 @@ class __TwigTemplate_df41ba54290a95a0717b7a96407f757f extends Template
   <path d=\"M18 20l3 -3l-3 -3\" />
   <line x1=\"21\" y1=\"7\" x2=\"3\" y2=\"7\" />
 </svg>
-", "@WebProfiler/Icon/serializer.svg", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/symfony/web-profiler-bundle/Resources/views/Icon/serializer.svg");
+", "@WebProfiler/Icon/serializer.svg", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/symfony/web-profiler-bundle/Resources/views/Icon/serializer.svg");
     }
 }

@@ -106,7 +106,7 @@ class __TwigTemplate_650b070136375238094c0adee138600b extends Template
     <h2 id=\"kmom01\">Kmom01</h2>
 
     <h3>Berätta kort om dina förkunskaper och tidigare erfarenheter kring objektorientering.</h3> 
-    <p>Jag har använt objektorienterad programmering ganska flitigt i år i kurserna fokuserade på Python och Javascript. OOP är ett programmeringsparadigm som fokuserar på skapandet av objekt – och på dessa språk är det genom skapandet av klasser som objekt kan skapas. Metoder kan skapas i klassen så att attributen kan nås eller ändras endast genom dessa fördefinierade metoder (encapsulation). Dessa attribut kan skapas som “public” eller “private”. Objekt kan också ärva metoder och attribut från andra klasser - man kan återanvända attribut och skapa en hierarki.</p>
+    <p>Jag har använt objektorienterad programmering ganska flitigt i år i kurserna fokuserade på Python och Javascript. OOP är ett programmeringsparadigm som fokuserar på skapandet av objekt – och på dessa språk är det genom skapandet av klasser där objekt kan skapas. Metoder kan skapas i klassen så att attributen kan nås eller ändras endast genom dessa fördefinierade metoder (encapsulation). Dessa attribut kan skapas som “public” eller “private”. Objekt kan också ärva metoder och attribut från andra klasser - man kan återanvända attribut och skapa en hierarki.</p>
 
     <h3>Berätta kort om PHPs modell för klasser och objekt. Vilka är de grunder man behöver veta/förstå för att kunna komma igång och skapa sina första klasser? </h3>
     <p>Man börjar använda \"class\"-nyckelordet för att skapa klassen eller \"new\" för att skapa objektet. Som på många språk kan PHP ha “private”, “protected” och “public” funktioner (metoder). På min rapportsidan har jag använt \"public” funktioner för att rendera webbsidorna (det här påvisar encapsulation.). PHP har också arv. Man kan använda nyckelordet \"extends\" för att ärva egenskaper från en annan klass. Polymorfism är ganska enkelt i PHP, genom att använda/skriva de metoder som man behöver. En subklass kan också \"override\" metoden om det behövs.</p>
@@ -114,7 +114,7 @@ class __TwigTemplate_650b070136375238094c0adee138600b extends Template
 
     <h3>Reflektera kort över den kodbas, koden, strukturen som användes till uppgiften me/report, hur uppfattar du den?</h3>
     <p>Jag använde Symfoni för att skapa rapportsidan. Jag har en \"assets\"-mapp som används för att lagra mina style.css- och js-filer och en “public”-mapp som innehåller mina bilder. Den här mappen innehåller också “.htaccess “filen som används när man använder filerna på studentsidan.</p>
-    <p>Den viktigaste, när det gäller vad som används regelbundet, är mappen \"templates\" som innehåller de sidor som kommer att renderas.  Templaten \"base.html.twig\" används för att skapa en övergripande mall för de andra sidorna. Det har grunden för min head,  header och footer.</p>
+    <p>Den viktigaste, när det gäller vad som används regelbundet, är mappen \"templates\" som innehåller de sidor som kommer att renderas. Templaten \"base.html.twig\" används för att skapa en övergripande mall för de andra sidorna. Det har grunden för min head, header och footer.</p>
     <p>Äntligen har jag min Controller-mapp som har min \"ReportController.php\"-fil. I filen skapas en klass som har “public” funktioner som renderar var och en av de olika sidorna och skickar data till dem. Det här är den mest utmanande aspekten av kursmomentet och kommer att diskuteras senare.</p>
 
     <h3>Med tanke på artikeln “PHP The Right Way”, vilka delar in den finner du extra intressanta och värdefulla? Är det några särskilda områden som du känner att du vill veta mer om? Lyft fram några delar av artikeln som du känner mer värdefulla.</h3>
@@ -125,7 +125,26 @@ class __TwigTemplate_650b070136375238094c0adee138600b extends Template
         
     </section>
     
+    <section>
 
+    <h2 id=\"kmom02\">Kmom02</h2>
+
+    <h3>Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP.</h3>
+    <p>Arv: Det betyder att en klass kan ärva attributer och metoder från en “parent class”. Man använder nyckelordet “extends” efter klassens namn för att ärva från en viss klass. Man kan fortfarande överride” metoderna och attributen från parent-klassen.</p>
+    <p>Komposition: Komposition betyder att en klass kan innehålla ett (eller flera) objekt från en annan klass. Man kan skapa en variabel med ett objekt från en annan klass inom klassen och även använda metoderna från den där klassen.</p>
+    <p>Interface: Interface innebär att klassen måste uppfylla metoderna som finns i interfacen (men inte nödvändigtvis hur det ska lösa det). Det är liksom en mall för funktionalitet för en klass. Man kan skapa ett interface genom att använda “interface” nyckelordet).</p>
+    <p>Trait: PHP har inget stöd för multipel-arv men man kan fortfarande utöka funktionalitet av en klass genom att använda trait. Det är liksom en “kodmodul” men för klasser och klassen kan använda metoderna från trait som om den vore sin egen. Man skapar en trait genom att använda “trait” nyckelordet och man använder en trait inom en klass genom att använda “use” nyckelordet.</p>
+
+    <h3>Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden och dina klasser?</h3>
+    <p>Jag började den här uppgiften med att skapa den övergripande strukturen för kortspel. Jag visste att jag behövde fyra klasser: Card, CardHand, DeckOfCards och CardGraphic. Genom att använda den sista övningen som mall kunde jag anpassa dem efter mina behov. Jag tog lite tid att bestämma mig för hur jag skulle representera mina kort. Jag ville visa korten tydligt och inte bara en strängrepresentation av dem, så jag bestämde mig för att använda UTF-8-koden för varje spelkort. Jag ville också undvika att skapa en lång arraylista, så till slut använde jag tabellen på Wikipedia-sidan \"Playing cards in Unicode\" för att räkna ut en funktion för att skapa en array för spelkorten. Det här var lite knepigt att implementera och eftersom de bara är en enkel \"tecken” kan de inte manipuleras på samma sätt som en bild kan. I nästa kursmoment vill jag ändra mina spelkort till riktiga bilder av korten.</p>  
+    <p>Nästa steg var att skapa mina rutter. Återigen skapade jag den övergripande strukturen och testade varje webbplats för att se om de fungerade. Jag skapade sedan steg för steg varje rutt när jag implementerade funktionaliteten för varje krav. Mina templater fyllde jag i på ungefär samma sätt, men jag försökte göra dessa så enkla som möjligt och att behålla det mesta av koden i klasserna och på rutterna.  Som helhet är jag nöjd med resultatet, men jag vill ha lite feedback för att se om jag har genomfört det här på det mest effektiva sättet.</p>
+
+    <h3>Berätta hur det kändes att modellera ett kortspel med flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en applikation?</h3>
+    <p>Eftersom vi hade skapat ett UML-diagram i en av våra tidigare kurser kände jag mig ganska bekväm med att skapa det. Att skapa ett av dessa diagram är alltid en bra övning för att se hur man kan börja ett projekt och samla sina tankar om en uppgift. Man kan sedan visualisera i sitt huvud hur flödet av projektet skulle kunna se ut. Tyvärr hade jag lämnat den här delen ganska sent och jag hade velat ha skapat den här från början - jag var för ivrig och ville dumt nog börja skriva min kod så snart som möjligt. Pseudokod, även om den inte kan implementeras direkt, är också ett bra sätt att strukturera sina tankar och att koncentrera sig på de delar som kan implementeras först och för att visa funktionens potentiella flöde. Jag använder pseudokod ganska mycket i mitt arbete, så jag kan se helheten i uppgiften innan den ens har skrivits.</p>
+
+    <h3>Vilken är din TIL för detta kmom?</h3>
+    <p>Jag har lärt mig mycket av det här kursmomentet. Det tog ett tag för mig att komma igång med den här kursen, men jag känner nu till och känner mig bekant med Symfonys struktur och hur varje del - rutten, klasserna och templater samverkar för att skapa något. Den har också samlat bregrepp från tidigare kurser. Det var också mycket fördelaktigt att lära sig mer om Git och hur man skriver commit-meddelanden. Även om det kan tyckas vara en enkel sak att göra, vet jag från mitt eget arbete att commit-meddelanden kan vara väldigt ogenomskinliga och otydliga. Det är också bra att ha en \"standard\" form som man följer.</p>
+    </section>
 
 
 ";
@@ -180,7 +199,7 @@ class __TwigTemplate_650b070136375238094c0adee138600b extends Template
     <h2 id=\"kmom01\">Kmom01</h2>
 
     <h3>Berätta kort om dina förkunskaper och tidigare erfarenheter kring objektorientering.</h3> 
-    <p>Jag har använt objektorienterad programmering ganska flitigt i år i kurserna fokuserade på Python och Javascript. OOP är ett programmeringsparadigm som fokuserar på skapandet av objekt – och på dessa språk är det genom skapandet av klasser som objekt kan skapas. Metoder kan skapas i klassen så att attributen kan nås eller ändras endast genom dessa fördefinierade metoder (encapsulation). Dessa attribut kan skapas som “public” eller “private”. Objekt kan också ärva metoder och attribut från andra klasser - man kan återanvända attribut och skapa en hierarki.</p>
+    <p>Jag har använt objektorienterad programmering ganska flitigt i år i kurserna fokuserade på Python och Javascript. OOP är ett programmeringsparadigm som fokuserar på skapandet av objekt – och på dessa språk är det genom skapandet av klasser där objekt kan skapas. Metoder kan skapas i klassen så att attributen kan nås eller ändras endast genom dessa fördefinierade metoder (encapsulation). Dessa attribut kan skapas som “public” eller “private”. Objekt kan också ärva metoder och attribut från andra klasser - man kan återanvända attribut och skapa en hierarki.</p>
 
     <h3>Berätta kort om PHPs modell för klasser och objekt. Vilka är de grunder man behöver veta/förstå för att kunna komma igång och skapa sina första klasser? </h3>
     <p>Man börjar använda \"class\"-nyckelordet för att skapa klassen eller \"new\" för att skapa objektet. Som på många språk kan PHP ha “private”, “protected” och “public” funktioner (metoder). På min rapportsidan har jag använt \"public” funktioner för att rendera webbsidorna (det här påvisar encapsulation.). PHP har också arv. Man kan använda nyckelordet \"extends\" för att ärva egenskaper från en annan klass. Polymorfism är ganska enkelt i PHP, genom att använda/skriva de metoder som man behöver. En subklass kan också \"override\" metoden om det behövs.</p>
@@ -188,7 +207,7 @@ class __TwigTemplate_650b070136375238094c0adee138600b extends Template
 
     <h3>Reflektera kort över den kodbas, koden, strukturen som användes till uppgiften me/report, hur uppfattar du den?</h3>
     <p>Jag använde Symfoni för att skapa rapportsidan. Jag har en \"assets\"-mapp som används för att lagra mina style.css- och js-filer och en “public”-mapp som innehåller mina bilder. Den här mappen innehåller också “.htaccess “filen som används när man använder filerna på studentsidan.</p>
-    <p>Den viktigaste, när det gäller vad som används regelbundet, är mappen \"templates\" som innehåller de sidor som kommer att renderas.  Templaten \"base.html.twig\" används för att skapa en övergripande mall för de andra sidorna. Det har grunden för min head,  header och footer.</p>
+    <p>Den viktigaste, när det gäller vad som används regelbundet, är mappen \"templates\" som innehåller de sidor som kommer att renderas. Templaten \"base.html.twig\" används för att skapa en övergripande mall för de andra sidorna. Det har grunden för min head, header och footer.</p>
     <p>Äntligen har jag min Controller-mapp som har min \"ReportController.php\"-fil. I filen skapas en klass som har “public” funktioner som renderar var och en av de olika sidorna och skickar data till dem. Det här är den mest utmanande aspekten av kursmomentet och kommer att diskuteras senare.</p>
 
     <h3>Med tanke på artikeln “PHP The Right Way”, vilka delar in den finner du extra intressanta och värdefulla? Är det några särskilda områden som du känner att du vill veta mer om? Lyft fram några delar av artikeln som du känner mer värdefulla.</h3>
@@ -199,7 +218,26 @@ class __TwigTemplate_650b070136375238094c0adee138600b extends Template
         
     </section>
     
+    <section>
 
+    <h2 id=\"kmom02\">Kmom02</h2>
+
+    <h3>Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP.</h3>
+    <p>Arv: Det betyder att en klass kan ärva attributer och metoder från en “parent class”. Man använder nyckelordet “extends” efter klassens namn för att ärva från en viss klass. Man kan fortfarande överride” metoderna och attributen från parent-klassen.</p>
+    <p>Komposition: Komposition betyder att en klass kan innehålla ett (eller flera) objekt från en annan klass. Man kan skapa en variabel med ett objekt från en annan klass inom klassen och även använda metoderna från den där klassen.</p>
+    <p>Interface: Interface innebär att klassen måste uppfylla metoderna som finns i interfacen (men inte nödvändigtvis hur det ska lösa det). Det är liksom en mall för funktionalitet för en klass. Man kan skapa ett interface genom att använda “interface” nyckelordet).</p>
+    <p>Trait: PHP har inget stöd för multipel-arv men man kan fortfarande utöka funktionalitet av en klass genom att använda trait. Det är liksom en “kodmodul” men för klasser och klassen kan använda metoderna från trait som om den vore sin egen. Man skapar en trait genom att använda “trait” nyckelordet och man använder en trait inom en klass genom att använda “use” nyckelordet.</p>
+
+    <h3>Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden och dina klasser?</h3>
+    <p>Jag började den här uppgiften med att skapa den övergripande strukturen för kortspel. Jag visste att jag behövde fyra klasser: Card, CardHand, DeckOfCards och CardGraphic. Genom att använda den sista övningen som mall kunde jag anpassa dem efter mina behov. Jag tog lite tid att bestämma mig för hur jag skulle representera mina kort. Jag ville visa korten tydligt och inte bara en strängrepresentation av dem, så jag bestämde mig för att använda UTF-8-koden för varje spelkort. Jag ville också undvika att skapa en lång arraylista, så till slut använde jag tabellen på Wikipedia-sidan \"Playing cards in Unicode\" för att räkna ut en funktion för att skapa en array för spelkorten. Det här var lite knepigt att implementera och eftersom de bara är en enkel \"tecken” kan de inte manipuleras på samma sätt som en bild kan. I nästa kursmoment vill jag ändra mina spelkort till riktiga bilder av korten.</p>  
+    <p>Nästa steg var att skapa mina rutter. Återigen skapade jag den övergripande strukturen och testade varje webbplats för att se om de fungerade. Jag skapade sedan steg för steg varje rutt när jag implementerade funktionaliteten för varje krav. Mina templater fyllde jag i på ungefär samma sätt, men jag försökte göra dessa så enkla som möjligt och att behålla det mesta av koden i klasserna och på rutterna.  Som helhet är jag nöjd med resultatet, men jag vill ha lite feedback för att se om jag har genomfört det här på det mest effektiva sättet.</p>
+
+    <h3>Berätta hur det kändes att modellera ett kortspel med flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en applikation?</h3>
+    <p>Eftersom vi hade skapat ett UML-diagram i en av våra tidigare kurser kände jag mig ganska bekväm med att skapa det. Att skapa ett av dessa diagram är alltid en bra övning för att se hur man kan börja ett projekt och samla sina tankar om en uppgift. Man kan sedan visualisera i sitt huvud hur flödet av projektet skulle kunna se ut. Tyvärr hade jag lämnat den här delen ganska sent och jag hade velat ha skapat den här från början - jag var för ivrig och ville dumt nog börja skriva min kod så snart som möjligt. Pseudokod, även om den inte kan implementeras direkt, är också ett bra sätt att strukturera sina tankar och att koncentrera sig på de delar som kan implementeras först och för att visa funktionens potentiella flöde. Jag använder pseudokod ganska mycket i mitt arbete, så jag kan se helheten i uppgiften innan den ens har skrivits.</p>
+
+    <h3>Vilken är din TIL för detta kmom?</h3>
+    <p>Jag har lärt mig mycket av det här kursmomentet. Det tog ett tag för mig att komma igång med den här kursen, men jag känner nu till och känner mig bekant med Symfonys struktur och hur varje del - rutten, klasserna och templater samverkar för att skapa något. Den har också samlat bregrepp från tidigare kurser. Det var också mycket fördelaktigt att lära sig mer om Git och hur man skriver commit-meddelanden. Även om det kan tyckas vara en enkel sak att göra, vet jag från mitt eget arbete att commit-meddelanden kan vara väldigt ogenomskinliga och otydliga. Det är också bra att ha en \"standard\" form som man följer.</p>
+    </section>
 
 
 {% endblock %}", "report.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/templates/report.html.twig");

@@ -80,7 +80,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
             <span class=\"site-title\">mvc - A site for Zachary Mooney</span>
         </header>
 
-        <nav>
+        <nav class=\"nav\">
             <ul>
                 <li><a href=\"";
         // line 28
@@ -102,11 +102,19 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("quote");
         echo "\">Quote of the Day</a></li>
+                <li><a href=\"";
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("card_start");
+        echo "\">Card Game</a></li>
+                <li><a href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_start");
+        echo "\">API</a></li>
             </ul>
         </nav>
 
         <main>";
-        // line 36
+        // line 38
         $this->displayBlock('body', $context, $blocks);
         echo "</main>
 
@@ -187,7 +195,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     }
 
-    // line 36
+    // line 38
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -217,7 +225,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  191 => 36,  178 => 17,  168 => 16,  155 => 13,  145 => 12,  126 => 5,  110 => 36,  103 => 32,  99 => 31,  95 => 30,  91 => 29,  87 => 28,  78 => 22,  73 => 19,  71 => 16,  68 => 15,  65 => 12,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  199 => 38,  186 => 17,  176 => 16,  163 => 13,  153 => 12,  134 => 5,  118 => 38,  111 => 34,  107 => 33,  103 => 32,  99 => 31,  95 => 30,  91 => 29,  87 => 28,  78 => 22,  73 => 19,  71 => 16,  68 => 15,  65 => 12,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -247,13 +255,15 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
             <span class=\"site-title\">mvc - A site for Zachary Mooney</span>
         </header>
 
-        <nav>
+        <nav class=\"nav\">
             <ul>
                 <li><a href=\"{{ path('index') }}\">Home</a></li>
                 <li><a href=\"{{ path('about') }}\">About</a></li>
                 <li><a href=\"{{ path('report') }}\">Report</a></li>
                 <li><a href=\"{{ path('lucky') }}\">Lucky</a></li>
                 <li><a href=\"{{ path('quote') }}\">Quote of the Day</a></li>
+                <li><a href=\"{{ path('card_start') }}\">Card Game</a></li>
+                <li><a href=\"{{ path('api_start') }}\">API</a></li>
             </ul>
         </nav>
 
