@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+{% include "card/card_nav.html.twig" %}
+<h1>Card Game</h1>
+
+<p>This is the landing page of the card game!</p>
+    <ul>
+        <li><a href="{{ path('card_start') }}">Home</a></li>
+        <li><a href="{{ path('card_deck') }}">Deck</a></li>
+        <li><a href="{{ path('card_deck_shuffle') }}">Shuffle Deck</a></li>
+        <li><a href="{{ path('card_deck_draw') }}">Draw Deck</a></li>
+        <li><a href="{{ path('card_deck_draw_num', {num: 5}) }}">Draw 5 cards</a></li>
+        <li><a href="{{ path('card_deck_deal', {num1: 3, num2:4}) }}">Deal (3, 4)</a></li>
+    </ul>
+
+<p>I have chosen to have <b>4</b> different classes for this game.</p>
+
+<p><h3>Card</h3> This is the basis for an individual playing card, where you can set and get the card's "integer" value.</p>
+<p><h3>CardGraphic</h3> This class inherits from <code>Card</code> and adds a visual representation of the card. You can <code>getAsString()</code>, which returns a string representation of the graphical representation of the card. 
+In kmom02, there is also a public function that generates a list of the unicode characters for all the playing cards.</p>
+<p><h3>CardHand</h3> A <code>Card</code> or <code>CardGraphic</code> object can be added to a <code>CardHand</code> object. The hand can also be empty. 
+You can count the number of cards you have in your hands, return the graphical representation of each <code>Card</code> object in your hand, and also return a list of all the <code>Card</code> objects in the hand.</p>
+<p><h3>DeckOfCards</h3> The <code>$deck</code> attribute of this class consists of <code>Card</code> objects. You can <code>add()</code>, <code>draw()</code>, <code>deckShuffle()</code>, <code>sortDeck()</code>, and <code>getValues()</code>.
+In other words, the <code>DeckOfCards</code> has a comprehensive API to retrieve and manipulate the <code>$deck</code> of cards.</p>
+
+<p><h3>UML Class Diagram</h3>
+ <img src="{{ asset('img/cardUML.png') }}" class= "myimg" alt="UML Diagram"></p>
+
+{% endblock %}

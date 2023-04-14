@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Deck{% endblock %}
+
+{% block body %}
+{% include "card/card_nav.html.twig" %}
+<h1>Deck of Cards</h1>
+
+<p>A list of all the cards in the pack in order.</p>
+
+{% for deck in deckString %}
+    {# {% if (deckArray[loop.index0] >= 14 and deckArray[loop.index0] <= 39 )%}
+        <span class="card red">{{ deck }}</span>
+    {% else %} #}
+        <span class="card">{{ deck }}</span>
+    {# {% endif %} #}
+{% endfor %}
+
+{% endblock %}

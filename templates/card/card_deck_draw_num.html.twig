@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Deck Draw Number{% endblock %}
+
+{% block body %}
+{% include "card/card_nav.html.twig" %}
+<h1>Card Deck - Draw {{ number }} Cards </h1>
+
+<p>The following cards have been drawn from the pack:</p> 
+
+<p>
+{% for card in discarded %}
+    <span class="card">{{ card }}</span>
+{% endfor %}
+</p>
+
+<p>You have <b>{{ total }}</b> cards left in the deck.</p>
+
+
+
+{% endblock %}

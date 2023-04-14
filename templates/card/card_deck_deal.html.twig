@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Deck Deal{% endblock %}
+
+{% block body %}
+{% include "card/card_nav.html.twig" %}
+<h1>Deck of Cards - Deal</h1>
+
+<p>You have <b>{{ total }}</b> cards left in the deck.</p>
+
+<p><b>Players:</b> {{ players}}</p>
+<p><b>Cards:</b> {{ dealt }}</p>
+
+{% for key, value in game %}
+    <h2>Player {{ key }}</h2>
+    {% for card in value %}
+            <span class="card">{{ card }}</span>
+    {% endfor %}
+{% endfor %}
+
+{% endblock %}

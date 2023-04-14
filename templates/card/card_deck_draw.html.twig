@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Deck - Draw{% endblock %}
+
+{% block body %}
+{% include "card/card_nav.html.twig" %}
+<h1>Deck of Cards - Draw</h1>
+
+<p>The following card has been drawn from the pack:</p> 
+<p><span class="card">{{ discarded }}</span></p>
+
+<p>You have <b>{{ total }}</b> cards left in the deck.</p>
+
+<br>
+
+<p>Why not draw <a href="{{ path('card_deck_draw_num', {num: 5}) }}">5</a> cards from the pack?</p>
+
+{% endblock %}
