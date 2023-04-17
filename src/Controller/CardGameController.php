@@ -18,7 +18,7 @@ class CardGameController extends AbstractController
 {
     #[Route("/card", name: "card_start")]
     public function home(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         // START THE SESSION
@@ -31,7 +31,7 @@ class CardGameController extends AbstractController
 
     #[Route("/card/deck", name: "card_deck")]
     public function deck(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         // GET DECK OF CARDS AND SORT IT
@@ -49,7 +49,7 @@ class CardGameController extends AbstractController
 
     #[Route("/card/deck/shuffle", name: "card_deck_shuffle")]
     public function shuffle(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
 
@@ -69,7 +69,7 @@ class CardGameController extends AbstractController
 
     #[Route("/card/deck/draw", name: "card_deck_draw")]
     public function draw(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         // GET THE DECK OF CARDS
@@ -79,7 +79,7 @@ class CardGameController extends AbstractController
         // GET A STRING REPRESENTATION OF THE DISCARDED CARD
         $discardedCard = $discarded->getAsString();
         // COUNT HOW MANY CARDS ARE LEFT IN THE DECK
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
 
         // CREATE A NEW HAND, ADD THE DISCARDED HAND TO IT, AND SET IN IT SESSION
         if (isset($_SESSION['playerx'])) {
@@ -92,7 +92,7 @@ class CardGameController extends AbstractController
         }
 
         $data = [
-            "total" => $total_cards,
+            "total" => $totalCards,
             "discarded" => $discardedCard,
         ];
 
@@ -120,10 +120,10 @@ class CardGameController extends AbstractController
         $newHand = new CardHand();
 
         // COUNT NUMBER OF HANDS IN DECK
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
 
         // IF THE NUMBER IS MORE THAN THE NUMBER OF CARDS IN THE DECK, THROW EXCEPTION
-        if ($num > $total_cards) {
+        if ($num > $totalCards) {
             throw new \Exception("You cannot draw more cards than there are in the deck!");
         }
 
@@ -135,12 +135,12 @@ class CardGameController extends AbstractController
         }
 
         // COUNT NUMBER OF HANDS IN THE DECK AFTER DISCARDING
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
         // GET A ARRAY OF STRING REPRESENTATION FOR THE DISCARDED CARDS
         $discardedCards = $newHand->getString();
 
         $data = [
-            "total" => $total_cards,
+            "total" => $totalCards,
             "discarded" => $discardedCards,
             "number" => $num,
         ];
@@ -152,16 +152,16 @@ class CardGameController extends AbstractController
     public function deal(
         int $num1,
         int $num2,
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         // GET DECK OF CARDS
         $deck = $session->get("deck");
         // COUNT NUMBER OF CARDS IN THE DECK
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
 
         // IF THE NUMBER IS MORE THAN THE NUMBER OF CARDS IN THE DECK, THROW EXCEPTION
-        if ($num2 > $total_cards) {
+        if ($num2 > $totalCards) {
             throw new \Exception("You cannot draw more cards than there are in the deck!");
         }
 
@@ -186,10 +186,10 @@ class CardGameController extends AbstractController
         }
 
         // COUNT NUMBER OF HANDS IN THE DECK AFTER DISCARDING
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
 
         $data = [
-            "total" => $total_cards,
+            "total" => $totalCards,
             "game" => $game,
             "players" => $num1,
             "dealt" => $num2,

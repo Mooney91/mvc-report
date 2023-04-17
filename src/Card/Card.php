@@ -4,7 +4,7 @@ namespace App\Card;
 
 class Card
 {
-    protected $value;
+    protected int $value;
     // protected $suit;
     // protected $number;
 
@@ -19,7 +19,7 @@ class Card
         return $this->value;
     }
 
-    public function setValue($arg): int
+    public function setValue(int $arg): int
     {
         $this->value = $arg;
         return $this->value;

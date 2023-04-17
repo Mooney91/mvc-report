@@ -19,7 +19,7 @@ class APIController extends AbstractController
 {
     #[Route("/api", name: "api_start")]
     public function apiStart(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         // START THE SESSION
@@ -32,7 +32,7 @@ class APIController extends AbstractController
 
     #[Route("/api/deck", name: "api_deck", methods: ['GET'])]
     public function apiDeck(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         // GET DECK OF CARDS AND SORT IT
@@ -52,7 +52,7 @@ class APIController extends AbstractController
 
     #[Route("/api/deck/shuffle", name: "api_deck_shuffle", methods: ['POST'])]
     public function apiDeckShuffle(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         // CREATE NEW DECK OF CARDS, SHUFFLE IT, AND SET IT IN SESSION
@@ -93,10 +93,10 @@ class APIController extends AbstractController
         $newHand = new CardHand();
 
         // COUNT NUMBER OF HANDS IN DECK
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
 
         // IF THE NUMBER IS MORE THAN THE NUMBER OF CARDS IN THE DECK, THROW EXCEPTION
-        if ($num > $total_cards) {
+        if ($num > $totalCards) {
             throw new \Exception("You cannot draw more cards than there are in the deck!");
         }
 
@@ -108,12 +108,12 @@ class APIController extends AbstractController
         }
 
         // COUNT NUMBER OF HANDS IN THE DECK AFTER DISCARDING
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
         // GET A ARRAY OF STRING REPRESENTATION FOR THE DISCARDED CARDS
         $discardedCards = $newHand->getString();
 
         $data = [
-            "total_left" => $total_cards,
+            "total_left" => $totalCards,
             "discarded" => $discardedCards,
         ];
 
@@ -136,10 +136,10 @@ class APIController extends AbstractController
         // GET DECK OF CARDS
         $deck = $session->get("deck");
         // COUNT NUMBER OF CARDS IN THE DECK
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
 
         // IF THE NUMBER IS MORE THAN THE NUMBER OF CARDS IN THE DECK, THROW EXCEPTION
-        if ($num2 > $total_cards) {
+        if ($num2 > $totalCards) {
             throw new \Exception("You cannot draw more cards than there are in the deck!");
         }
 
@@ -165,10 +165,10 @@ class APIController extends AbstractController
         }
 
         // COUNT NUMBER OF HANDS IN THE DECK AFTER DISCARDING
-        $total_cards = $deck->cardsInDeck();
+        $totalCards = $deck->cardsInDeck();
 
         $data = [
-            "total_left" => $total_cards,
+            "total_left" => $totalCards,
             "game" => $game,
         ];
 

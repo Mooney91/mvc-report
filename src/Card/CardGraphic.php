@@ -4,7 +4,7 @@ namespace App\Card;
 
 class CardGraphic extends Card
 {
-    private $representation = [];
+    private array $representation = [];
 
     public function __construct()
     {
