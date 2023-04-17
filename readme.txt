@@ -12,6 +12,16 @@ tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --dry-run -v
 // FIX STYLE ISSUES
 tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src
 
+// CODE ISSUES IN php
+
+tools/phpmd/vendor/bin/phpmd src text cleancode,codesize,controversial,design,naming,unusedcode
+
+// ALL FILES
+tools/phpmd/vendor/bin/phpmd . text phpmd.xml
+
+// PHPSTAN
+
+tools/phpstan/vendor/bin/phpstan analyse src
 
 ---------------------------------------------------
 
