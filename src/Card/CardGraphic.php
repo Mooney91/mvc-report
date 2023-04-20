@@ -20,19 +20,13 @@ class CardGraphic extends Card
 
     public function generateUnicode()
     {
-        $suits = ["A", "B", "C", "D"];
+        $uniSuits = ["A", "B", "C", "D"];
         $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "D", "E"];
         $rep = [];
-        foreach ($suits as $suit) {
+        foreach ($uniSuits as $uniSuit) {
             foreach ($numbers as $number) {
-                // if ($suit == 'B' || $suit == 'C') {
-                //     $suitColour = 'red';
-                //   } else {
-                //     $suitColour = 'black';
-                //   }
-                $codepoint = hexdec("1F0" . $suit . $number);
+                $codepoint = hexdec("1F0" . $uniSuit . $number);
                 $unicode = html_entity_decode('&#' . $codepoint . ';', ENT_NOQUOTES, 'UTF-8');
-                // $rep[] = [$unicode, $suitColour];
                 $rep[] = $unicode;
             }
         }

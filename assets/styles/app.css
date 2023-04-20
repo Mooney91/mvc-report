@@ -120,6 +120,11 @@ p {
   color: #ff0000
 }
 
+.pseudo {
+  background-color: #000000;
+  color: #008000;
+}
+
 
 /* NAVCARD */
 

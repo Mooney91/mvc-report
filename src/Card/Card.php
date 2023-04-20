@@ -5,12 +5,14 @@ namespace App\Card;
 class Card
 {
     protected int $value;
-    // protected $suit;
-    // protected $number;
+    protected string $face;
+    protected string $suit;
 
     public function __construct()
     {
-        $this->value = null;
+        $this->value = 0;
+        $this->face = "";
+        $this->suit = "";
     }
 
     public function roll(): int
@@ -28,6 +30,28 @@ class Card
     public function getValue(): int
     {
         return $this->value;
+    }
+
+    public function setFace(string $arg): string
+    {
+        $this->face = $arg;
+        return $this->face;
+    }
+
+    public function getFace(): string
+    {
+        return $this->face;
+    }
+
+    public function setSuit(string $arg): string
+    {
+        $this->suit = $arg;
+        return $this->value;
+    }
+
+    public function getSuit(): string
+    {
+        return $this->suit;
     }
 
     public function getAsString(): string

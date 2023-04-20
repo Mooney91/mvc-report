@@ -8,15 +8,31 @@ class DeckOfCards
 {
     protected $deck = [];
     protected $total = 0;
-
+    protected $faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    protected $suits = ["♠", "♥", "♦", "♣"];
 
     public function __construct(int $num)
     {
         $this->total = $num;
 
+        $j = 0;
+        $k = 0;
+
         for ($i = 1; $i <= $num; $i++) {
             $temp = new CardGraphic();
             $temp->setValue($i);
+            $temp->setFace($this->faces[$j]);
+            $temp->setSuit($this->suits[$k]);
+
+            if ($j < (count($this->faces)-1) ) {
+                $j += 1;
+            } else {
+                $j = 0;
+                if ($k < (count($this->suits)-1)) {
+                    $k += 1;
+                }
+            }
+
             $this->add($temp);
         }
     }
@@ -51,6 +67,24 @@ class DeckOfCards
             $values[] = $card->getValue();
         }
         return $values;
+    }
+
+    public function getFaces(): array
+    {
+        $faces = [];
+        foreach ($this->deck as $face) {
+            $faces[] = $face->getFace();
+        }
+        return $faces;
+    }
+
+    public function getSuits(): array
+    {
+        $suits = [];
+        foreach ($this->deck as $suit) {
+            $suits[] = $suit->getSuit();
+        }
+        return $suits;
     }
 
     public function getString(): array

@@ -41,6 +41,8 @@ class APIController extends AbstractController
 
         $data = [
             "deck" => $deck->getString(),
+            "faces" => $deck->getFaces(),
+            "suits" => $deck->getSuits(),
         ];
 
         $response = new JsonResponse($data);

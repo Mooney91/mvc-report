@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Twenty-One{% endblock %}
+
+{% block body %}
+{# {% include "card/card_nav.html.twig" %} #}
+<h1>British Twenty-One!</h1>
+
+<h2>Flow Chart</h2>
+
+<p>The flowchart below shows the basic gameplay for Twenty-One.</p>
+<img src="{{ asset('img/flowGame.png') }}" class= "myimg" alt="Flow Chart"></p>
+
+<h2>Pseudocode</h2>
+<p>The pseudocode below demonstrates in part how the game will be written and implemented.</p>
+
+<div class = "pseudo">
+    <code>
+        <p>== Player clicks on button to start the game.</p>
+        <p></p>
+        <p>Player --&gt; twist() // Takes card</p>
+        <p>Player --&gt; calculateHand() // returns True if Players goes bust</p>
+        <p>    if calculateHand() == True :</p>
+        <p>        Game --&gt; victory(Banker)</p>
+        <p>Player --&gt; stick() // Hands value is saved</p>
+        <p></p>
+        <p>Game --&gt; nextPlayer() // Banker's Turn</p>
+        <p></p>
+        <p>Banker --&gt; twist() // Takes card</p>
+        <p>Banker--&gt; calculateHand() // returns True if Players goes bust</p>
+        <p>    if calculateHand() == True :</p>
+        <p>        Game --&gt; victory(Player)</p>
+        <p>Banker --&gt; stick() // Hands value is saved</p>
+        <p>Game --&gt; FinalCalculate() // Calculates if Player has better hand</p>
+        <p>    Game --&gt; Victory(winner)</p>
+    </code>
+</div>
+
+<h2>Classes</h2>
+
+<h3>Card/CardGraphic</h3>
+<p><code>Card</code> is the basis for an individual playing card, where you can set and get the card's "integer" value.
+An update from v2.0.0 is that the Class now has "face" and "suit" properties. <code>CardGraphic</code> inherits from <code>Card</code> and adds a visual representation of the card. You can <code>getAsString()</code>, which returns a string representation of the graphical representation of the card. 
+In kmom02, there is also a public function that generates a list of the unicode characters for all the playing cards.</p>
+
+<h3>CardHand</h3> 
+<p>A <code>Card</code> or <code>CardGraphic</code> object can be added to a <code>CardHand</code> object. The hand can also be empty. 
+You can count the number of cards you have in your hands, return the graphical representation of each <code>Card</code> object in your hand, and also return a list of all the <code>Card</code> objects in the hand.</p>
+
+<h3>DeckOfCards</h3> 
+<p>The <code>$deck</code> attribute of this class consists of <code>Card</code> objects. You can <code>add()</code>, <code>draw()</code>, <code>deckShuffle()</code>, <code>sortDeck()</code>, and <code>getValues()</code>.
+In other words, the <code>DeckOfCards</code> has a comprehensive API to retrieve and manipulate the <code>$deck</code> of cards.</p>
+
+<h3>Game</h3>
+<p>The <code>Game</code> contains properties and methods relating to the current game in play. It has the scores for the Banker and Player as well as methods relating to the game.</p>
+
+<h3> Player/Banker </h3>
+<p>The <code>Player</code> class represents the player in play and has has-a relationship with <code>CardHand</code>. It has <code>twist()</code> and <code>stick()</code> methods which
+are main functionality of play. <code>Banker</code> is a player therefore inherits from Player, but since it is the computer (AI) is requires special consideration.</p>
+
+<h3>UML - Class Diagram</h3>
+{# <img src="{{ asset('img/cardUML.png') }}" class= "myimg" alt="UML Diagram"></p> #}
+
+{% endblock %}

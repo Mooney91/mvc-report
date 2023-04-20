@@ -110,11 +110,15 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api_start");
         echo "\">API</a></li>
+                <li><a href=\"";
+        // line 35
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game_start");
+        echo "\">Twenty-One</a></li>
             </ul>
         </nav>
 
         <main>";
-        // line 38
+        // line 39
         $this->displayBlock('body', $context, $blocks);
         echo "</main>
 
@@ -195,7 +199,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     }
 
-    // line 38
+    // line 39
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -225,7 +229,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  199 => 38,  186 => 17,  176 => 16,  163 => 13,  153 => 12,  134 => 5,  118 => 38,  111 => 34,  107 => 33,  103 => 32,  99 => 31,  95 => 30,  91 => 29,  87 => 28,  78 => 22,  73 => 19,  71 => 16,  68 => 15,  65 => 12,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  203 => 39,  190 => 17,  180 => 16,  167 => 13,  157 => 12,  138 => 5,  122 => 39,  115 => 35,  111 => 34,  107 => 33,  103 => 32,  99 => 31,  95 => 30,  91 => 29,  87 => 28,  78 => 22,  73 => 19,  71 => 16,  68 => 15,  65 => 12,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -264,6 +268,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
                 <li><a href=\"{{ path('quote') }}\">Quote of the Day</a></li>
                 <li><a href=\"{{ path('card_start') }}\">Card Game</a></li>
                 <li><a href=\"{{ path('api_start') }}\">API</a></li>
+                <li><a href=\"{{ path('game_start') }}\">Twenty-One</a></li>
             </ul>
         </nav>
 
