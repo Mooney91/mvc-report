@@ -20,8 +20,9 @@
     <li>Aces are worth 1 or 11.</li>
     <li>Picture cards (Jack, Queen, and King) are worth 10 points each.</li>
 </ul>
-<button><a href="{{ path('game_doc') }}">Documentation</a></button>
-<button><a href="{{ path('game_play') }}">Let's Play!</a></button>
-
+<div class="button-container">
+    <button class="button"><a href="{{ path('game_doc') }}">Documentation</a></button>
+    <button class="button"><a href="{{ path('game_init') }}">Let's Play!</a></button>
+</div>
 
 {% endblock %}
