@@ -369,6 +369,9 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ReportController"/>
       </call>
     </service>
+    <service id="App\Game\Banker" class="App\Game\Banker" autowire="true" autoconfigure="true"/>
+    <service id="App\Game\Game" class="App\Game\Game" autowire="true" autoconfigure="true"/>
+    <service id="App\Game\Player" class="App\Game\Player" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
       <tag name="kernel.event_subscriber"/>
