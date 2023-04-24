@@ -23,6 +23,15 @@ class ReportController extends AbstractController
         return $this->render('about.html.twig');
     }
 
+
+               // if ($currentPlayer->getPoints() > 21) {
+            //     $victory = "Player";
+            //     // $game->victory($banker);
+            // } else {
+            //     $victory = "Banker";
+            //     $game->victory($banker);
+            // }
+
     #[Route("/report", name: "report")]
     public function report(): Response
     {
