@@ -6,34 +6,66 @@
 
 <h1>British Twenty-One [PLAYING]</h1>
 
-{# <p>Roll the dices or save the points you have.</p>
+{# <h3>Player {{ currentPlayer}}: {{ points }}</h3>
+<h3>Banker: {{bankerPoints }}</h3> #}
 
-<p>You are playing with {{ pigDices }} dices.</p>
+{% for key, value in playersPoints %}
 
-<p>
-{% for value in diceValues %}
-    <span class="die">{{ value }}</span>
+    <div class="box">
+        <h2>Player {{ key }}</h2>
+        <p class="points">{{ value }} points</p>
+    </div>
+
+    {# <h3>Player {{ key }} : {{ value }}</h3> #}
 {% endfor %}
-</p>
 
-<p>Round: {{ pigRound }}</p>
-<p>Total: {{ pigTotal }}</p>
+<h2>Current Player: {{ currentPlayer}}</h2>
 
-<form method="post" action="">
+
+
+{% if (victory != "") %}
+    <p class="info">{{ victory }} has won!</p>
+    <form method="post" action="">
     <p>
-        <input type="submit" name="roll" value="Roll"
-            onClick="this.form.action='{{ path('pig_roll') }}';"
-        >
-        <input type="submit" name="save" value="Save"
-            onClick="this.form.action='{{ path('pig_save') }}';"
-        >
-        <input type="submit" name="restart" value="Restart"
-            onClick="this.form.action='{{ path('pig_init_get') }}';this.form.method='get';"
+        <input type="submit" name="restart" value="Restart" class="button"
+            onClick="this.form.action='{{ path('game_init') }}';this.form.method='get';"
         >
     </p>
-</form>
+    </form>
+    
+{% else %}
+    {% if (bankTurn == false) %}
+    <form method="post" action="" class="gameForm">
+        <p>
+            <input type="submit" name="twist" value="Twist" class="button"
+                onClick="this.form.action='{{ path('game_play') }}';"
+            >
+            <input type="submit" name="stick" value="Stick" class="button"
+                onClick="this.form.action='{{ path('game_play') }}';"
+            >
+            <input type="submit" name="restart" value="Restart" class="button"
+                onClick="this.form.action='{{ path('game_init') }}';this.form.method='get';"
+            >
+        </p>
+    </form>
+    {% else %}
+    <form method="post" action="">
+    <p>
+         <input type="submit" name="banker" value="Banker's Turn" class="button"
+                onClick="this.form.action='{{ path('game_play') }}';"
+        >
+    </p>
+    </form>
+    {% endif %}
+{% endif %}
 
-{{ include('flash.html.twig') }} #}
+<p>{{ bankersDecision }}</p>
+
+{% for card in hand %}
+        <span class="card2">{{ card }}</span>
+{% endfor %}
+
+{# {{ include('flash.html.twig') }} #}
 
 
 {% endblock %}
