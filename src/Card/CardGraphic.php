@@ -20,7 +20,7 @@ class CardGraphic extends Card
     {
         return $this->representation[$this->value - 1];
     }
-    
+
     /**
     * @return string[]
     */
@@ -28,7 +28,7 @@ class CardGraphic extends Card
     {
         $uniSuits = ["A", "B", "C", "D"];
         $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "D", "E"];
-        
+
         $rep = [];
         foreach ($uniSuits as $uniSuit) {
             foreach ($numbers as $number) {

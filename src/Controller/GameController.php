@@ -28,8 +28,7 @@ class GameController extends AbstractController
     #[Route("/game/init", name: "game_init", methods: ['GET'])]
     public function init(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = new Game(1);
         $currentPlayer = $game->getCurrentPlayer();
         $playerHand = $currentPlayer->getHandString();
@@ -44,8 +43,7 @@ class GameController extends AbstractController
     #[Route("/game/play", name: "game_play", methods: ['GET'])]
     public function play(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         // GET CURRENT SESSION OF THE GAME
         $game =  $session->get("game");
         // CURRENT PLAYER
@@ -61,7 +59,7 @@ class GameController extends AbstractController
         // ALL PLAYERS
         $players = $game->getPlayers();
         $playersPoints = $game->getPlayersPoints();
-        
+
         $data = [
         "game" => $game,
         "players" => $players,
@@ -82,8 +80,7 @@ class GameController extends AbstractController
     public function postPlay(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         // GET CURRENT SESSION OF THE GAME
         $game = $session->get("game");
         $victory = "";
@@ -133,7 +130,7 @@ class GameController extends AbstractController
             "bankTurn" => $bankTurn,
             "bankersDecision" => $bankersDecision,
         ];
-        
+
         return $this->render('game/play.html.twig', $data);
     }
 
@@ -151,7 +148,7 @@ class GameController extends AbstractController
         $currentPlayer->calculateHand();
         // IF PLAYER GOES BUST, BANKER WINS
         if ($currentPlayer->getPoints() > 21) {
-           return $game->victory($banker); //victory
+            return $game->victory($banker); //victory
         }
 
         return ""; //victory
@@ -160,7 +157,7 @@ class GameController extends AbstractController
     public function stick(Game $game, Player $currentPlayer): bool
     {
         // MOVES ONTO NEXT PLAYER - THE BANKER
-        
+
         $currentPlayer->stick();
         $game->nextPlayer();
         return true; // bankTurn
@@ -185,7 +182,7 @@ class GameController extends AbstractController
             case $bankersDecision == "stick": // IF THE BANKER DECIDES TO STICK
                 if ($banker->getPoints() >= $human->getPoints()) { // IF POINTS ARE MORE THAN OR SAME AS HUMAN, BANKER WINS
                     $victory = $game->victory($banker);
-                } else if ($banker->getPoints() < $human->getPoints()) { // IF BANKER'S POINTS ARE LESS THAN HUMAN'S, HUMAN WINS
+                } elseif ($banker->getPoints() < $human->getPoints()) { // IF BANKER'S POINTS ARE LESS THAN HUMAN'S, HUMAN WINS
                     $victory = $game->victory($human);
                 }
                 $bankersDecision = "The Banker decides to stick!";

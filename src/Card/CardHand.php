@@ -16,7 +16,7 @@ class CardHand
         $this->hand[] = $card;
     }
 
-   
+
     public function getNumberCards(): int
     {
         return count($this->hand);

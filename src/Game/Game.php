@@ -87,8 +87,8 @@ class Game
         $index = array_search($current, $this->getPlayers());
         $this->currentPlayer = $this->players[$index + 1];
         if (count($this->getPlayers()) == ($index + 1)) {
-                $this->currentPlayer = $this->players[0];
-            }
+            $this->currentPlayer = $this->players[0];
+        }
     }
 
     public function getCurrentPlayer(): object

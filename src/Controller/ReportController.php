@@ -51,8 +51,7 @@ class ReportController extends AbstractController
     #[Route("/api/quote", name: "quote")]
     public function quote(
         Request $request
-    ): Response
-    {
+    ): Response {
         $quotes = [
             "Education is the most powerful weapon which you can use to change the world. - Nelson Mandela",
             "The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education. - Martin Luther King Jr.",

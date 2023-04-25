@@ -11,11 +11,11 @@ class DeckOfCards
      */
     protected array $deck = [];
     protected int $total = 0;
-        /**
+    /**
      * @var array<string> An array of values for each card ("face")
      */
     protected array $faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-        /**
+    /**
      * @var array<string> An array of suits
      */
     protected array $suits = ["♠", "♥", "♦", "♣"];
