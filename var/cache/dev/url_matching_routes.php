@@ -19,6 +19,7 @@ return [
         '/api/deck/shuffle' => [[['_route' => 'api_deck_shuffle', '_controller' => 'App\\Controller\\APIController::apiDeckShuffle'], null, ['POST' => 0], null, false, false, null]],
         '/api/deck/draw' => [[['_route' => 'api_deck_draw_num', '_controller' => 'App\\Controller\\APIController::apiDeckDrawNum'], null, ['POST' => 0], null, true, false, null]],
         '/api/deck/deal' => [[['_route' => 'api_deal', '_controller' => 'App\\Controller\\APIController::apiDeal'], null, ['POST' => 0], null, false, false, null]],
+        '/api/game' => [[['_route' => 'api_game', '_controller' => 'App\\Controller\\APIController::apiGame'], null, ['GET' => 0], null, false, false, null]],
         '/card' => [[['_route' => 'card_start', '_controller' => 'App\\Controller\\CardGameController::home'], null, null, null, false, false, null]],
         '/card/deck' => [[['_route' => 'card_deck', '_controller' => 'App\\Controller\\CardGameController::deck'], null, null, null, false, false, null]],
         '/card/deck/shuffle' => [[['_route' => 'card_deck_shuffle', '_controller' => 'App\\Controller\\CardGameController::shuffle'], null, null, null, false, false, null]],

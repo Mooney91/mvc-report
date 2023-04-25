@@ -224,6 +224,11 @@ p {
 .gameForm {
   text-align: center;
 }
+
+.decision {
+  font-style: italic;
+  font-size: 18px;
+}
 /* COLOUR PALETTE */
 /* #F2DEA0
 #F2CB9B

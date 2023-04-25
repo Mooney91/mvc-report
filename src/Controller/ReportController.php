@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class ReportController extends AbstractController
 {
@@ -22,8 +23,6 @@ class ReportController extends AbstractController
     {
         return $this->render('about.html.twig');
     }
-
-
                // if ($currentPlayer->getPoints() > 21) {
             //     $victory = "Player";
             //     // $game->victory($banker);
@@ -50,7 +49,9 @@ class ReportController extends AbstractController
     }
 
     #[Route("/api/quote", name: "quote")]
-    public function quote(): Response
+    public function quote(
+        Request $request
+    ): Response
     {
         $quotes = [
             "Education is the most powerful weapon which you can use to change the world. - Nelson Mandela",
@@ -68,8 +69,8 @@ class ReportController extends AbstractController
         $number = random_int(0, count($quotes)-1);
         $quote = $quotes[$number];
         $today = date("Y-m-d H:i:s");
-        $timestamp = $_SERVER['REQUEST_TIME'];
-
+        // $timestamp = $_SERVER['REQUEST_TIME'];
+        $timestamp = $request->server->get('REQUEST_TIME');
         $data = [
             'quote' => $quote,
             'today' => $today,

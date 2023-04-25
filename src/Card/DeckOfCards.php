@@ -6,32 +6,35 @@ use App\Card\CardGraphic;
 
 class DeckOfCards
 {
-    protected $deck = [];
-    protected $total = 0;
-    protected $faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-    protected $suits = ["♠", "♥", "♦", "♣"];
+    /**
+     * @var array<object> An array of cards
+     */
+    protected array $deck = [];
+    protected int $total = 0;
+        /**
+     * @var array<string> An array of values for each card ("face")
+     */
+    protected array $faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+        /**
+     * @var array<string> An array of suits
+     */
+    protected array $suits = ["♠", "♥", "♦", "♣"];
 
     public function __construct(int $num)
     {
         $this->total = $num;
 
-        $j = 0;
-        $k = 0;
+        $idxF = 0;
+        $idxS = 0;
 
-        for ($i = 1; $i <= $num; $i++) {
+        for ($idx = 1; $idx <= $num; $idx++) {
             $temp = new CardGraphic();
-            $temp->setValue($i);
-            $temp->setFace($this->faces[$j]);
-            $temp->setSuit($this->suits[$k]);
-
-            if ($j < (count($this->faces)-1) ) {
-                $j += 1;
-            } else {
-                $j = 0;
-                if ($k < (count($this->suits)-1)) {
-                    $k += 1;
-                }
-            }
+            $temp->setValue($idx);
+            $temp->setFace($this->faces[$idxF]);
+            $temp->setSuit($this->suits[$idxS]);
+            // INCREMENT VARIABLES
+            $idxF = ($idxF == (count($this->faces) - 1)) ? 0 : ($idxF + 1);
+            $idxS = ($idxF == 0) ? (($idxS == (count($this->suits) - 1)) ? 0 : ($idxS + 1)) : $idxS;
 
             $this->add($temp);
         }
@@ -55,11 +58,17 @@ class DeckOfCards
         return $total;
     }
 
+    /**
+    * @return object[]
+    */
     public function getDeck(): array
     {
         return $this->deck;
     }
 
+    /**
+    * @return int[]
+    */
     public function getValues(): array
     {
         $values = [];
@@ -69,6 +78,9 @@ class DeckOfCards
         return $values;
     }
 
+    /**
+    * @return string[]
+    */
     public function getFaces(): array
     {
         $faces = [];
@@ -78,6 +90,9 @@ class DeckOfCards
         return $faces;
     }
 
+    /**
+    * @return string[]
+    */
     public function getSuits(): array
     {
         $suits = [];
@@ -87,6 +102,9 @@ class DeckOfCards
         return $suits;
     }
 
+    /**
+    * @return string[]
+    */
     public function getString(): array
     {
         $values = [];
@@ -100,7 +118,6 @@ class DeckOfCards
     {
         shuffle($this->deck);
     }
-
 
     public function sortDeck(): void
     {

@@ -27,7 +27,6 @@ class GameController extends AbstractController
 
     #[Route("/game/init", name: "game_init", methods: ['GET'])]
     public function init(
-        Request $request,
         SessionInterface $session
     ): Response
     {
@@ -44,22 +43,25 @@ class GameController extends AbstractController
 
     #[Route("/game/play", name: "game_play", methods: ['GET'])]
     public function play(
-        Request $request,
         SessionInterface $session
     ): Response
     {
+        // GET CURRENT SESSION OF THE GAME
         $game =  $session->get("game");
-        $banker = $game->getBanker();
+        // CURRENT PLAYER
         $currentPlayer = $game->getCurrentPlayer();
-        $bankTurn = false;
-        $players = $game->getPlayers();
         $identifier = $currentPlayer->getIdentifier();
         $currentPlayer->calculateHand();
         $points = $currentPlayer->getPoints();
+        // BANKER
+        $banker = $game->getBanker();
+        $bankTurn = false; // FOR TEMPLATE: INDICATES IF IT IS BANKER'S TURN
         $bankerPoints = $banker->getPoints();
-        $playersPoints = $game->getPlayersPoints();
         $bankersDecision = "";
-
+        // ALL PLAYERS
+        $players = $game->getPlayers();
+        $playersPoints = $game->getPlayersPoints();
+        
         $data = [
         "game" => $game,
         "players" => $players,
@@ -74,7 +76,6 @@ class GameController extends AbstractController
         ];
 
         return $this->render('game/play.html.twig', $data);
-        
     }
 
     #[Route("/game/play", name: "game_play_post", methods: ['POST'])]
@@ -83,70 +84,40 @@ class GameController extends AbstractController
         SessionInterface $session
     ): Response
     {
-        $victory = "";
-        $bankTurn = $request->query->getBoolean('bankTurn');
+        // GET CURRENT SESSION OF THE GAME
         $game = $session->get("game");
+        $victory = "";
+        // PLAYERS
         $currentPlayer = $game->getCurrentPlayer();
         $human = $game->getHuman();
         $banker = $game->getBanker();
         $bankersDecision = "";
+        $bankTurn = $request->query->getBoolean('bankTurn');
 
-        // if ($currentPlayer->getIdentifier() === $banker->getIdentifier()) {
-        //     $bankTurn = true;
-            
-        //     // while (!$banker->decide()) {}
-        //     $banker->decide();
+        if ($request->request->has('twist')) { // HUMAN PLAYER TWISTS
+            $victory = $this->twist($game, $currentPlayer, $banker);
+        } elseif ($request->request->has('stick')) { // HUMAN PLAYER STICKS
+            $bankTurn = $this->stick($game, $currentPlayer);
+        } elseif ($request->request->has('restart')) { // CLICKED ON RESTART BUTTON - NEW GAME
+            return $this->redirectToRoute('game_start');
+        } elseif ($request->request->has('banker')) { // BANKER'S TURN
+            $result =$this->bankerTurn($game, $human, $banker);
+            $bankersDecision = $result["bankersDecision"];
+            $bankTurn = $result["bankTurn"];
+            $victory = $result["victory"];
+        }
 
-        //     if ($currentPlayer->getPoints() > 21) {
-        //         $victory = $game->victory($human);
-        //     }
-            
-        //     if ($currentPlayer->getPoints()>= $human->getPoints()) {
-        //         $victory = $game->victory($banker);
-        //     } 
-        // } else {
-            if ($request->request->has('twist')) {
-                $currentPlayer->twist();
-                $currentPlayer->calculateHand();
-                if ($currentPlayer->getPoints() > 21) {
-                    $victory = $game->victory($banker);
-                }
-            } elseif($request->request->has('stick')) {
-                $currentPlayer->stick();
-                $game->nextPlayer();
-                $bankTurn = true;
-            } elseif($request->request->has('restart')) {
-                return $this->redirectToRoute('game_start');
-            } elseif ($request->request->has('banker')) {
-                $bankersDecision = $banker->decide();
-                $bankTurn = true;
-
-                if ($banker->getPoints() > 21) {
-                    $victory = $game->victory($human);
-                } else if ($bankersDecision == "stick") {
-                    if ($banker->getPoints() >= $human->getPoints()) {
-                        $victory = $game->victory($banker);
-                    } else if ($banker->getPoints() < $human->getPoints()) {
-                    $victory = $game->victory($human);
-                    }
-                }
-
-                if ($bankersDecision == "stick") {
-                    $bankersDecision = "The Banker decides to stick!";
-                } else {
-                    $bankersDecision = "The Banker takes another card...";
-                }
-
-            };
-        // }
-
+        // CURRENT PLAYER AND CURRENT STATE
         $currentPlayer = $game->getCurrentPlayer();
         $playerHand = $currentPlayer->getHandString();
         $currentPlayer->calculateHand();
         $points = $currentPlayer->getPoints();
+        // BANKER
         $bankerPoints = $banker->getPoints();
+        // PLAYERS
         $playersPoints = $game->getPlayersPoints();
 
+        // SAVE VARIABLES IN SESSION
         $session->set("game", $game);
         $session->set("currentPlayer", $currentPlayer);
         $session->set("hand", $playerHand);
@@ -170,5 +141,59 @@ class GameController extends AbstractController
     public function doc(): Response
     {
         return $this->render('game/doc.html.twig');
+    }
+
+    public function twist(Game $game, Player $currentPlayer, Banker $banker): string
+    {
+        // TWIST EXECUTED
+        $currentPlayer->twist();
+        // LOOK AT HAND AND LOOK HOW MANY POINTS
+        $currentPlayer->calculateHand();
+        // IF PLAYER GOES BUST, BANKER WINS
+        if ($currentPlayer->getPoints() > 21) {
+           return $game->victory($banker); //victory
+        }
+
+        return ""; //victory
+    }
+
+    public function stick(Game $game, Player $currentPlayer): bool
+    {
+        // MOVES ONTO NEXT PLAYER - THE BANKER
+        
+        $currentPlayer->stick();
+        $game->nextPlayer();
+        return true; // bankTurn
+    }
+
+    /**
+    * @return string[]
+    */
+    public function bankerTurn(Game $game, Player $human, Banker $banker): array
+    {
+        // THE BANKER MAKES A DECISION
+        $bankersDecision = $banker->decide();
+        $banker->calculateHand();
+        $bankTurn = true;
+        $victory = "";
+
+        switch (true) {
+            case $banker->getPoints() > 21: // IF BANKER GOES BUST HUMAN PLAYER WINS
+                $bankersDecision = "Banker goes bust!";
+                $victory = $game->victory($human);
+                break;
+            case $bankersDecision == "stick": // IF THE BANKER DECIDES TO STICK
+                if ($banker->getPoints() >= $human->getPoints()) { // IF POINTS ARE MORE THAN OR SAME AS HUMAN, BANKER WINS
+                    $victory = $game->victory($banker);
+                } else if ($banker->getPoints() < $human->getPoints()) { // IF BANKER'S POINTS ARE LESS THAN HUMAN'S, HUMAN WINS
+                    $victory = $game->victory($human);
+                }
+                $bankersDecision = "The Banker decides to stick!";
+                break;
+            default:
+                $bankersDecision = "The Banker takes another card...";
+        }
+
+        return array("bankersDecision" => $bankersDecision, "bankTurn" => $bankTurn, "victory" => $victory);
     }
 }

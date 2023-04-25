@@ -9,8 +9,10 @@ use App\Card\Card;
 
 class Game
 {
-
     protected object $deck;
+    /**
+     * @var array<object> An array of cards
+     */
     protected array $players = [];
     protected object $currentPlayer;
     protected object $banker;
@@ -19,10 +21,8 @@ class Game
 
     public function __construct(int$num)
     {
-        // DO SOMETHING
-
         for ($i = 1; $i <= $num; $i++) {
-            $this->setPlayer($i);
+            $this->setPlayer(strval($i));
         }
         $this->setBanker();
         $deck = new DeckOfCards(52);
@@ -30,10 +30,9 @@ class Game
         $this->deck = $deck;
         $this->human = $this->players[0];
         $this->currentPlayer = $this->players[0];
-
     }
 
-    public function setPlayer($identifier):object
+    public function setPlayer(string $identifier): object
     {
         $player = new Player($identifier, $this);
         $this->players[] = $player;
@@ -43,7 +42,6 @@ class Game
 
     public function setBanker(): object
     {
-        // DO SOMETHING
         $banker = new Banker("Banker", $this);
         $this->players[] = $banker;
         $this->banker = $banker;
@@ -51,13 +49,17 @@ class Game
         return $banker;
     }
 
+    /**
+    * @return object[]
+    */
     public function getPlayers(): array
     {
-
         return $this->players;
     }
 
-
+    /**
+    * @return array<string, int>
+    */
     public function getPlayersPoints(): array
     {
         $playersPoints = [];
@@ -71,33 +73,22 @@ class Game
 
     public function getBanker(): object
     {
-
         return $this->banker;
     }
 
     public function getHuman(): object
     {
-
         return $this->human;
-    }
-
-    public function finalCalculate(): object
-    {
-        // DO SOMETHING
-
     }
 
     public function nextPlayer(): void
     {
-        // DO SOMETHING
         $current = $this->getCurrentPlayer();
         $index = array_search($current, $this->getPlayers());
-
+        $this->currentPlayer = $this->players[$index + 1];
         if (count($this->getPlayers()) == ($index + 1)) {
-            $this->currentPlayer = $this->players[0];
-        } else {
-            $this->currentPlayer = $this->players[$index + 1];
-        }
+                $this->currentPlayer = $this->players[0];
+            }
     }
 
     public function getCurrentPlayer(): object
@@ -110,40 +101,36 @@ class Game
         return $this->deck;
     }
 
-    public function returnPoints($card): int
+    public function returnPoints(object $card): int
     {
         $face = $card->getFace();
 
-        $values = ["A" => 1, 
-                   "2" => 2, 
-                   "3" => 3, 
-                   "4" => 4, 
+        $values = ["A" => 1,
+                   "2" => 2,
+                   "3" => 3,
+                   "4" => 4,
                    "5" => 5,
-                   "6" => 6, 
-                   "7" => 7, 
-                   "8" => 8, 
-                   "9" => 9, 
-                   "10" => 10, 
-                   "J" => 10, 
-                   "Q" => 10, 
+                   "6" => 6,
+                   "7" => 7,
+                   "8" => 8,
+                   "9" => 9,
+                   "10" => 10,
+                   "J" => 10,
+                   "Q" => 10,
                    "K" => 10];
 
-        // $value = isset($values[$face]) ? $values[$face] : null;
-        
-        // if ($value !== null) {
-        //     $result = [$face => $value];
-        // } else {
-        //     $result = null;
-        // }
-
-        // return intval($result);
         return $values[$face];
     }
 
-    public function victory($player)
+    public function victory(object $player): string
     {
         $this->winner = $player;
 
         return strval($player->getIdentifier());
+    }
+
+    public function getWinner(): object
+    {
+        return $this->winner;
     }
 }

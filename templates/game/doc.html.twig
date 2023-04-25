@@ -6,6 +6,8 @@
 {# {% include "card/card_nav.html.twig" %} #}
 <h1>British Twenty-One!</h1>
 
+<p>Below describes how I started to develop the game Twenty-One and my thought processes. The UML diagram at the end shows a complete picture of the final game.</p>
+
 <h2>Flow Chart</h2>
 
 <p>The flowchart below shows the basic gameplay for Twenty-One.</p>
@@ -55,10 +57,10 @@ In other words, the <code>DeckOfCards</code> has a comprehensive API to retrieve
 <p>The <code>Game</code> contains properties and methods relating to the current game in play. It has the scores for the Banker and Player as well as methods relating to the game.</p>
 
 <h3> Player/Banker </h3>
-<p>The <code>Player</code> class represents the player in play and has has-a relationship with <code>CardHand</code>. It has <code>twist()</code> and <code>stick()</code> methods which
+<p>The <code>Player</code> class represents the player in play and has a "has-a" relationship with <code>CardHand</code>. It has <code>twist()</code> and <code>stick()</code> methods which
 are main functionality of play. <code>Banker</code> is a player therefore inherits from Player, but since it is the computer (AI) is requires special consideration.</p>
 
 <h3>UML - Class Diagram</h3>
-{# <img src="{{ asset('img/cardUML.png') }}" class= "myimg" alt="UML Diagram"></p> #}
+<img src="{{ asset('img/twentyoneUML.png') }}" class= "myimg" alt="UML Diagram"></p>
 
 {% endblock %}

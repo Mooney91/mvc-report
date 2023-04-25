@@ -13,12 +13,12 @@ use App\Card\Card;
 use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
+use Exception;
 
 class CardGameController extends AbstractController
 {
     #[Route("/card", name: "card_start")]
     public function home(
-        // Request $request,
         SessionInterface $session
     ): Response {
         // START THE SESSION
@@ -31,10 +31,12 @@ class CardGameController extends AbstractController
 
     #[Route("/card/deck", name: "card_deck")]
     public function deck(
-        // Request $request,
         SessionInterface $session
     ): Response {
         // GET DECK OF CARDS AND SORT IT
+        /**
+         * @var DeckOfCards $deck The Deck of cards used.
+         */
         $deck = $session->get("deck");
         $deck->sortDeck();
 
@@ -73,6 +75,9 @@ class CardGameController extends AbstractController
         SessionInterface $session
     ): Response {
         // GET THE DECK OF CARDS
+        /**
+         * @var DeckOfCards $deck The Deck of cards used.
+         */
         $deck = $session->get("deck");
         // DRAW A CARD FROM THE DECK
         $discarded = $deck->draw();
@@ -82,14 +87,12 @@ class CardGameController extends AbstractController
         $totalCards = $deck->cardsInDeck();
 
         // CREATE A NEW HAND, ADD THE DISCARDED HAND TO IT, AND SET IN IT SESSION
-        if (isset($_SESSION['playerx'])) {
-            $hand = $session->get("playerx");
-            $hand->add($discarded);
-        } else {
-            $hand = new CardHand();
-            $hand->add($discarded);
-            $session->set("playerx", $hand);
-        }
+        /**
+         * @var CardHand PlayerX's card hand.
+         */
+        $hand = $session->get("playerx", new CardHand());
+        $hand->add($discarded);
+        $session->set("playerx", $hand);
 
         $data = [
             "total" => $totalCards,
@@ -102,19 +105,18 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/draw/{num<\d+>}", name: "card_deck_draw_num")]
     public function drawWithNum(
         int $num,
-        Request $request,
         SessionInterface $session
     ): Response {
         // GET THE DECK
+        /**
+         * @var DeckOfCards $deck The Deck of cards used.
+         */
         $deck = $session->get("deck");
-
-        // GET PLAYERX'S HAND
-        if (isset($_SESSION['playerx'])) {
-            $hand = $session->get("playerx");
-        } else {
-            $hand = new CardHand();
-            $session->set("playerx", $hand);
-        }
+        /**
+         * @var CardHand PlayerX's card hand.
+         */
+        $hand = $session->get("playerx", new CardHand());
+        $session->set("playerx", $hand);
 
         // NEW HAND IS USED TO SHOW DISCARDED CARDS ON THIS ROUND ONLY
         $newHand = new CardHand();
@@ -124,7 +126,7 @@ class CardGameController extends AbstractController
 
         // IF THE NUMBER IS MORE THAN THE NUMBER OF CARDS IN THE DECK, THROW EXCEPTION
         if ($num > $totalCards) {
-            throw new \Exception("You cannot draw more cards than there are in the deck!");
+            throw new Exception("You cannot draw more cards than there are in the deck!");
         }
 
         // DISCARD CARDS AND ADD TO HAND AND NEWHAND
@@ -152,17 +154,19 @@ class CardGameController extends AbstractController
     public function deal(
         int $num1,
         int $num2,
-        // Request $request,
         SessionInterface $session
     ): Response {
         // GET DECK OF CARDS
+        /**
+         * @var DeckOfCards $deck The Deck of cards used.
+         */
         $deck = $session->get("deck");
         // COUNT NUMBER OF CARDS IN THE DECK
         $totalCards = $deck->cardsInDeck();
 
         // IF THE NUMBER IS MORE THAN THE NUMBER OF CARDS IN THE DECK, THROW EXCEPTION
         if ($num2 > $totalCards) {
-            throw new \Exception("You cannot draw more cards than there are in the deck!");
+            throw new Exception("You cannot draw more cards than there are in the deck!");
         }
 
         // CREATE AN ARRAY

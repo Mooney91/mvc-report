@@ -64,5 +64,25 @@
     <p>Jag har lärt mig mycket av det här kursmomentet. Det tog ett tag för mig att komma igång med den här kursen, men jag känner nu till och känner mig bekant med Symfonys struktur och hur varje del - rutten, klasserna och templater samverkar för att skapa något. Den har också samlat bregrepp från tidigare kurser. Det var också mycket fördelaktigt att lära sig mer om Git och hur man skriver commit-meddelanden. Även om det kan tyckas vara en enkel sak att göra, vet jag från mitt eget arbete att commit-meddelanden kan vara väldigt ogenomskinliga och otydliga. Det är också bra att ha en "standard" form som man följer.</p>
     </section>
 
+    <section>
 
+    <h2 id="kmom03">Kmom03</h2>
+
+    <h3>Berätta hur det kändes att modellera ett kortspel med flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en applikation?</h3>
+    <p>Att skapa ett flödesdiagram och använda pseudokod var definitivt användbart för att utveckla spelet. Flödet var användbart för att förstå hur spelet skulle fungera. Jag tog lite tid att tänka på de olika typerna av klasser jag behövde för spelet, och pseudokoden hjälpte till att visa hur dessa klasser skulle interagera med varandra. Jag valde även att skapa ett UML-diagram, som jag fortsatte att uppdatera genom utveckling. Det här gav mig en referens som jag kunde titta tillbaka på och gav en överblick över spelet som helhet.</p>
+    <p>Flödet och pseudokoden fick mig att tänka på spelet innan jag skrev koden. Jag kunde samla mina tankar. Eftersom jag ofta har en viss tidspress, skyndar jag mig in i kodning i stället för att slappna av lite och tänka igenom processen. Till slut kunde jag använda mina förberedelser i programmeringen. Så det tog nog lika lång tid, men med högre kvalitet.</p>
+
+    <h3>Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden, dina klasser och applikationen som helhet?</h3>
+    <p>Med arbetet som jag hade gjort under förberedelsen (flödet, pseudokoden och UML) kunde jag snabbt skapa strukturen för klasserna och de metoder/egenskaper som skulle krävas för spelet. Det svåraste för mig var att skapa de olika rutterna i Controller och arbeta med session (inte konceptet, utan snarare felmeddelandena från symfony). Jag gjorde några justeringar av mina ursprungliga klasser, jag behövde uppdatera några av klasserna från föregående kmom. Jag behövde några extra "properties” för att lagra "face" och "suit" för varje kort. Jag behövde också några ytterligare metoder för att “set” och “get” dessa värden.</p>
+    <p>I slutet är jag nöjd med applikationen och spelet som jag har skapat. Jag tror att jag kan ha “överkonstruerat” eller “överkomplicerat” spelet och min kod. Jag undrar om jag hade kunnat ändra det så att det behövdes färre egenskaper och metoder. Speciellt tror jag att min Game-klass kunde ha delats upp i mindre klasser eftersom det blev klassen som styrde spelets huvudfunktionalitet.</p>
+    <p>Jag är inte heller särskilt nöjd med hur spelet ser ut. Det är inte ett vackert spel och jag tror att den här delen av applikationen kan förbättras mycket. Till exempel med bättre kortgrafik, en spelbräda och användargränssnittet.</p>
+
+    <h3>Vilken är din känsla för att koda i ett ramverk som Symfony, så här långt in i kursen?</h3>
+    <p>I början av kursen var det ganska förvirrande att ha en "applikation" eller webbplats uppdelad på (minst) tre olika platser. "Templates", “Controllers”, och klasserna. Nu förstår jag hur det är uppbyggt och hur man skapar något med mina egna behov. Det svåraste är att arbeta med de felmeddelanden som dyker upp. Jag tycker att Symfony är ganska svårt att felsöka, speciellt om raden Symfony syftar på inte är det direkta problemet. Python har till exempel ganska tydliga felmeddelanden och Javascript är ganska lätt att felsöka med webbläsaren.</p>
+
+    <h3>Vilken är din TIL för detta kmom?</h3>
+    <p>Jag tycker att artikeln "Clean Code PHP" var mycket informativ. Även om det kan ta lite tid att komma ihåg allt som sägs i artikeln så tycker jag att det är en bra påminnelse och guide till hur man skriver bra kod, speciellt i PHP. Det gav också en del specifik information som jag inte kände till angående datatyper och funktioner som kunde användas.</p>
+    <p>Jag gillade också övningen på linters. Det känns som att vi är på väg att bli mer självförsörjande på kodning.</p>
+    
+    </section>
 {% endblock %}

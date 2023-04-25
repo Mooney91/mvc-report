@@ -46,7 +46,7 @@ class Card
     public function setSuit(string $arg): string
     {
         $this->suit = $arg;
-        return $this->value;
+        return $this->suit;
     }
 
     public function getSuit(): string

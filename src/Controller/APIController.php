@@ -14,12 +14,12 @@ use App\Card\Card;
 use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
+use Exception;
 
 class APIController extends AbstractController
 {
     #[Route("/api", name: "api_start")]
     public function apiStart(
-        // Request $request,
         SessionInterface $session
     ): Response {
         // START THE SESSION
@@ -32,7 +32,6 @@ class APIController extends AbstractController
 
     #[Route("/api/deck", name: "api_deck", methods: ['GET'])]
     public function apiDeck(
-        // Request $request,
         SessionInterface $session
     ): Response {
         // GET DECK OF CARDS AND SORT IT
@@ -54,7 +53,6 @@ class APIController extends AbstractController
 
     #[Route("/api/deck/shuffle", name: "api_deck_shuffle", methods: ['POST'])]
     public function apiDeckShuffle(
-        // Request $request,
         SessionInterface $session
     ): Response {
         // CREATE NEW DECK OF CARDS, SHUFFLE IT, AND SET IT IN SESSION
@@ -77,19 +75,14 @@ class APIController extends AbstractController
     public function apiDeckDrawNum(
         Request $request,
         SessionInterface $session,
-        // int $num,
     ): Response {
         $num = $request->request->get('num1');
         // GET THE DECK
         $deck = $session->get("deck");
 
         // GET PLAYERX'S HAND
-        if (isset($_SESSION['playerx'])) {
-            $hand = $session->get("playerx");
-        } else {
-            $hand = new CardHand();
-            $session->set("playerx", $hand);
-        }
+        $hand = $session->get("playerx", new CardHand());
+        $session->set("playerx", $hand);
 
         // NEW HAND IS USED TO SHOW DISCARDED CARDS ON THIS ROUND ONLY
         $newHand = new CardHand();
@@ -99,7 +92,7 @@ class APIController extends AbstractController
 
         // IF THE NUMBER IS MORE THAN THE NUMBER OF CARDS IN THE DECK, THROW EXCEPTION
         if ($num > $totalCards) {
-            throw new \Exception("You cannot draw more cards than there are in the deck!");
+            throw new Exception("You cannot draw more cards than there are in the deck!");
         }
 
         // DISCARD CARDS AND ADD TO HAND AND NEWHAND
@@ -130,8 +123,6 @@ class APIController extends AbstractController
     public function apiDeal(
         Request $request,
         SessionInterface $session
-        // int $num1,
-        // int $num2,
     ): Response {
         $num1 = $request->request->get('num1');
         $num2 = $request->request->get('num2');
@@ -142,7 +133,7 @@ class APIController extends AbstractController
 
         // IF THE NUMBER IS MORE THAN THE NUMBER OF CARDS IN THE DECK, THROW EXCEPTION
         if ($num2 > $totalCards) {
-            throw new \Exception("You cannot draw more cards than there are in the deck!");
+            throw new Exception("You cannot draw more cards than there are in the deck!");
         }
 
         // CREATE AN ARRAY
@@ -172,6 +163,30 @@ class APIController extends AbstractController
         $data = [
             "total_left" => $totalCards,
             "game" => $game,
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("/api/game", name: "api_game", methods: ['GET'])]
+    public function apiGame(
+        SessionInterface $session
+    ): Response {
+        // GET GAME
+        $game = $session->get("game");
+        $currentPlayer = $game->getCurrentPlayer();
+        $banker = $game->getBanker();
+        $human = $game->getHuman();
+
+        $data = [
+            "Points" => $game->getPlayersPoints(),
+            "Current Player" => $currentPlayer->getIdentifier(),
+            "Player Hand" => $human->getHandString(),
+            "Banker Hand" => $banker->getHandString(),
         ];
 
         $response = new JsonResponse($data);

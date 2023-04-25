@@ -6,22 +6,14 @@
 
 <h1>British Twenty-One [PLAYING]</h1>
 
-{# <h3>Player {{ currentPlayer}}: {{ points }}</h3>
-<h3>Banker: {{bankerPoints }}</h3> #}
-
 {% for key, value in playersPoints %}
-
     <div class="box">
         <h2>Player {{ key }}</h2>
         <p class="points">{{ value }} points</p>
     </div>
-
-    {# <h3>Player {{ key }} : {{ value }}</h3> #}
 {% endfor %}
 
 <h2>Current Player: {{ currentPlayer}}</h2>
-
-
 
 {% if (victory != "") %}
     <p class="info">{{ victory }} has won!</p>
@@ -51,7 +43,7 @@
     {% else %}
     <form method="post" action="">
     <p>
-         <input type="submit" name="banker" value="Banker's Turn" class="button"
+         <input type="submit" name="banker" value="Banker's Turn..." class="button"
                 onClick="this.form.action='{{ path('game_play') }}';"
         >
     </p>
@@ -59,7 +51,7 @@
     {% endif %}
 {% endif %}
 
-<p>{{ bankersDecision }}</p>
+<p class="decision">{{ bankersDecision }}</p>
 
 {% for card in hand %}
         <span class="card2">{{ card }}</span>

@@ -6349,13 +6349,42 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator._tHndrl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.DpgrdWZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="banker" type="service_closure" id="App\Game\Banker"/>
+        <argument key="currentPlayer" type="service_closure" id="App\Game\Player"/>
+        <argument key="game" type="service_closure" id="App\Game\Game"/>
+      </argument>
+    </service>
+    <service id=".service_locator.gPHttvX" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="currentPlayer" type="service_closure" id="App\Game\Player"/>
+        <argument key="game" type="service_closure" id="App\Game\Game"/>
+      </argument>
+    </service>
+    <service id=".service_locator.tCJe9UG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="banker" type="service_closure" id="App\Game\Banker"/>
+        <argument key="game" type="service_closure" id="App\Game\Game"/>
+        <argument key="human" type="service_closure" id="App\Game\Player"/>
+      </argument>
+    </service>
+    <service id=".service_locator.w_Tn6Ha" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\GameController::bankerTurn" type="service_closure" id=".service_locator.tCJe9UG"/>
+        <argument key="App\Controller\GameController::stick" type="service_closure" id=".service_locator.gPHttvX"/>
+        <argument key="App\Controller\GameController::twist" type="service_closure" id=".service_locator.DpgrdWZ"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
+        <argument key="App\Controller\GameController:bankerTurn" type="service_closure" id=".service_locator.tCJe9UG"/>
+        <argument key="App\Controller\GameController:stick" type="service_closure" id=".service_locator.gPHttvX"/>
+        <argument key="App\Controller\GameController:twist" type="service_closure" id=".service_locator.DpgrdWZ"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -7163,12 +7192,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator._tHndrl"/>
+      <argument type="service" id=".service_locator.w_Tn6Ha"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator._tHndrl"/>
+      <argument type="service" id=".service_locator.w_Tn6Ha"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8110,7 +8139,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator._tHndrl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.w_Tn6Ha"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8132,7 +8161,10 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~W7KwJ8V"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.uYp3OwG" alias=".service_locator._tHndrl"/>
+    <service id=".service_locator.BtJ6Ega" alias=".service_locator.DpgrdWZ"/>
+    <service id=".service_locator.xpfZVoj" alias=".service_locator.gPHttvX"/>
+    <service id=".service_locator.AZT2IGG" alias=".service_locator.tCJe9UG"/>
+    <service id=".service_locator.i.zV8HD" alias=".service_locator.w_Tn6Ha"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
@@ -8182,6 +8214,9 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator.ky.MD_k" alias=".service_locator.DpgrdWZ"/>
+    <service id=".service_locator.cv5YIW_" alias=".service_locator.gPHttvX"/>
+    <service id=".service_locator.tBnl8Cp" alias=".service_locator.tCJe9UG"/>
     <service id=".service_locator.eAaUVIw" alias=".service_locator.jIxfAsi"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>

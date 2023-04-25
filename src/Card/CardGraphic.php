@@ -4,6 +4,9 @@ namespace App\Card;
 
 class CardGraphic extends Card
 {
+    /**
+     * @var array<string> Graphical representations of cards
+     */
     private array $representation = [];
 
     public function __construct()
@@ -17,11 +20,15 @@ class CardGraphic extends Card
     {
         return $this->representation[$this->value - 1];
     }
-
-    public function generateUnicode()
+    
+    /**
+    * @return string[]
+    */
+    public function generateUnicode(): array
     {
         $uniSuits = ["A", "B", "C", "D"];
         $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "D", "E"];
+        
         $rep = [];
         foreach ($uniSuits as $uniSuit) {
             foreach ($numbers as $number) {
