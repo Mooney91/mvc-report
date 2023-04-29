@@ -81,6 +81,6 @@ class __TwigTemplate_43f992151ded0deb56e46769b5f4d947 extends Template
     public function getSourceContext()
     {
         return new Source("{% block panel '' %}
-", "@WebProfiler/Profiler/ajax_layout.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/ajax_layout.html.twig");
+", "@WebProfiler/Profiler/ajax_layout.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/ajax_layout.html.twig");
     }
 }

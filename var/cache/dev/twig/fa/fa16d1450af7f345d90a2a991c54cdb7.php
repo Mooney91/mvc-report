@@ -330,6 +330,6 @@ class __TwigTemplate_0aa7aa8160407b86a53fd567740651f8 extends Template
     {% endif %}
 
 {% endblock %}
-", "@WebProfiler/Profiler/results.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
+", "@WebProfiler/Profiler/results.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/results.html.twig");
     }
 }

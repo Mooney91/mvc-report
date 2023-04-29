@@ -171,6 +171,6 @@ class __TwigTemplate_fe3cfc2c57e75d1e61f5322d93f744d2 extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

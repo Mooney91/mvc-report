@@ -86,10 +86,17 @@ class __TwigTemplate_04ee1ac1cdf4b9a67ec4bf630ea982fa extends Template
 
         // line 6
         echo "    <h1>Quote of the Day</h1>
-    <p>Welcome to my awesome magical homepage.</p>
-    <p>This is the current magic number: ";
+    <p>";
+        // line 7
+        echo twig_escape_filter($this->env, (isset($context["today"]) || array_key_exists("today", $context) ? $context["today"] : (function () { throw new RuntimeError('Variable "today" does not exist.', 7, $this->source); })()), "html", null, true);
+        echo "</p>
+    <p>";
         // line 8
-        echo twig_escape_filter($this->env, (isset($context["number"]) || array_key_exists("number", $context) ? $context["number"] : (function () { throw new RuntimeError('Variable "number" does not exist.', 8, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["timestamp"]) || array_key_exists("timestamp", $context) ? $context["timestamp"] : (function () { throw new RuntimeError('Variable "timestamp" does not exist.', 8, $this->source); })()), "html", null, true);
+        echo "</p>
+    <p>";
+        // line 9
+        echo twig_escape_filter($this->env, (isset($context["quote"]) || array_key_exists("quote", $context) ? $context["quote"] : (function () { throw new RuntimeError('Variable "quote" does not exist.', 9, $this->source); })()), "html", null, true);
         echo "</p>
 ";
         
@@ -112,7 +119,7 @@ class __TwigTemplate_04ee1ac1cdf4b9a67ec4bf630ea982fa extends Template
 
     public function getDebugInfo()
     {
-        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  99 => 9,  95 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,8 +130,9 @@ class __TwigTemplate_04ee1ac1cdf4b9a67ec4bf630ea982fa extends Template
 
 {% block body %}
     <h1>Quote of the Day</h1>
-    <p>Welcome to my awesome magical homepage.</p>
-    <p>This is the current magic number: {{ number }}</p>
+    <p>{{today}}</p>
+    <p>{{timestamp}}</p>
+    <p>{{quote}}</p>
 {% endblock %}", "quote.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/templates/quote.html.twig");
     }
 }

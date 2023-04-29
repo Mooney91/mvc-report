@@ -99,6 +99,6 @@ class __TwigTemplate_f17b1375ec46a3691339aa2c2065f484 extends Template
 .container.body_default {
     border-top: 8px solid #aaaaaa;
 }
-", "@email/zurb_2/notification/local.css", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
+", "@email/zurb_2/notification/local.css", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
     }
 }

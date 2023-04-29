@@ -73,6 +73,6 @@ class __TwigTemplate_325ccb1fd9903510c79a57fecdf5e0bf extends Template
     <path d=\"M4 6v6a8 3 0 0 0 16 0v-6\"></path>
     <path d=\"M4 12v6a8 3 0 0 0 16 0v-6\"></path>
 </svg>
-", "@Doctrine/Collector/database.svg", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/doctrine/doctrine-bundle/Resources/views/Collector/database.svg");
+", "@Doctrine/Collector/database.svg", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/doctrine/doctrine-bundle/Resources/views/Collector/database.svg");
     }
 }

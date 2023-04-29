@@ -710,6 +710,6 @@ class __TwigTemplate_348240798a1e6d45aed0389e82800b11 extends Template
         <td class=\"font-normal\">{{ migration.execution_time|default('n/a') }}</td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
     }
 }

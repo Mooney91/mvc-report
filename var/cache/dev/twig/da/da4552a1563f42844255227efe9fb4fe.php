@@ -434,6 +434,6 @@ class __TwigTemplate_b7d33b13e3218c20de151c6b0a362c5e extends Template
     {%- set widget_class = widget_class|default('mr-2') -%}
     {{- parent() -}}
 {%- endblock radio_widget -%}
-", "tailwind_2_layout.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/app/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
+", "tailwind_2_layout.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
     }
 }
