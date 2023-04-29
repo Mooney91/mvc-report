@@ -4,12 +4,19 @@ namespace App\Card;
 
 use App\Card\CardGraphic;
 
+/**
+ * The class for a deck of cards
+ * @author Zachary Mooney
+ */
 class DeckOfCards
 {
     /**
      * @var array<object> An array of cards
      */
     protected array $deck = [];
+    /**
+     * @var int The number of cards in the deck
+     */
     protected int $total = 0;
     /**
      * @var array<string> An array of values for each card ("face")
@@ -20,6 +27,10 @@ class DeckOfCards
      */
     protected array $suits = ["♠", "♥", "♦", "♣"];
 
+    /**
+     * Deck of Cards constructor
+     * @param int $num The number of cards in the deck.
+     */
     public function __construct(int $num)
     {
         $this->total = $num;
@@ -40,18 +51,30 @@ class DeckOfCards
         }
     }
 
+    /**
+     * Add a card to the deck.
+     * @param CardGraphic $card The card to add to the deck.
+     */
     public function add(CardGraphic $card): void
     {
         $this->deck[] = $card;
         // return $card;
     }
 
+    /**
+     * Draw a card from the deck.
+     * @return object The card drawn from the top of the deck.
+     */
     public function draw(): object
     {
         $drawn = array_shift($this->deck);
         return $drawn;
     }
 
+    /**
+     * Get the number of cards in the deck.
+     * @return int The number of cards remaining in the deck.
+     */
     public function cardsInDeck(): int
     {
         $total = count($this->deck);
@@ -59,7 +82,8 @@ class DeckOfCards
     }
 
     /**
-    * @return object[]
+    * Get an array of all the cards
+    * @return object[] An array of all the cards
     */
     public function getDeck(): array
     {
@@ -67,7 +91,8 @@ class DeckOfCards
     }
 
     /**
-    * @return int[]
+     * Get an array of all the cards' values
+     * @return int[]
     */
     public function getValues(): array
     {
@@ -79,7 +104,8 @@ class DeckOfCards
     }
 
     /**
-    * @return string[]
+     * Get an array of all the cards' faces
+     * @return string[]
     */
     public function getFaces(): array
     {
@@ -91,7 +117,8 @@ class DeckOfCards
     }
 
     /**
-    * @return string[]
+     * Get an array of all the cards' suits
+     * @return string[]
     */
     public function getSuits(): array
     {
@@ -103,6 +130,7 @@ class DeckOfCards
     }
 
     /**
+     * Get an array of all the cards' string representations
     * @return string[]
     */
     public function getString(): array
@@ -114,11 +142,17 @@ class DeckOfCards
         return $values;
     }
 
+    /**
+     * Shuffle the deck of cards
+     */
     public function deckShuffle(): void
     {
         shuffle($this->deck);
     }
 
+    /**
+     * Sort the deck
+     */
     public function sortDeck(): void
     {
         usort($this->deck, function ($arg1, $arg2) {

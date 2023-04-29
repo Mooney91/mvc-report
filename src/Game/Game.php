@@ -8,28 +8,32 @@ use App\Game\Banker;
 use App\Card\Card;
 
 /**
- * This is the main functionality for the game "Twenty-One"
+ * This is the main class for the game "Twenty-One"
  * @author Zachary Mooney
  */
 class Game
 {
+    /**
+     * The deck of cards used in the game.
+     * @var object
+     */
     protected object $deck;
     /**
-     * @var array<object> An array of cards
+     * @var array<object> An array of cards.
      */
     protected array $players = [];
     /**
-     * This is the current player in play.
+     * The current player in play.
      * @var object
      */
     protected object $currentPlayer;
     /**
-     * This is the Banker in the game.
+     * The Banker in the game.
      * @var object
      */
     protected object $banker;
     /**
-     * This is the human in the game. Not very useful - may become deprecated.
+     * The human in the game. Not very useful - may become deprecated.
      * @var object
      */
     protected object $human;
@@ -40,7 +44,7 @@ class Game
     protected object $winner;
 
     /**
-     * Create a Game object
+     * Game constructor
      * @param int   $num    The number of players
      */
     public function __construct(int$num = 1)
@@ -57,7 +61,7 @@ class Game
     }
 
     /**
-     * Add a new player to the players attribute
+     * Add a new player to the game
      * @param string   $identifier    The name of the player (this is usually numeric)
      * @return object  $player        Return the player
      */
@@ -70,7 +74,7 @@ class Game
     }
 
     /**
-     * Add the Banker to the players attribute
+     * Add the Banker to the game
      * @return object   $banker The banker
      */    
     public function setBanker(): object
@@ -83,7 +87,7 @@ class Game
     }
 
     /**
-    * Return an array of all the Players 
+    * Return an array of all the Players.
     * @return object[]
     */
     public function getPlayers(): array
@@ -92,7 +96,7 @@ class Game
     }
 
     /**
-    * Return an associative array of the players' points
+    * Return an associative array of the players' points.
     * @return array<string, int>
     */
     public function getPlayersPoints(): array
@@ -107,7 +111,7 @@ class Game
     }
 
     /**
-    * Get the Banker of the game
+    * Get the Banker of the game.
     * @return object   The banker
     */ 
     public function getBanker(): object
@@ -116,7 +120,7 @@ class Game
     }
 
     /**
-    * Get the Human of the game
+    * Get the Human of the game.
     * @return object   The human (which in this version, is the Player)
     */ 
     public function getHuman(): object
@@ -125,7 +129,7 @@ class Game
     }
 
     /**
-    * Change the current player to the next player in the Players array
+    * Change the current player to the next player in the Players array.
     */ 
     public function nextPlayer(): void
     {
@@ -138,7 +142,7 @@ class Game
     }
 
     /**
-    * Get the Current Player of the game
+    * Get the Current Player of the game.
     * @return object   The current player attribute
     */ 
     public function getCurrentPlayer(): object
@@ -147,7 +151,7 @@ class Game
     }
 
     /**
-    * Get the Deck of Cards that is used in the game
+    * Get the Deck of Cards that is used in the game.
     * @return object   The desk of cards
     */ 
     public function getDeck(): object
@@ -182,7 +186,7 @@ class Game
     }
 
     /**
-    * Set the player who won as the winner and returns their name
+    * Set the player who won as the winner and return their identifier.
     * @param object       $player    The player who won
     * @return string      The winner/player's name as a string
     */ 
@@ -194,7 +198,7 @@ class Game
     }
 
     /**
-    * Return the winner of the game
+    * Return the winner of the game.
     * @return object     The winner
     */ 
     public function getWinner(): object

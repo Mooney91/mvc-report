@@ -2,6 +2,11 @@
 
 namespace App\Card;
 
+/**
+ * The class for the graphical representation of the card.
+ * Inherits from Card.
+ * @author Zachary Mooney
+ */
 class CardGraphic extends Card
 {
     /**
@@ -9,6 +14,9 @@ class CardGraphic extends Card
      */
     private array $representation = [];
 
+    /**
+     * CardGraphic constructor
+     */
     public function __construct()
     {
         parent::__construct();
@@ -16,14 +24,19 @@ class CardGraphic extends Card
         $this->representation = $this->generateUnicode();
     }
 
+        /**
+     * Get the string representation of the card
+     * @return string The representation of the card
+     */
     public function getAsString(): string
     {
         return $this->representation[$this->value - 1];
     }
 
     /**
-    * @return string[]
-    */
+     * Generate an array of Unicode representations of cards
+     * @return string[] An array of Unicode representations of cards
+     */
     public function generateUnicode(): array
     {
         $uniSuits = ["A", "B", "C", "D"];
