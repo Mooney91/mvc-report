@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Game;
+
+use PHPUnit\Framework\TestCase;
+
+/**
+ * Test cases for class Game.
+ */
+class GameTest extends TestCase
+{
+    /**
+     * Construct object and verify it it a Dice object.
+     */
+    public function testCreateObject()
+    {
+        $game = new Game();
+        $this->assertInstanceOf("\App\Game\Game", $game);
+
+        $res = count($die->getPlayers());
+        $exp = 2;
+        $this->assertEquals($exp, $res);
+    }
+}
+
