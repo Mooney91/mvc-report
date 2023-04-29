@@ -123,7 +123,7 @@
 
     </aside>
 
-            <p class="phpdocumentor-summary">This is the main functionality for the game &quot;Twenty-One&quot;</p>
+            <p class="phpdocumentor-summary">This is the main class for the game &quot;Twenty-One&quot;</p>
 
 
 
@@ -159,28 +159,28 @@
     <span>
                         &nbsp;: object            </span>
 </dt>
-<dd></dd>
+<dd>The Banker in the game.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/App-Game-Game.html#property_currentPlayer">$currentPlayer</a>
     <span>
                         &nbsp;: object            </span>
 </dt>
-<dd></dd>
+<dd>The current player in play.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/App-Game-Game.html#property_deck">$deck</a>
     <span>
                         &nbsp;: object            </span>
 </dt>
-<dd></dd>
+<dd>The deck of cards used in the game.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/App-Game-Game.html#property_human">$human</a>
     <span>
                         &nbsp;: object            </span>
 </dt>
-<dd></dd>
+<dd>The human in the game. Not very useful - may become deprecated.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/App-Game-Game.html#property_players">$players</a>
@@ -194,98 +194,98 @@
     <span>
                         &nbsp;: object            </span>
 </dt>
-<dd></dd>
+<dd>This is the winner of game.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Create a Game object</dd>
+<dd>Game constructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_getBanker">getBanker()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
-<dd>Get the Banker of the game</dd>
+<dd>Get the Banker of the game.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_getCurrentPlayer">getCurrentPlayer()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
-<dd>Get the Current Player of the game</dd>
+<dd>Get the Current Player of the game.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_getDeck">getDeck()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
-<dd>Get the Deck of Cards that is used in the game</dd>
+<dd>Get the Deck of Cards that is used in the game.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_getHuman">getHuman()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
-<dd>Get the Human of the game</dd>
+<dd>Get the Human of the game.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_getPlayers">getPlayers()</a>
     <span>
                                 &nbsp;: array&lt;string|int, object&gt;    </span>
 </dt>
-<dd>Return an array of all the Players</dd>
+<dd>Return an array of all the Players.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_getPlayersPoints">getPlayersPoints()</a>
     <span>
                                 &nbsp;: array&lt;string, int&gt;    </span>
 </dt>
-<dd>Returns an associative array of the players&#039; points</dd>
+<dd>Return an associative array of the players&#039; points.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_getWinner">getWinner()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
-<dd>Returns the winner of the game</dd>
+<dd>Return the winner of the game.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_nextPlayer">nextPlayer()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Changes the current player to the next player in the Players array</dd>
+<dd>Change the current player to the next player in the Players array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_returnPoints">returnPoints()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd>Returns the points that a particular card has.</dd>
+<dd>Return the points that a particular card has.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_setBanker">setBanker()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
-<dd>Add the Banker to the players attribute</dd>
+<dd>Add the Banker to the game</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_setPlayer">setPlayer()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
-<dd>Add a new player to the players attribute</dd>
+<dd>Add a new player to the game</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Game-Game.html#method_victory">victory()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Sets the player who won as the winner and returns their name</dd>
+<dd>Set the player who won as the winner and return their identifier.</dd>
 
         </dl>
 
@@ -315,21 +315,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">The Banker in the game.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">object</span>
     <span class="phpdocumentor-signature__name">$banker</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -349,21 +348,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">The current player in play.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">object</span>
     <span class="phpdocumentor-signature__name">$currentPlayer</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -383,21 +381,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">The deck of cards used in the game.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">object</span>
     <span class="phpdocumentor-signature__name">$deck</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -417,21 +414,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">The human in the game. Not very useful - may become deprecated.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">object</span>
     <span class="phpdocumentor-signature__name">$human</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -451,7 +447,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -463,7 +459,7 @@
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
-        <section class="phpdocumentor-description"><p>An array of cards</p>
+        <section class="phpdocumentor-description"><p>An array of cards.</p>
 </section>
 
     
@@ -485,21 +481,20 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">This is the winner of game.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">object</span>
     <span class="phpdocumentor-signature__name">$winner</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -523,11 +518,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Create a Game object</p>
+        <p class="phpdocumentor-summary">Game constructor</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -568,11 +563,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get the Banker of the game</p>
+        <p class="phpdocumentor-summary">Get the Banker of the game.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -603,11 +598,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get the Current Player of the game</p>
+        <p class="phpdocumentor-summary">Get the Current Player of the game.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -638,11 +633,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">157</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get the Deck of Cards that is used in the game</p>
+        <p class="phpdocumentor-summary">Get the Deck of Cards that is used in the game.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -673,11 +668,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">126</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get the Human of the game</p>
+        <p class="phpdocumentor-summary">Get the Human of the game.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -708,11 +703,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Return an array of all the Players</p>
+        <p class="phpdocumentor-summary">Return an array of all the Players.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -741,11 +736,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns an associative array of the players&#039; points</p>
+        <p class="phpdocumentor-summary">Return an associative array of the players&#039; points.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -774,11 +769,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the winner of the game</p>
+        <p class="phpdocumentor-summary">Return the winner of the game.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -809,11 +804,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Changes the current player to the next player in the Players array</p>
+        <p class="phpdocumentor-summary">Change the current player to the next player in the Players array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -842,11 +837,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the points that a particular card has.</p>
+        <p class="phpdocumentor-summary">Return the points that a particular card has.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -889,11 +884,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Add the Banker to the players attribute</p>
+        <p class="phpdocumentor-summary">Add the Banker to the game</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -924,11 +919,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Add a new player to the players attribute</p>
+        <p class="phpdocumentor-summary">Add a new player to the game</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -971,11 +966,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Game.php"><a href="files/src-game-game.html"><abbr title="src/Game/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">193</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Sets the player who won as the winner and returns their name</p>
+        <p class="phpdocumentor-summary">Set the player who won as the winner and return their identifier.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
