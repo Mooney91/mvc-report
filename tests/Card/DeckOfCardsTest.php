@@ -22,7 +22,6 @@ class DeckOfCardsTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-
      /**
      * Test that the a card can be drawn
      */

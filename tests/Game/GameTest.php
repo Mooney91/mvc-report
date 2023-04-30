@@ -149,16 +149,4 @@ class GameTest extends TestCase
         $this->assertEquals($player, $game->getWinner());
     }
 
-    // /**
-    //  * Create a winner and test the property and return value
-    //  */
-    // public function testVictory()
-    // {
-    //     $game = new Game();
-    //     $players = $game->getPlayers();
-    //     $player = $players[0];
-    //     $game->victory($player);
-        
-    //     $this->assertEquals($player, $game->getWinner());
-    // }
 }
