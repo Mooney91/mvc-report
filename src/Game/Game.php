@@ -76,7 +76,7 @@ class Game
     /**
      * Add the Banker to the game
      * @return object   $banker The banker
-     */    
+     */
     public function setBanker(): object
     {
         $banker = new Banker("Banker", $this);
@@ -113,7 +113,7 @@ class Game
     /**
     * Get the Banker of the game.
     * @return object   The banker
-    */ 
+    */
     public function getBanker(): object
     {
         return $this->banker;
@@ -122,7 +122,7 @@ class Game
     /**
     * Get the Human of the game.
     * @return object   The human (which in this version, is the Player)
-    */ 
+    */
     public function getHuman(): object
     {
         return $this->human;
@@ -130,21 +130,21 @@ class Game
 
     /**
     * Change the current player to the next player in the Players array.
-    */ 
+    */
     public function nextPlayer(): void
     {
         $current = $this->getCurrentPlayer();
         $index = array_search($current, $this->getPlayers());
         $this->currentPlayer = $this->players[$index + 1];
-        if (count($this->getPlayers()) == ($index + 1)) {
-            $this->currentPlayer = $this->players[0];
-        }
+        // if (count($this->getPlayers()) == ($index + 1)) {
+        //     $this->currentPlayer = $this->players[0];
+        // }
     }
 
     /**
     * Get the Current Player of the game.
     * @return object   The current player attribute
-    */ 
+    */
     public function getCurrentPlayer(): object
     {
         return $this->currentPlayer;
@@ -153,7 +153,7 @@ class Game
     /**
     * Get the Deck of Cards that is used in the game.
     * @return object   The desk of cards
-    */ 
+    */
     public function getDeck(): object
     {
         return $this->deck;
@@ -163,7 +163,7 @@ class Game
     * Return the points that a particular card has.
     * @param object       $card    A Card object
     * @return int         The number of points
-    */ 
+    */
     public function returnPoints(object $card): int
     {
         $face = $card->getFace();
@@ -189,7 +189,7 @@ class Game
     * Set the player who won as the winner and return their identifier.
     * @param object       $player    The player who won
     * @return string      The winner/player's name as a string
-    */ 
+    */
     public function victory(object $player): string
     {
         $this->winner = $player;
@@ -200,7 +200,7 @@ class Game
     /**
     * Return the winner of the game.
     * @return object     The winner
-    */ 
+    */
     public function getWinner(): object
     {
         return $this->winner;

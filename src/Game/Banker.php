@@ -26,7 +26,7 @@ class Banker extends Player
 
     /**
     * Decide the Banker's next move (twist or stick)
-    */ 
+    */
     public function decide(): string
     {
         $decision = "";

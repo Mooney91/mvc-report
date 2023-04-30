@@ -44,7 +44,7 @@ class CardHand
     }
 
     /**
-     * Get the values of the cards in the hand 
+     * Get the values of the cards in the hand
      * @return string[]
      */
     public function getValues(): array
@@ -57,7 +57,7 @@ class CardHand
     }
 
     /**
-     * Get the string representations of the cards 
+     * Get the string representations of the cards
      * @return string[]
      */
     public function getString(): array

@@ -67,7 +67,7 @@ class Player
 
     /**
      * Stick with the current hand - do nothing!
-     */    
+     */
     public function stick(): void
     {
         // DO NOTHING
