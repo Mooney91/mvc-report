@@ -167,6 +167,38 @@ class __TwigTemplate_650b070136375238094c0adee138600b extends Template
     <p>Jag gillade också övningen på linters. Det känns som att vi är på väg att bli mer självförsörjande på kodning.</p>
     
     </section>
+
+    <section>
+
+    <h2 id=\"kmom04\">Kmom04</h2>
+
+    <h3>Berätta hur du upplevde att skriva kod som testar annan kod med PHPUnit och hur du upplever phpunit rent allmänt.</h3>
+    <p>Att förbereda phpunit var en mycket frustrerande upplevelse för mig. Allt hade gått utmärkt i övningen, men i början fungerade phpunit  inte för mitt spel. Jag tittade över min kod, skrev om phpunit.xml-fil och installerade om allt. Jag skrev om min testkod och bad om råd från mina klasskamrater på \"discord\". Genom den här processen slösade jag bort mycket värdefull tid. Till slut upptäckte jag att jag stavade fel i min testfil. Jag hade skrivit \"GameTest,php\" istället för \"GameTest.php\".</p>
+    <p>Allt som allt kände jag mig ganska bekväm med att skriva mina tester, men eftersom många av funktionerna i mina klasser returnerar liknande saker, kunde jag inte visa en stor variation av \"assertions\" och bara några var negativa \"assertions”.</p>
+    <p>Om jag skulle skriva mina tester igen skulle jag börja med de enklaste klasserna och funktionerna. I min brådska började jag med min Game-klass som har en del komplicerade funktioner som krävde funktioner från andra klasser. Även om jag nådde 100 % kodtäckning kunde jag ha skrivit dem på ett mer systematiskt sätt så att min testning hade varit mer meningsfull. Många av mina mer komplikationsfunktioner behövde mer komplicerade tester, så om det var något fel på min \"Card\"-klass - en av de viktigaste klasserna - skulle det ha varit svårare att felsöka.</p>
+
+    <h3>Hur väl lyckades du med kodtäckningen av din kod, lyckades du nå mer än 90% kodtäckning?</h3>
+    <p>Jag hade turen att jag kunde nå 100% kodtäckning. Det enda undantaget var mina controllers. Jag försökte skapa några tester för dessa, men eftersom jag fortfarande hade några fel och jag slösade mycket tid bestämde jag mig för att ta bort det här från min senaste version.</p>
+
+    <h3>Upplever du din egen kod som “testbar kod” eller finns det delar i koden som är mer eller mindre testbar och finns det saker som kan göras för att förbättra kodens testbarhet? </h3>
+    <p>Min kod var lyckligtvis ganska testbar eftersom jag tidigt bestämde mig för att jag skulle dela upp mina klasser i mindre metoder så att en funktion inte skulle göra för mycket.</p>
+    <p>Jag hade några problem med funktioner som skulle returnera en array. Det här var ganska svårt att testa, men jag bestämde mig för flera assertions - en för att testa arrayen och elementen i arrayen.</p>
+    <p>Jag har också en funktion som inte gör någonting. Jag hade skrivit ett ganska bra test för det här, men mina linters gillade inte att jag returnerade ett resultat från en funktion som inte och aldrig kunde returnera något. Jag bestämde mig för att jag skulle testa eller visa att state:et för mitt objekt inte ändrar efter att ha kört just den här funktionen.</p>
+
+    <h3>Valde du att skriva om delar av din kod för att förbättra den eller göra den mer testbar, om så berätta lite hur du tänkte.</h3>
+    <p>Det fanns en del av koden i min CardHand-klass som jag - genom att testa och titta på kodtäckningen - upptäckte att den inte behövdes. Testprocessen var ganska användbar för att göra min kod lite mer tydlig och ren. Förutom det behövde jag inte skriva om någon av min kod.</p> 
+
+    <h3>Fundera över om du anser att testbar kod är något som kan identifiera “snygg och ren kod”. </h3>
+    <p>Jag tycker att det är mer sannolikt att kod som har delats upp i flera klasser eller metoder, är snygg och ren och testbar. Det är lättare att testa något som returnerar något enkelt eller utför bara en sak istället för mer komplicerade funktioner.</p>
+    <p>Dessutom kan dessa mindre funktioner användas igen och, om de testas, kan de litas på att användas i en annan större funktion som också behöver testas.</p>
+    <p>Det är inte säkert att testbar kod är snygg och ren, men rörig kod är mer säker på att vara otestbar.</p>
+
+    <h3>Vilken är din TIL för detta kmom? </h3>
+    <p>Från det här kursmomentet lärde jag mig naturligtvis mycket om phpdoc och phpunit och hur man implementerar det här i min kod. Det jag tyckte var mest användbart den här veckan var att lära av mina egna misstag. När jag felsöker måste jag leta efter de enkla fel såsom filnamn eller saknade semikolon.</p>
+    
+    </section>
+
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -280,6 +312,38 @@ class __TwigTemplate_650b070136375238094c0adee138600b extends Template
     <p>Jag gillade också övningen på linters. Det känns som att vi är på väg att bli mer självförsörjande på kodning.</p>
     
     </section>
+
+    <section>
+
+    <h2 id=\"kmom04\">Kmom04</h2>
+
+    <h3>Berätta hur du upplevde att skriva kod som testar annan kod med PHPUnit och hur du upplever phpunit rent allmänt.</h3>
+    <p>Att förbereda phpunit var en mycket frustrerande upplevelse för mig. Allt hade gått utmärkt i övningen, men i början fungerade phpunit  inte för mitt spel. Jag tittade över min kod, skrev om phpunit.xml-fil och installerade om allt. Jag skrev om min testkod och bad om råd från mina klasskamrater på \"discord\". Genom den här processen slösade jag bort mycket värdefull tid. Till slut upptäckte jag att jag stavade fel i min testfil. Jag hade skrivit \"GameTest,php\" istället för \"GameTest.php\".</p>
+    <p>Allt som allt kände jag mig ganska bekväm med att skriva mina tester, men eftersom många av funktionerna i mina klasser returnerar liknande saker, kunde jag inte visa en stor variation av \"assertions\" och bara några var negativa \"assertions”.</p>
+    <p>Om jag skulle skriva mina tester igen skulle jag börja med de enklaste klasserna och funktionerna. I min brådska började jag med min Game-klass som har en del komplicerade funktioner som krävde funktioner från andra klasser. Även om jag nådde 100 % kodtäckning kunde jag ha skrivit dem på ett mer systematiskt sätt så att min testning hade varit mer meningsfull. Många av mina mer komplikationsfunktioner behövde mer komplicerade tester, så om det var något fel på min \"Card\"-klass - en av de viktigaste klasserna - skulle det ha varit svårare att felsöka.</p>
+
+    <h3>Hur väl lyckades du med kodtäckningen av din kod, lyckades du nå mer än 90% kodtäckning?</h3>
+    <p>Jag hade turen att jag kunde nå 100% kodtäckning. Det enda undantaget var mina controllers. Jag försökte skapa några tester för dessa, men eftersom jag fortfarande hade några fel och jag slösade mycket tid bestämde jag mig för att ta bort det här från min senaste version.</p>
+
+    <h3>Upplever du din egen kod som “testbar kod” eller finns det delar i koden som är mer eller mindre testbar och finns det saker som kan göras för att förbättra kodens testbarhet? </h3>
+    <p>Min kod var lyckligtvis ganska testbar eftersom jag tidigt bestämde mig för att jag skulle dela upp mina klasser i mindre metoder så att en funktion inte skulle göra för mycket.</p>
+    <p>Jag hade några problem med funktioner som skulle returnera en array. Det här var ganska svårt att testa, men jag bestämde mig för flera assertions - en för att testa arrayen och elementen i arrayen.</p>
+    <p>Jag har också en funktion som inte gör någonting. Jag hade skrivit ett ganska bra test för det här, men mina linters gillade inte att jag returnerade ett resultat från en funktion som inte och aldrig kunde returnera något. Jag bestämde mig för att jag skulle testa eller visa att state:et för mitt objekt inte ändrar efter att ha kört just den här funktionen.</p>
+
+    <h3>Valde du att skriva om delar av din kod för att förbättra den eller göra den mer testbar, om så berätta lite hur du tänkte.</h3>
+    <p>Det fanns en del av koden i min CardHand-klass som jag - genom att testa och titta på kodtäckningen - upptäckte att den inte behövdes. Testprocessen var ganska användbar för att göra min kod lite mer tydlig och ren. Förutom det behövde jag inte skriva om någon av min kod.</p> 
+
+    <h3>Fundera över om du anser att testbar kod är något som kan identifiera “snygg och ren kod”. </h3>
+    <p>Jag tycker att det är mer sannolikt att kod som har delats upp i flera klasser eller metoder, är snygg och ren och testbar. Det är lättare att testa något som returnerar något enkelt eller utför bara en sak istället för mer komplicerade funktioner.</p>
+    <p>Dessutom kan dessa mindre funktioner användas igen och, om de testas, kan de litas på att användas i en annan större funktion som också behöver testas.</p>
+    <p>Det är inte säkert att testbar kod är snygg och ren, men rörig kod är mer säker på att vara otestbar.</p>
+
+    <h3>Vilken är din TIL för detta kmom? </h3>
+    <p>Från det här kursmomentet lärde jag mig naturligtvis mycket om phpdoc och phpunit och hur man implementerar det här i min kod. Det jag tyckte var mest användbart den här veckan var att lära av mina egna misstag. När jag felsöker måste jag leta efter de enkla fel såsom filnamn eller saknade semikolon.</p>
+    
+    </section>
+
+
 {% endblock %}", "report.html.twig", "/home/mooney/dbwebb-kurser/mvc/me/report/templates/report.html.twig");
     }
 }

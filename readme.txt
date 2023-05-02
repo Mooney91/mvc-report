@@ -23,6 +23,11 @@ tools/phpmd/vendor/bin/phpmd . text phpmd.xml
 
 tools/phpstan/vendor/bin/phpstan analyse src
 
+// SQL
+
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
 ---------------------------------------------------
 
 klasser
