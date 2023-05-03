@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+{% include "library/library_nav.html.twig" %}
+<h1>Details about {{title}} ({{id}})</h1>
+
+<div class="book">
+    <img src="{{picture}}" alt="{{title}}"> 
+    <table class = "table">
+        <tr>
+            <td>ID</td>
+            <td>{{id}}</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>{{title}}</td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>{{author}}</td>
+        </tr>
+        <tr>
+            <td>ISBN</td>
+            <td>{{isbn}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a href="update/{{id}}" style="text-decoration: none;">✎ </a>
+                <a href="delete/{{id}}" style="text-decoration: none;">🗑</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+{% endblock %}
