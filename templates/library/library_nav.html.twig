@@ -3,9 +3,9 @@
     <ul>
         <li><a href="{{ path('app_library') }}">Home</a></li>
         <li><a href="{{ path('library_create_get') }}">Add Book</a></li>
-        <li><a href="{{ path('library_show_all') }}">Show the entire Library</a></li>
-        <li><a href="{{ path('library_by_id', {id: 1}) }}">Book Details (1)</a></li>
-        <li><a href="{{ path('library_delete_by_id', {id: 1}) }}">Delete Book (1)</a></li>
-        <li><a href="{{ path('library_update', {id: 1, picture:"test2"}) }}">Update Book (ID: 1, Value: 2)</a></li>
+        <li><a href="{{ path('library_show_all') }}">Show Library</a></li>
+        <li><a href="{{ path('library_by_id', {id: 11}) }}">Book Details (ID: 11)</a></li>
+        <li><a href="{{ path('library_delete_by_id_get', {id: 11}) }}">Delete Book (ID: 11)</a></li>
+        <li><a href="{{ path('library_update_get', {id: 11}) }}">Update Book (ID: 11)</a></li>
     </ul>
 </div>

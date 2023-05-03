@@ -141,6 +141,7 @@ p {
   padding: 0;
   overflow: hidden;
   background-color: #008000;
+  /* background-color: #230aae; */
   text-align: center;
 }
 
@@ -240,14 +241,14 @@ p {
 
 
 .form {
-	font: 95% Arial, Helvetica, sans-serif;
+	/* font: 95% Arial, Helvetica, sans-serif; */
 	max-width: 400px;
 	margin: 10px auto;
 	padding: 16px;
 	background: #F7F7F7;
 }
 .form h1{
-	background: #43D1AF;
+	/* background: #43D1AF; */
 	padding: 20px 0;
 	font-size: 140%;
 	font-weight: 300;
@@ -272,8 +273,8 @@ p {
 	-o-transition: all 0.30s ease-in-out; */
 	outline: none;
 	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+	/* -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; */
 	width: 100%;
 	background: #fff;
 	margin-bottom: 4%;
@@ -301,12 +302,12 @@ p {
 .form input[type="submit"],
 .form input[type="button"]{
 	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+	/* -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; */
 	width: 100%;
 	padding: 3%;
-	background: #43D1AF;
-	border-bottom: 2px solid #30C29E;
+	background: #6E2E14;
+	border-bottom: 2px solid #591202;
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;	
@@ -314,5 +315,53 @@ p {
 }
 .form input[type="submit"]:hover,
 .form input[type="button"]:hover{
-	background: #2EBC99;
+	background: #591202;
+}
+
+/* BOOK INFO*/
+
+.book {
+  border-color: #591202;
+  border-width: 2px;
+  border-style:groove;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F7F7F7;
+  margin-bottom: 10px;
+}
+
+.book img {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  height: auto;
+}
+.table {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  border-collapse: collapse;
+  width: 100%;
+  text-decoration: none;
+}
+
+.table td:nth-child(1) {  
+  font-weight: 800;
+}
+
+.table td, .book table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+.table tr:nth-child(odd){background-color: #f2f2f29e;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  /* background-color: #04AA6D; */
+  color: white;
 }
