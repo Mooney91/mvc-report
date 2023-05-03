@@ -38,7 +38,7 @@ class LibraryController extends AbstractController
         $author = $request->request->get('author');
         $isbn = $request->request->get('isbn');
         $picture = $request->request->get('picture');
-    
+
         $book = new Library();
         // $book->setTitle('temp_title_' . rand(1, 9));
         // $book->setAuthor('temp_author_' . rand(1, 9));
@@ -49,14 +49,14 @@ class LibraryController extends AbstractController
         $book->setAuthor($author);
         $book->setIsbn($isbn);
         $book->setPicture($picture);
-    
+
         // tell Doctrine you want to (eventually) save the Library
         // (no queries yet)
         $entityManager->persist($book);
-    
+
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
-    
+
         // return new Response('Saved new book with id '.$book->getId());
         return $this->redirectToRoute('library_show_all');
     }
@@ -76,7 +76,7 @@ class LibraryController extends AbstractController
             $author = $book->getAuthor();
             $isbn = $book->getIsbn();
             $picture = $book->getPicture();
-    
+
             $details = [
                 "id" => $id,
                 "title" => $title,
@@ -86,12 +86,12 @@ class LibraryController extends AbstractController
             ];
 
             array_push($data, $details);
-        } 
+        }
 
         // $data = [
         //     "data" => $data
         // ];
-        
+
         // $response = $this->json($books);
         // $response->setEncodingOptions(
         //     $response->getEncodingOptions() | JSON_PRETTY_PRINT

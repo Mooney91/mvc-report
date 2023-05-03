@@ -22,6 +22,8 @@ return [
     'api_deck_draw_num' => [[], ['_controller' => 'App\\Controller\\APIController::apiDeckDrawNum'], [], [['text', '/api/deck/draw/']], [], [], []],
     'api_deal' => [[], ['_controller' => 'App\\Controller\\APIController::apiDeal'], [], [['text', '/api/deck/deal']], [], [], []],
     'api_game' => [[], ['_controller' => 'App\\Controller\\APIController::apiGame'], [], [['text', '/api/game']], [], [], []],
+    'api_library_books' => [[], ['_controller' => 'App\\Controller\\APIController::apiLibraryBooks'], [], [['text', '/api/library/books']], [], [], []],
+    'api_book_by_isbn' => [['isbn'], ['_controller' => 'App\\Controller\\APIController::apiBookByIsbn'], [], [['variable', '/', '[^/]++', 'isbn', true], ['text', '/api/library/book']], [], [], []],
     'card_start' => [[], ['_controller' => 'App\\Controller\\CardGameController::home'], [], [['text', '/card']], [], [], []],
     'card_deck' => [[], ['_controller' => 'App\\Controller\\CardGameController::deck'], [], [['text', '/card/deck']], [], [], []],
     'card_deck_shuffle' => [[], ['_controller' => 'App\\Controller\\CardGameController::shuffle'], [], [['text', '/card/deck/shuffle']], [], [], []],

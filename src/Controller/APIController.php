@@ -14,6 +14,7 @@ use App\Card\Card;
 use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
+use App\Repository\LibraryRepository;
 use Exception;
 
 class APIController extends AbstractController
@@ -194,5 +195,48 @@ class APIController extends AbstractController
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
+    }
+
+    #[Route('/api/library/books', name: 'api_library_books')]
+    public function apiLibraryBooks(
+        LibraryRepository $libraryRepository
+    ): Response {
+        $books = $libraryRepository
+            ->findAll();
+
+        $response = $this->json($books);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route('/api/library/book/{isbn}', name: 'api_book_by_isbn')]
+    public function apiBookByIsbn(
+        LibraryRepository $libraryRepository,
+        string $isbn
+    ): Response {
+        $books = $libraryRepository
+            ->findAll();
+
+        $id = "";
+
+        foreach ($books as $book) {
+            if ($book->getIsbn() == $isbn) {
+                $id = $book->getId();
+                break;
+            }
+        }
+
+        if (!$id) {
+            throw $this->createNotFoundException(
+                'This book does not exist.'
+            );
+        }
+
+        $book = $libraryRepository
+            ->find($id);
+
+        return $this->json($book);
     }
 }
