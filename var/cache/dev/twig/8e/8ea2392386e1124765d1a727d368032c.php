@@ -114,11 +114,15 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
         // line 35
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game_start");
         echo "\">Twenty-One</a></li>
+                <li><a href=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_library");
+        echo "\">Library</a></li>
             </ul>
         </nav>
 
         <main>";
-        // line 39
+        // line 40
         $this->displayBlock('body', $context, $blocks);
         echo "</main>
 
@@ -199,7 +203,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     }
 
-    // line 39
+    // line 40
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -229,7 +233,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  203 => 39,  190 => 17,  180 => 16,  167 => 13,  157 => 12,  138 => 5,  122 => 39,  115 => 35,  111 => 34,  107 => 33,  103 => 32,  99 => 31,  95 => 30,  91 => 29,  87 => 28,  78 => 22,  73 => 19,  71 => 16,  68 => 15,  65 => 12,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  207 => 40,  194 => 17,  184 => 16,  171 => 13,  161 => 12,  142 => 5,  126 => 40,  119 => 36,  115 => 35,  111 => 34,  107 => 33,  103 => 32,  99 => 31,  95 => 30,  91 => 29,  87 => 28,  78 => 22,  73 => 19,  71 => 16,  68 => 15,  65 => 12,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -269,6 +273,7 @@ class __TwigTemplate_141f76152e244d508ab68bb244b927c3 extends Template
                 <li><a href=\"{{ path('card_start') }}\">Card Game</a></li>
                 <li><a href=\"{{ path('api_start') }}\">API</a></li>
                 <li><a href=\"{{ path('game_start') }}\">Twenty-One</a></li>
+                <li><a href=\"{{ path('app_library') }}\">Library</a></li>
             </ul>
         </nav>
 
