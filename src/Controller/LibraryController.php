@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,17 +21,34 @@ class LibraryController extends AbstractController
         ]);
     }
 
-    #[Route('/library/create', name: 'library_create')]
-    public function createBook(
+    #[Route("/library/create", name: "library_create_get", methods: ['GET'])]
+    public function createBookGet(): Response
+    {
+        return $this->render('library/create.html.twig');
+    }
+
+    #[Route('/library/create', name: 'library_create_post', methods: ['POST'])]
+    public function createBookPost(
+        Request $request,
         ManagerRegistry $doctrine
     ): Response {
         $entityManager = $doctrine->getManager();
+
+        $title = $request->request->get('title');
+        $author = $request->request->get('author');
+        $isbn = $request->request->get('isbn');
+        $picture = $request->request->get('picture');
     
         $book = new Library();
-        $book->setTitle('temp_title_' . rand(1, 9));
-        $book->setAuthor('temp_author_' . rand(1, 9));
-        $book->setIsbn('temp_isbn_' . rand(1, 9));
-        $book->setPicture('temp_picture_' . rand(1, 9));
+        // $book->setTitle('temp_title_' . rand(1, 9));
+        // $book->setAuthor('temp_author_' . rand(1, 9));
+        // $book->setIsbn('temp_isbn_' . rand(1, 9));
+        // $book->setPicture('temp_picture_' . rand(1, 9));
+
+        $book->setTitle($title);
+        $book->setAuthor($author);
+        $book->setIsbn($isbn);
+        $book->setPicture($picture);
     
         // tell Doctrine you want to (eventually) save the Library
         // (no queries yet)
@@ -39,7 +57,8 @@ class LibraryController extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
     
-        return new Response('Saved new book with id '.$book->getId());
+        // return new Response('Saved new book with id '.$book->getId());
+        return $this->redirectToRoute('library_show_all');
     }
 
     #[Route('/library/show', name: 'library_show_all')]
