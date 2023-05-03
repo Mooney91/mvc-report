@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+{% include "library/library_nav.html.twig" %}
+<h1>List of all Books</h1>
+
+{% for datum in data %}
+    <div class="book">
+        <img src="{{datum.picture}}" alt="{{datum.title}}"> 
+        <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>{{datum.id}}</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>{{datum.title}}</td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>{{datum.author}}</td>
+        </tr>
+        <tr>
+            <td>ISBN</td>
+            <td>{{datum.isbn}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a href="show/{{datum.id}}" style="text-decoration: none;">🔍 </a>
+                <a href="update/{{datum.id}}" style="text-decoration: none;">✎ </a>
+                <a href="delete/{{datum.id}}" style="text-decoration: none;">🗑</a>
+            </td>
+        </tr>
+        </table> 
+    </div>
+
+
+{% endfor %}
+
+{% endblock %}
