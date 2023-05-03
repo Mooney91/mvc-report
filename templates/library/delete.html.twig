@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delete a Book{% endblock %}
+
+{% block body %}
+{% include "library/library_nav.html.twig" %}
+<h1>Delete {{title}} ({{id}})</h1>
+
+<p>Please confirm that you would like to delete {{title}} ({{id}}).</p>
+<div class="form">
+    <form method="post" action="">
+        <input type="submit" value="Confirm Deletion">
+    </form>
+</div>
+
+{% endblock %}
