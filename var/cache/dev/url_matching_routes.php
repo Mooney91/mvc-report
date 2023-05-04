@@ -38,6 +38,10 @@ return [
             [['_route' => 'library_create_post', '_controller' => 'App\\Controller\\LibraryController::createBookPost'], null, ['POST' => 0], null, false, false, null],
         ],
         '/library/show' => [[['_route' => 'library_show_all', '_controller' => 'App\\Controller\\LibraryController::showAllLibrary'], null, null, null, false, false, null]],
+        '/library/reset' => [
+            [['_route' => 'library_reset_get', '_controller' => 'App\\Controller\\LibraryController::resetLibraryGet'], null, ['GET' => 0], null, false, false, null],
+            [['_route' => 'library_reset_post', '_controller' => 'App\\Controller\\LibraryController::resetLibraryPost'], null, ['POST' => 0], null, false, false, null],
+        ],
         '/product' => [[['_route' => 'app_product', '_controller' => 'App\\Controller\\ProductController::index'], null, null, null, false, false, null]],
         '/product/create' => [[['_route' => 'product_create', '_controller' => 'App\\Controller\\ProductController::createProduct'], null, null, null, false, false, null]],
         '/product/show' => [[['_route' => 'product_show_all', '_controller' => 'App\\Controller\\ProductController::showAllProduct'], null, null, null, false, false, null]],

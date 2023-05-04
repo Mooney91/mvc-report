@@ -6416,13 +6416,20 @@
         <argument key="doctrine" type="service_closure" id="doctrine"/>
       </argument>
     </service>
+    <service id=".service_locator.pFKXCGK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="libraryRepository" type="service_closure" id="App\Repository\LibraryRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.0Fb1YCW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="productRepository" type="service_closure" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.HM7AYDi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.PjNd3bh" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\APIController::apiBookByIsbn" type="service_closure" id=".service_locator.TBgEv1t"/>
@@ -6433,6 +6440,7 @@
         <argument key="App\Controller\LibraryController::createBookPost" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\LibraryController::deleteLibraryByIdGet" type="service_closure" id=".service_locator.TBgEv1t"/>
         <argument key="App\Controller\LibraryController::deleteLibraryByIdPost" type="service_closure" id=".service_locator.TBgEv1t"/>
+        <argument key="App\Controller\LibraryController::resetLibraryPost" type="service_closure" id=".service_locator.pFKXCGK"/>
         <argument key="App\Controller\LibraryController::showAllLibrary" type="service_closure" id=".service_locator.TBgEv1t"/>
         <argument key="App\Controller\LibraryController::showLibraryById" type="service_closure" id=".service_locator.TBgEv1t"/>
         <argument key="App\Controller\LibraryController::updateLibraryGet" type="service_closure" id=".service_locator.TBgEv1t"/>
@@ -6454,6 +6462,7 @@
         <argument key="App\Controller\LibraryController:createBookPost" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\LibraryController:deleteLibraryByIdGet" type="service_closure" id=".service_locator.TBgEv1t"/>
         <argument key="App\Controller\LibraryController:deleteLibraryByIdPost" type="service_closure" id=".service_locator.TBgEv1t"/>
+        <argument key="App\Controller\LibraryController:resetLibraryPost" type="service_closure" id=".service_locator.pFKXCGK"/>
         <argument key="App\Controller\LibraryController:showAllLibrary" type="service_closure" id=".service_locator.TBgEv1t"/>
         <argument key="App\Controller\LibraryController:showLibraryById" type="service_closure" id=".service_locator.TBgEv1t"/>
         <argument key="App\Controller\LibraryController:updateLibraryGet" type="service_closure" id=".service_locator.TBgEv1t"/>
@@ -7289,12 +7298,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.HM7AYDi"/>
+      <argument type="service" id=".service_locator.PjNd3bh"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.HM7AYDi"/>
+      <argument type="service" id=".service_locator.PjNd3bh"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8236,7 +8245,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.HM7AYDi"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.PjNd3bh"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8261,7 +8270,8 @@
     <service id=".service_locator.BtJ6Ega" alias=".service_locator.DpgrdWZ"/>
     <service id=".service_locator.xpfZVoj" alias=".service_locator.gPHttvX"/>
     <service id=".service_locator.AZT2IGG" alias=".service_locator.tCJe9UG"/>
-    <service id=".service_locator.xMgCKF1" alias=".service_locator.HM7AYDi"/>
+    <service id=".service_locator.nLzTFMn" alias=".service_locator.pFKXCGK"/>
+    <service id=".service_locator.8OiX4HW" alias=".service_locator.PjNd3bh"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
@@ -8316,6 +8326,7 @@
     <service id=".service_locator.cv5YIW_" alias=".service_locator.gPHttvX"/>
     <service id=".service_locator.tBnl8Cp" alias=".service_locator.tCJe9UG"/>
     <service id=".service_locator.FPFiL9q" alias=".service_locator.GQZbvNR"/>
+    <service id=".service_locator.2oqknbk" alias=".service_locator.pFKXCGK"/>
     <service id=".service_locator.sa.k_vl" alias=".service_locator.0Fb1YCW"/>
     <service id=".service_locator.eAaUVIw" alias=".service_locator.jIxfAsi"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>

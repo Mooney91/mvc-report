@@ -611,6 +611,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-LibraryController.html#method_updateLibraryPost"
         },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AresetLibraryGet\u0028\u0029",
+            "name": "resetLibraryGet",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_resetLibraryGet"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AresetLibraryPost\u0028\u0029",
+            "name": "resetLibraryPost",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_resetLibraryPost"
+        },                {
             "fqsen": "\\App\\Controller\\ProductController",
             "name": "ProductController",
             "summary": "",

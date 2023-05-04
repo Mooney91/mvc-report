@@ -44,6 +44,8 @@ return [
     'library_delete_by_id_post' => [['id'], ['_controller' => 'App\\Controller\\LibraryController::deleteLibraryByIdPost'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/library/delete']], [], [], []],
     'library_update_get' => [['id'], ['_controller' => 'App\\Controller\\LibraryController::updateLibraryGet'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/library/update']], [], [], []],
     'library_update_post' => [['id'], ['_controller' => 'App\\Controller\\LibraryController::updateLibraryPost'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/library/update']], [], [], []],
+    'library_reset_get' => [[], ['_controller' => 'App\\Controller\\LibraryController::resetLibraryGet'], [], [['text', '/library/reset']], [], [], []],
+    'library_reset_post' => [[], ['_controller' => 'App\\Controller\\LibraryController::resetLibraryPost'], [], [['text', '/library/reset']], [], [], []],
     'app_product' => [[], ['_controller' => 'App\\Controller\\ProductController::index'], [], [['text', '/product']], [], [], []],
     'product_create' => [[], ['_controller' => 'App\\Controller\\ProductController::createProduct'], [], [['text', '/product/create']], [], [], []],
     'product_show_all' => [[], ['_controller' => 'App\\Controller\\ProductController::showAllProduct'], [], [['text', '/product/show']], [], [], []],
