@@ -635,3 +635,6 @@ c89f4d,127.0.0.1,GET,http://localhost:8888/library/show,1683222191,,200
 1657c4,127.0.0.1,GET,http://localhost:8888/api,1683222347,,200
 4ec761,127.0.0.1,GET,http://localhost:8888/api/library/books,1683222351,,200
 98ee98,127.0.0.1,GET,http://localhost:8888/api/library/book/978-0-393-34506-3,1683222356,,200
+b1467b,127.0.0.1,GET,http://localhost:8888/,1683223766,,200
+e55b71,127.0.0.1,GET,http://localhost:8888/library,1683223772,,200
+ef7ebd,127.0.0.1,GET,http://localhost:8888/report,1683223774,,200
