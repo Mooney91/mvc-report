@@ -1,0 +1,58 @@
+[
+    {
+        "id": 4,
+        "title": "Manufacturing Consent",
+        "author": "Edward S. Herman, Noam Chomsky",
+        "isbn": "0-375-71449-9",
+        "picture": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/c\/ce\/Manugactorinconsent2.jpg"
+    },
+    {
+        "id": 5,
+        "title": "The Price of Inequality",
+        "author": "Joseph Stiglitz",
+        "isbn": "978-0-393-34506-3",
+        "picture": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/3\/3b\/The_Price_of_Inequality.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Development as Freedom",
+        "author": "Amartya Sen",
+        "isbn": "0385720270",
+        "picture": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/c\/c3\/Development_as_Freedom.jpg"
+    },
+    {
+        "id": 7,
+        "title": "The Ecology of Freedom",
+        "author": "Murray Bookchin",
+        "isbn": "978-1904859260",
+        "picture": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/0\/0d\/The_Ecology_of_Freedom.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Imagined Communities",
+        "author": "Benedict Anderson",
+        "isbn": "0860910598",
+        "picture": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/8\/8f\/Imagined_Communities.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Factfulness",
+        "author": "Hans Rosling, Anna Rosling R\u00f6nnlund, Ola Rosling",
+        "isbn": "978-1-250-10781-7",
+        "picture": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/b\/b2\/Factfulness_Ten_Reasons_We%27re_Wrong_About_the_World--and_Why_Things_Are_Better_Than_You_Think.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Sapiens: A Brief History of Humankind",
+        "author": "Yuval Noah Harari",
+        "isbn": "978-0062316097",
+        "picture": "https:\/\/upload.wikimedia.org\/wikipedia\/en\/0\/06\/%E1%B8%B2itsur_toldot_ha-enoshut.jpg"
+    },
+    {
+        "id": 11,
+        "title": "This is for Testing",
+        "author": "Testy McTestface",
+        "isbn": "005500",
+        "picture": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f4\/The_Test_novel_Mary_Tappan_Wright_1904.jpg"
+    }
+]

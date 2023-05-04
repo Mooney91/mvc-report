@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset Library{% endblock %}
+
+{% block body %}
+{% include "library/library_nav.html.twig" %}
+<h1>Reset Library</h1>
+<p>This will reset the library to its original state.</p>
+<p>Please confirm that you would like to reset.</p>
+<div class="form">
+    <form method="post" action="">
+        <input type="submit" value="Confirm Reset">
+    </form>
+</div>
+
+{% endblock %}

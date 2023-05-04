@@ -40,11 +40,6 @@ class LibraryController extends AbstractController
         $picture = $request->request->get('picture');
 
         $book = new Library();
-        // $book->setTitle('temp_title_' . rand(1, 9));
-        // $book->setAuthor('temp_author_' . rand(1, 9));
-        // $book->setIsbn('temp_isbn_' . rand(1, 9));
-        // $book->setPicture('temp_picture_' . rand(1, 9));
-
         $book->setTitle($title);
         $book->setAuthor($author);
         $book->setIsbn($isbn);
@@ -88,15 +83,6 @@ class LibraryController extends AbstractController
             array_push($data, $details);
         }
 
-        // $data = [
-        //     "data" => $data
-        // ];
-
-        // $response = $this->json($books);
-        // $response->setEncodingOptions(
-        //     $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        // );
-        // return $response;
         return $this->render('library/library.html.twig', [ "data" => $data ]);
     }
 
@@ -120,7 +106,7 @@ class LibraryController extends AbstractController
             "isbn" => $isbn,
             "picture" => $picture
         ];
-        // return $this->json($book);
+
         return $this->render('library/book.html.twig', $data);
     }
 
@@ -144,11 +130,9 @@ class LibraryController extends AbstractController
             "isbn" => $isbn,
             "picture" => $picture
         ];
-        // return $this->json($book);
+
         return $this->render('library/delete.html.twig', $data);
     }
-
-
 
     #[Route('/library/delete/{id}', name: 'library_delete_by_id_post', methods: ['POST'])]
     public function deleteLibraryByIdPost(
@@ -189,7 +173,7 @@ class LibraryController extends AbstractController
             "isbn" => $isbn,
             "picture" => $picture
         ];
-        // return $this->json($book);
+
         return $this->render('library/update.html.twig', $data);
     }
 
@@ -198,7 +182,6 @@ class LibraryController extends AbstractController
         Request $request,
         LibraryRepository $libraryRepository,
         int $id,
-        // string $picture
     ): Response {
         $book = $libraryRepository->find($id);
 
@@ -220,7 +203,49 @@ class LibraryController extends AbstractController
 
         $libraryRepository->save($book, true);
 
-        // return $this->redirectToRoute('library_show_all');
         return $this->redirectToRoute('library_by_id', ['id' => $id]);
+    }
+
+
+    #[Route("/library/reset", name: "library_reset_get", methods: ['GET'])]
+    public function resetLibraryGet(
+    ): Response {
+        // CONFIRM WITH THE USER THAT THEY DO WISH TO RESET
+        return $this->render('library/reset.html.twig');
+    }
+
+
+    #[Route("/library/reset", name: "library_reset_post", methods: ['POST'])]
+    public function resetLibraryPost(
+        LibraryRepository $libraryRepository,
+        ManagerRegistry $doctrine
+    ): Response {
+        // DELETE ALL BOOKS IN THE LIBRARY
+        $books= $libraryRepository
+            ->findAll();
+
+        foreach ($books as $book) {
+            $libraryRepository->remove($book, true);
+        }
+
+        // ADD ALL BOOKS USING THE JSON FILE
+        $json = file_get_contents('../library.json');
+        $jsonData = json_decode($json, true);
+
+        $entityManager = $doctrine->getManager();
+
+        foreach ($jsonData as $bookData) {
+            $book = new Library();
+            $book->setTitle($bookData['title']);
+            $book->setAuthor($bookData['author']);
+            $book->setIsbn($bookData['isbn']);
+            $book->setPicture($bookData['picture']);
+
+            $entityManager->persist($book);
+        }
+
+        $entityManager->flush();
+
+        return $this->redirectToRoute('library_show_all');
     }
 }
