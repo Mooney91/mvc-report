@@ -116,5 +116,25 @@
     
     </section>
 
+    <section>
+
+    <h2 id="kmom05">Kmom05</h2>
+    <h3>Gick det bra att jobba igenom övningen med Symfony och Doctrine. Något särskilt du tänkte/reagerade på under övningen?</h3>
+    <p>Att implementera Doctrine var ganska okomplicerat. När jag började läsa att vi skulle testa att koppla databaser med OOP tänkte jag det värsta. Å andra sidan gör Doctrine det mycket enkelt för utvecklaren att integrera och skapa en databas. Jag gillade väldigt mycket steg-för-steg-metoden, som fortfarande ger en bra mängd flexibilitet. Det som var överraskande var hur Doctrine skapade ett helt API för klassen/databasen. Det här eliminerar “onödig” tid på att skapa en klass från början och man kan koncentrera sig på att skapa din applikation. Doctrine skapade också automatiskt - hand i hand med Symfony, alla nödvändiga mappar och filer som behövs för att starta applikationen direkt. Jag tycker att det är väldigt tydligt för en nybörjare såväl som för ett proffs.</p>
+
+    <h3>Berätta om din applikation och hur du tänkte när du byggde upp den. Tänkte du något speciellt på användargränssnittet?</h3>
+    <p>Jag började med att skapa den grundläggande funktionaliteten för min webbplats. Med andra ord, jag använde min LibraryController för att skapa, läsa, uppdatera och ta bort objekt från min databas. Utifrån den här grunden använde jag mina kunskaper om Symfony och tidigare kursmoment för att rendera en webbsida med data från databasen istället för att returnera en JSON-representation. Eftersom jag redan hade den grundläggande logiken kunde jag skapa några templates och skickade data till webbsidan. Det enda jag hade problem med det här var när jag visade alla böcker i mitt bibliotek. Jag var osäker (eller kunde inte komma ihåg) hur jag skickade data för flera objekt till webbsidan. Jag hade delvis gjort detta tidigare i ett tidigare exempel så jag kunde slutföra detta snabbt. 
+    <p>Jag försökte tänka särskilt hur användaren skulle uppleva min användarupplevelse. Var skulle användaren förvänta sig eller vilja att min webbplats skulle omdirigeras till när de hade skapat eller uppdaterat en bok? Var skulle de vilja ta bort eller redigera en bok? För varje "book"i min “Library”-sida lade jag till tre symboler som skulle få användaren att titta på, redigera eller ta bort den boken.</p>
+
+    <h3>Gick det bra att jobba med ORM i CRUD eller vad anser du om det, jämför gärna med andra sätt att jobba med databaser?</h3>
+    <p>Jag tycker att det gick väldigt bra. Om man inte är bekant med SQL är det här ett mycket okomplicerat sätt att interagera med en databas. Vi har blandat SQL med andra programmeringsspråk tidigare och det är väldigt lätt att få fel eller oväntade resultat. Att arbeta med data på (för det mesta) ett språk är ganska användbart och ramverket hjälper till att arbeta med data och databas på det sätt som man vill interagera med den. Det är mindre sannolikt att det skapar fel.</p>
+    <p>Vi har inte jobbat med det här än, men jag undrar hur det skulle kunna hantera komplicerade queries till databasen. Till exempel, hur kan den göra olika kopplingar eller arbeta med olika främmande nycklar eller begränsningar? Jag kan tänka mig att det skulle vara svårt att felsöka om det var något fel med hur databasen skapas.</p>
+
+    <h3>Vad är din uppfattning om ORM så här långt och relatera gärna till andra sätt att jobba med applikationskod mot databaser?</h3>
+    <p>ORM (eller "Object-Relational Mapping") är ett sätt att interagera eller manipulera en databas genom att använda objektorienterad programmering (i vårt fall PHP). Jag har sett att det här använder mindre kod och inget riktigt behov av att använda SQL (även om det här kan användas lika väl som andra query languages i Doctrine). Med Doctrine var det enkelt och snabbt att skapa ett sätt att interagera med databasen och att bygga en webbapplikation från grunden. Genom att skapa ett API (som är automatiskt med Doctrine) kan man skapa CRUD-funktioner utan några oavsiktliga fel.</p>
+
+    <h3>Vilken är din TIL för detta kmom?</h3>
+    <p>Det här kursmomentet var helt nytt för mig och jag har aldrig arbetat med ORM på det här sättet tidigare. Generellt lärde jag mig att interagera med databaser på det här sättet är möjligt och ett bra sätt att utveckla en webbapplikation. Jag vill veta mer om hur ett mer komplicerat sätt att interagera med databasen skulle fungera - speciellt nu när vi har lärt oss så mycket sedan webtec-kursen.</p>
+    </section>
 
 {% endblock %}
