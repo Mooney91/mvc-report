@@ -3,7 +3,7 @@
         'name' => 'bth/mvc-zamo22',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b16b5bb15794813d5bd8f54753e53d9fb64ae3ab',
+        'reference' => '31b3d9e72aad8043f46053b6abbb4c399c71567b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'bth/mvc-zamo22' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b16b5bb15794813d5bd8f54753e53d9fb64ae3ab',
+            'reference' => '31b3d9e72aad8043f46053b6abbb4c399c71567b',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
