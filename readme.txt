@@ -28,6 +28,10 @@ tools/phpstan/vendor/bin/phpstan analyse src
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
 
+// PHPMETRICS
+
+tools/phpmetrics/vendor/bin/phpmetrics --config=phpmetrics.json
+
 ---------------------------------------------------
 
 klasser
