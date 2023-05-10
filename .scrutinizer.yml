@@ -7,10 +7,9 @@ filter:
 build:
     nodes:
         my-tests:
-            image: default-bionic
             environment:
                 php:
-                    version: 8.2
+                    version: 8.1
         analysis:
             tests:
                 override:
