@@ -57,4 +57,5 @@ return [
     'report' => [[], ['_controller' => 'App\\Controller\\ReportController::report'], [], [['text', '/report']], [], [], []],
     'quote' => [[], ['_controller' => 'App\\Controller\\ReportController::quote'], [], [['text', '/api/quote']], [], [], []],
     'lucky' => [[], ['_controller' => 'App\\Controller\\ReportController::number'], [], [['text', '/lucky']], [], [], []],
+    'metrics' => [[], ['_controller' => 'App\\Controller\\ReportController::metrics'], [], [['text', '/metrics']], [], [], []],
 ];

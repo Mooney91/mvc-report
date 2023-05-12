@@ -73,19 +73,11 @@ class TwigExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
     }
 
     /**
-     * @default {"enabled":false}
-     * @return \Symfony\Config\TwigExtra\MarkdownConfig|$this
-     */
-    public function markdown(mixed $value = []): \Symfony\Config\TwigExtra\MarkdownConfig|static
+     * @default {"enabled":true}
+    */
+    public function markdown(array $value = []): \Symfony\Config\TwigExtra\MarkdownConfig
     {
-        if (!\is_array($value)) {
-            $this->_usedProperties['markdown'] = true;
-            $this->markdown = $value;
-
-            return $this;
-        }
-
-        if (!$this->markdown instanceof \Symfony\Config\TwigExtra\MarkdownConfig) {
+        if (null === $this->markdown) {
             $this->_usedProperties['markdown'] = true;
             $this->markdown = new \Symfony\Config\TwigExtra\MarkdownConfig($value);
         } elseif (0 < \func_num_args()) {
@@ -208,7 +200,7 @@ class TwigExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
 
         if (array_key_exists('markdown', $value)) {
             $this->_usedProperties['markdown'] = true;
-            $this->markdown = \is_array($value['markdown']) ? new \Symfony\Config\TwigExtra\MarkdownConfig($value['markdown']) : $value['markdown'];
+            $this->markdown = new \Symfony\Config\TwigExtra\MarkdownConfig($value['markdown']);
             unset($value['markdown']);
         }
 
@@ -251,7 +243,7 @@ class TwigExtraConfig implements \Symfony\Component\Config\Builder\ConfigBuilder
             $output['html'] = $this->html instanceof \Symfony\Config\TwigExtra\HtmlConfig ? $this->html->toArray() : $this->html;
         }
         if (isset($this->_usedProperties['markdown'])) {
-            $output['markdown'] = $this->markdown instanceof \Symfony\Config\TwigExtra\MarkdownConfig ? $this->markdown->toArray() : $this->markdown;
+            $output['markdown'] = $this->markdown->toArray();
         }
         if (isset($this->_usedProperties['intl'])) {
             $output['intl'] = $this->intl instanceof \Symfony\Config\TwigExtra\IntlConfig ? $this->intl->toArray() : $this->intl;

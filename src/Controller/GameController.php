@@ -164,8 +164,11 @@ class GameController extends AbstractController
     }
 
     /**
-    * @return string[]
-    */
+     * @param Game $game
+     * @param Player $human
+     * @param Banker $banker
+     * @return array{bankersDecision: string, bankTurn: bool, victory: string}
+     */
     public function bankerTurn(Game $game, Player $human, Banker $banker): array
     {
         // THE BANKER MAKES A DECISION

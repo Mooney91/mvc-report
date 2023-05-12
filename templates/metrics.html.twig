@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Metrics{% endblock %}
+
+{% block body %}
+
+{{ include('metrics.md')|markdown_to_html }}
+
+{% endblock %}
+

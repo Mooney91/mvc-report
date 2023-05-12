@@ -68,7 +68,6 @@ class ReportController extends AbstractController
         $number = random_int(0, count($quotes)-1);
         $quote = $quotes[$number];
         $today = date("Y-m-d H:i:s");
-        // $timestamp = $_SERVER['REQUEST_TIME'];
         $timestamp = $request->server->get('REQUEST_TIME');
         $data = [
             'quote' => $quote,
@@ -89,5 +88,11 @@ class ReportController extends AbstractController
         ];
 
         return $this->render('lucky.html.twig', $data);
+    }
+
+    #[Route("/metrics", name: "metrics")]
+    public function metrics(): Response
+    {
+        return $this->render('metrics.html.twig');
     }
 }

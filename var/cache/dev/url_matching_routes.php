@@ -50,6 +50,7 @@ return [
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\ReportController::report'], null, null, null, false, false, null]],
         '/api/quote' => [[['_route' => 'quote', '_controller' => 'App\\Controller\\ReportController::quote'], null, null, null, false, false, null]],
         '/lucky' => [[['_route' => 'lucky', '_controller' => 'App\\Controller\\ReportController::number'], null, null, null, false, false, null]],
+        '/metrics' => [[['_route' => 'metrics', '_controller' => 'App\\Controller\\ReportController::metrics'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

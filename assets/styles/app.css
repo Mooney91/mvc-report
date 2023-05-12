@@ -28,10 +28,15 @@ h1 {
     font-weight: 800;
 }
 
-img {
+.me {
     float: left;
     margin: 5px;
     width: 180px;
+    height: auto;
+}
+
+img {
+    width: 100%;
     height: auto;
 }
 

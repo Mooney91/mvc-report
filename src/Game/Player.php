@@ -110,7 +110,7 @@ class Player
         $hand = $this->getHand();
         $aces = 0;
         $total = 0;
-        $point = 0;
+        // $point = 0;
 
         foreach ($hand as $card) {
             $point = $game->returnPoints($card);

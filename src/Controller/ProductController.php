@@ -66,26 +66,6 @@ class ProductController extends AbstractController
         return $this->json($product);
     }
 
-    // #[Route('/product/delete/{id}', name: 'product_delete_by_id')]
-    // public function deleteProductById(
-    //     ManagerRegistry $doctrine,
-    //     int $id
-    // ): Response {
-    //     $entityManager = $doctrine->getManager();
-    //     $product = $entityManager->getRepository(Product::class)->find($id);
-
-    //     if (!$product) {
-    //         throw $this->createNotFoundException(
-    //             'No product found for id '.$id
-    //         );
-    //     }
-
-    //     $entityManager->remove($product);
-    //     $entityManager->flush();
-
-    //     return $this->redirectToRoute('product_show_all');
-    // }
-
     #[Route('/product/delete/{id}', name: 'product_delete_by_id')]
     public function deleteProductById(
         ProductRepository $productRepository,
@@ -103,27 +83,6 @@ class ProductController extends AbstractController
 
         return $this->redirectToRoute('product_show_all');
     }
-
-    // #[Route('/product/update/{id}/{value}', name: 'product_update')]
-    // public function updateProduct(
-    //     ManagerRegistry $doctrine,
-    //     int $id,
-    //     int $value
-    // ): Response {
-    //     $entityManager = $doctrine->getManager();
-    //     $product = $entityManager->getRepository(Product::class)->find($id);
-
-    //     if (!$product) {
-    //         throw $this->createNotFoundException(
-    //             'No product found for id '.$id
-    //         );
-    //     }
-
-    //     $product->setValue($value);
-    //     $entityManager->flush();
-
-    //     return $this->redirectToRoute('product_show_all');
-    // }
 
     #[Route('/product/update/{id}/{value}', name: 'product_update')]
     public function updateProduct(
