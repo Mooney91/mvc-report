@@ -6,13 +6,20 @@ use PHPUnit\Framework\TestCase;
 
 class LibraryTest extends TestCase
 {
-    public function testGetId()
+
+    /**
+     * Test for getting ID
+     */
+    public function testGetId():void
     {
         $library = new Library();
         $this->assertNull($library->getId());
     }
 
-    public function testGetSetTitle()
+    /**
+     * Test for setting and getting Title
+     */
+    public function testGetSetTitle():void
     {
         $library = new Library();
         $title = "Test Title";
@@ -20,7 +27,10 @@ class LibraryTest extends TestCase
         $this->assertEquals($title, $library->getTitle());
     }
 
-    public function testGetSetAuthor()
+    /**
+     * Test for setting and getting Author
+     */
+    public function testGetSetAuthor():void
     {
         $library = new Library();
         $author = "Test Author";
@@ -28,7 +38,10 @@ class LibraryTest extends TestCase
         $this->assertEquals($author, $library->getAuthor());
     }
 
-    public function testGetSetIsbn()
+    /**
+     * Test for setting and getting ISBN
+     */
+    public function testGetSetIsbn():void
     {
         $library = new Library();
         $isbn = "123456789";
@@ -36,7 +49,10 @@ class LibraryTest extends TestCase
         $this->assertEquals($isbn, $library->getIsbn());
     }
 
-    public function testGetSetPicture()
+    /**
+     * Test for setting and getting Picture
+     */
+    public function testGetSetPicture():void
     {
         $library = new Library();
         $picture = "test.jpg";

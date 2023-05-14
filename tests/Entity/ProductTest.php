@@ -6,13 +6,19 @@ use PHPUnit\Framework\TestCase;
 
 class ProductTest extends TestCase
 {
-    public function testGetId()
+    /**
+     * Test for getting ID
+     */
+    public function testGetId():void
     {
         $product = new Product();
         $this->assertNull($product->getId());
     }
 
-    public function testGetSetName()
+    /**
+     * Test for setting and getting Name
+     */
+    public function testGetSetName():void
     {
         $product = new Product();
         $name = "Acme Anvil";
@@ -20,7 +26,10 @@ class ProductTest extends TestCase
         $this->assertEquals($name, $product->getName());
     }
 
-    public function testGetSetValue()
+    /**
+     * Test for setting and getting Value
+     */
+    public function testGetSetValue():void
     {
         $product = new Product();
         $value = 42;

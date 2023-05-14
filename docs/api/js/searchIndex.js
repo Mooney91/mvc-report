@@ -361,6 +361,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ReportController.html#method_number"
         },                {
+            "fqsen": "\\App\\Controller\\ReportController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-ReportController.html#method_metrics"
+        },                {
             "fqsen": "\\App\\Game\\Banker",
             "name": "Banker",
             "summary": "This\u0020is\u0020the\u0020Banker\u0020class\u0020inheriting\u0020from\u0020Player",
