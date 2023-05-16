@@ -1,0 +1,54 @@
+/* NAVBAR */
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #591202;
+    text-align: center;
+  }
+  
+.nav li {
+    float: left;
+  }
+  
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+.nav li a:hover {
+    background-color: #8C3A1C;
+  }
+
+  /* NAVCARD */
+
+.nav-card ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #008000;
+    /* background-color: #230aae; */
+    text-align: center;
+  }
+  
+  .nav-card li {
+    float: left;
+  }
+  
+  .nav-card li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .nav-card li a:hover {
+    background-color: #8C3A1C;
+  }

@@ -18,7 +18,7 @@
         {% endblock %}
     </head>
 
-    <body>
+    <body class="site-body">
         <header class="site-header" style="background-image: url({{ asset('img/background.jpg') }})">
             <span class="site-title">mvc - A site for Zachary Mooney</span>
         </header>
@@ -35,6 +35,7 @@
                 <li><a href="{{ path('game_start') }}">Twenty-One</a></li>
                 <li><a href="{{ path('app_library') }}">Library</a></li>
                 <li><a href="{{ path('metrics') }}">Metrics</a></li>
+                <li><a href="{{ path('proj') }}">Project</a></li>
             </ul>
         </nav>
 

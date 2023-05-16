@@ -1,0 +1,23 @@
+/* SITE SPECIFIC */
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.child {
+    flex-basis: 50%;
+}
+
+.lucky {
+    font-size: 2rem;
+    text-align: center;
+} 
+
+.lucky-number {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 800;
+} 
+

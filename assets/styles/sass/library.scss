@@ -1,0 +1,47 @@
+/* BOOK INFO*/
+
+.book {
+    border-color: #591202;
+    border-width: 2px;
+    border-style:groove;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #F7F7F7;
+    margin-bottom: 10px;
+  }
+  
+  .book img {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    height: auto;
+  }
+  .table {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    border-collapse: collapse;
+    width: 100%;
+    text-decoration: none;
+  }
+  
+  .table td:nth-child(1) {  
+    font-weight: 800;
+  }
+  
+  .table td, .book table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .table tr:nth-child(even){background-color: #f2f2f2;}
+  .table tr:nth-child(odd){background-color: #f2f2f29e;}
+  
+  .table tr:hover {background-color: #ddd;}
+  
+  .table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    /* background-color: #04AA6D; */
+    color: white;
+  }

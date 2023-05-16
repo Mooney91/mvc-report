@@ -52,6 +52,7 @@ return [
     'product_by_id' => [['id'], ['_controller' => 'App\\Controller\\ProductController::showProductById'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/product/show']], [], [], []],
     'product_delete_by_id' => [['id'], ['_controller' => 'App\\Controller\\ProductController::deleteProductById'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/product/delete']], [], [], []],
     'product_update' => [['id', 'value'], ['_controller' => 'App\\Controller\\ProductController::updateProduct'], [], [['variable', '/', '[^/]++', 'value', true], ['variable', '/', '[^/]++', 'id', true], ['text', '/product/update']], [], [], []],
+    'proj' => [[], ['_controller' => 'App\\Controller\\ProjectController::index'], [], [['text', '/proj']], [], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\ReportController::index'], [], [['text', '/']], [], [], []],
     'about' => [[], ['_controller' => 'App\\Controller\\ReportController::about'], [], [['text', '/about']], [], [], []],
     'report' => [[], ['_controller' => 'App\\Controller\\ReportController::report'], [], [['text', '/report']], [], [], []],

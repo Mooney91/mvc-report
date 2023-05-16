@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Oswald&display=swap');
+
+$body-font: 'Asap', sans-serif;
+$header-font: 'Oswald', sans-serif;
+$edu-colour: #C5192D;
+
+.proj-body {
+    font-family: $body-font;
+    background-color: #FFFFFF;
+    color: #787878;
+}
+
+.proj-header {
+    font-family: $header-font;
+}
+
+.proj-title {
+    font-family: $header-font;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-size: 40px;
+    margin: 0 auto;
+}
+
+.proj-nav {
+    text-transform: uppercase;
+    font-family: $header-font;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.proj-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    // background-color: #591202;
+    text-align: center;
+}
+
+.proj-nav li {
+    // float: left;
+    margin: 0 auto;
+}
+
+.proj-nav li a {
+    display: block;
+    color: #224B80;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.proj-nav li a:hover {
+    background-color: #016CB8;
+    color: white;
+}
+
+.proj-footer {
+    background-color: $edu-colour;
+    color: white;
+    font-family: $header-font;
+}
+
+/*
+ * Style the rows and columns.
+ */
+ .proj-footer .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.proj-footer .row > .col3 {
+    width: calc(100% / 3);
+}
+
+.proj-footer .row > .col1 {
+    width: 100%;
+}
+
+.proj-box {
+    font-weight: 800;
+    padding: 10px;
+}
+
+.proj-box ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+.proj-box p {
+    font-size: larger;
+}
+
+.proj-box ul li {
+    text-decoration: none;
+}
+

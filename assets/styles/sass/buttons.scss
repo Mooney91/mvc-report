@@ -1,0 +1,75 @@
+.info {
+    width: 400px;
+    height: 50px;
+    border: 2px solid #000;
+    margin: 0 auto 15px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: 10px;
+    background-color: #FFF484;
+    border-color: #DCC600;
+  }
+  
+  .button {
+    background-color: #591202;
+    color: #F2DEA0; 
+    border: none;
+    font-size: 18px;
+    /* font-family: Georgia, serif; */
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin: 5px;
+  }
+  
+  .button a:link { text-decoration: none;color: #F2DEA0;  }
+  .button a:visited { text-decoration: none;color: #F2DEA0;  }
+  .button a:hover { text-decoration: none;color: #F2DEA0;  }
+  .button a:active { text-decoration: none;color: #F2DEA0;  }
+  
+  .box {
+    background-color: #F2DEA0;
+    border: 5px solid #8C3A1C;
+    color: #8C3A1C;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .box h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .box p {
+    font-size: 18px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  
+  .box .points {
+    color: #591202;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .gameForm {
+    text-align: center;
+  }
+  
+  .decision {
+    font-style: italic;
+    font-size: 18px;
+  }
+  /* COLOUR PALETTE */
+  /* #F2DEA0
+  #F2CB9B
+  #8C3A1C
+  #591202
+  #260101 */
+  

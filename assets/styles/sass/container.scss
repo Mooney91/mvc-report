@@ -1,0 +1,51 @@
+.site-body {
+    background-color: #F2DEA0;
+    margin: 0 auto;
+    font-family: 'EB Garamond', serif;
+    /* max-width: 400px; */
+    overflow: auto;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 480px;
+}
+
+h1 {
+    border-bottom: 4px double #ccc;
+}
+
+.site-header {
+    height: 100px;
+    background-size: cover;
+    text-align: center;
+    border-bottom-width: 2px;
+    border-bottom-color: #260101;
+}
+
+.site-title {
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.me {
+    float: left;
+    margin: 5px;
+    width: 180px;
+    height: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.myimg {
+    width: 100%;
+    height: auto;
+}
+
+p {
+  text-align: justify;
+  overflow: auto;
+}
