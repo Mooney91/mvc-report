@@ -12,12 +12,12 @@ return [[
     'entrypoints' => [
         'app' => [
             'js' => [
-                'build/runtime.61b1725c.js',
-                'build/751.7f9c0d93.js',
-                'build/app.5eb22a3a.js',
+                'build/runtime.833cb8d0.js',
+                'build/751.ae6389df.js',
+                'build/app.28e8afd7.js',
             ],
             'css' => [
-                'build/app.51146d9c.css',
+                'build/app.addc9320.css',
             ],
         ],
     ],

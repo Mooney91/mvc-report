@@ -41,6 +41,7 @@ class ComposerStaticInit4f4bbbd4df3fd09d88addb2a853bd472
         'S' => 
         array (
             'Symfony\\WebpackEncoreBundle\\' => 28,
+            'Symfony\\UX\\Chartjs\\' => 19,
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
@@ -188,6 +189,10 @@ class ComposerStaticInit4f4bbbd4df3fd09d88addb2a853bd472
         'Symfony\\WebpackEncoreBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src',
+        ),
+        'Symfony\\UX\\Chartjs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/ux-chartjs/src',
         ),
         'Symfony\\Runtime\\Symfony\\Component\\' => 
         array (
@@ -635,13 +640,16 @@ class ComposerStaticInit4f4bbbd4df3fd09d88addb2a853bd472
         'App\\Controller\\GameController' => __DIR__ . '/../..' . '/src/Controller/GameController.php',
         'App\\Controller\\LibraryController' => __DIR__ . '/../..' . '/src/Controller/LibraryController.php',
         'App\\Controller\\ProductController' => __DIR__ . '/../..' . '/src/Controller/ProductController.php',
+        'App\\Controller\\ProjectController' => __DIR__ . '/../..' . '/src/Controller/ProjectController.php',
         'App\\Controller\\ReportController' => __DIR__ . '/../..' . '/src/Controller/ReportController.php',
+        'App\\Entity\\Education' => __DIR__ . '/../..' . '/src/Entity/Education.php',
         'App\\Entity\\Library' => __DIR__ . '/../..' . '/src/Entity/Library.php',
         'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
         'App\\Game\\Banker' => __DIR__ . '/../..' . '/src/Game/Banker.php',
         'App\\Game\\Game' => __DIR__ . '/../..' . '/src/Game/Game.php',
         'App\\Game\\Player' => __DIR__ . '/../..' . '/src/Game/Player.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\EducationRepository' => __DIR__ . '/../..' . '/src/Repository/EducationRepository.php',
         'App\\Repository\\LibraryRepository' => __DIR__ . '/../..' . '/src/Repository/LibraryRepository.php',
         'App\\Repository\\ProductRepository' => __DIR__ . '/../..' . '/src/Repository/ProductRepository.php',
         'Collator' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/Resources/stubs/Collator.php',
@@ -7096,6 +7104,12 @@ class ComposerStaticInit4f4bbbd4df3fd09d88addb2a853bd472
         'Symfony\\Runtime\\Symfony\\Component\\HttpFoundation\\RequestRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/HttpFoundation/RequestRuntime.php',
         'Symfony\\Runtime\\Symfony\\Component\\HttpFoundation\\ResponseRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/HttpFoundation/ResponseRuntime.php',
         'Symfony\\Runtime\\Symfony\\Component\\HttpKernel\\HttpKernelInterfaceRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/HttpKernel/HttpKernelInterfaceRuntime.php',
+        'Symfony\\UX\\Chartjs\\Builder\\ChartBuilder' => __DIR__ . '/..' . '/symfony/ux-chartjs/src/Builder/ChartBuilder.php',
+        'Symfony\\UX\\Chartjs\\Builder\\ChartBuilderInterface' => __DIR__ . '/..' . '/symfony/ux-chartjs/src/Builder/ChartBuilderInterface.php',
+        'Symfony\\UX\\Chartjs\\ChartjsBundle' => __DIR__ . '/..' . '/symfony/ux-chartjs/src/ChartjsBundle.php',
+        'Symfony\\UX\\Chartjs\\DependencyInjection\\ChartjsExtension' => __DIR__ . '/..' . '/symfony/ux-chartjs/src/DependencyInjection/ChartjsExtension.php',
+        'Symfony\\UX\\Chartjs\\Model\\Chart' => __DIR__ . '/..' . '/symfony/ux-chartjs/src/Model/Chart.php',
+        'Symfony\\UX\\Chartjs\\Twig\\ChartExtension' => __DIR__ . '/..' . '/symfony/ux-chartjs/src/Twig/ChartExtension.php',
         'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookup' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookup.php',
         'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookupCollection' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookupCollection.php',
         'Symfony\\WebpackEncoreBundle\\Asset\\EntrypointLookupCollectionInterface' => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src/Asset/EntrypointLookupCollectionInterface.php',
