@@ -2,7 +2,7 @@
 
 $body-font: 'Asap', sans-serif;
 $header-font: 'Oswald', sans-serif;
-$edu-colour: #C5192D;
+$edu-colour: #27BBDF;
 
 .proj-body {
     font-family: $body-font;
@@ -20,13 +20,16 @@ $edu-colour: #C5192D;
     text-transform: uppercase;
     color: black;
     font-size: 40px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .proj-nav {
     text-transform: uppercase;
     font-family: $header-font;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    display: flex;
+    justify-content: center;
 }
 
 .proj-nav ul {
@@ -39,7 +42,7 @@ $edu-colour: #C5192D;
 }
 
 .proj-nav li {
-    // float: left;
+    float: left;
     margin: 0 auto;
 }
 
@@ -61,6 +64,7 @@ $edu-colour: #C5192D;
     background-color: $edu-colour;
     color: white;
     font-family: $header-font;
+    padding: 5px;
 }
 
 /*
@@ -96,7 +100,38 @@ $edu-colour: #C5192D;
     font-size: larger;
 }
 
-.proj-box ul li {
+.proj-box ul li a {
     text-decoration: none;
+    color: white;
 }
+
+.proj-img {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.proj-button {
+    background-color: #016CB8;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+    border: none;
+    color: white;
+    font-family: $header-font;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 4px;
+}
+
+.proj-button a {
+    text-decoration: none;
+    color: white;
+}
+
+// .proj-button div{
+//     text-decoration: none;
+//     color: white;
+// }
 
