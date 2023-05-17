@@ -1,0 +1,13 @@
+{% extends "project/base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <h1 class="proj-header">About</h1>
+    
+    <p>There are 17 Global Goals that are set by the United Nations to promote and measure sustainable social, polical, and economic development across the world.</p>
+    <p>By using data from <i>Statistics Sweden (SCB)</i>, this site explores whether Sweden has reached these goals and trends in recent years.</p>
+    <p>The areas that will be the main focus of this study are twso of the seventeen Global Goals - <i>Quality Education</i> and <i>Reduced Inequalities</i>.</p>
+
+    <div class="proj-button"><a href="{{ path('proj-database') }}">Learn about the Database</a></div>
+{% endblock %}

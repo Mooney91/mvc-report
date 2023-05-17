@@ -1,0 +1,13 @@
+{% extends "project/base.html.twig" %}
+
+{% block title %}Education{% endblock %}
+
+{% block body %}
+    <h1 class="proj-header">Quality Education</h1>
+    
+    <p>All data should be attributed to SCB (Statistics Sweden). You can find more tables on the 2020 snapshot for Agenda 2030 on SCB's <a href="https://www.scb.se/hitta-statistik/statistik-efter-amne/miljo/miljoekonomi-och-hallbar-utveckling/indikatorer-for-hallbar-utveckling/pong/tabell-och-diagram/agenda-2030-lagesbild-2020--tabellbilagor2/">website</a>.</p>
+    <p>For education, this <a href="https://www.scb.se/contentassets/c9a909d7121b4968ad0324c20abe1d4f/likvardig-utbildning.xlsx">table</a> has been used.</p>
+
+    {{ render_chart(chart, {'class': 'my-chart'}) }}
+    
+{% endblock %}
