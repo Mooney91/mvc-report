@@ -1,0 +1,241 @@
+﻿gender,education_level,year,percentage
+Female,Förgymnasial,1990,32.04179946
+Female,Förgymnasial,1991,30.59284248
+Female,Förgymnasial,1992,28.15519545
+Female,Förgymnasial,1993,26.69588703
+Female,Förgymnasial,1994,25.75269032
+Female,Förgymnasial,1995,24.74602226
+Female,Förgymnasial,1996,23.76002309
+Female,Förgymnasial,1997,22.98911957
+Female,Förgymnasial,1998,22.38957658
+Female,Förgymnasial,1999,21.68959786
+Female,Förgymnasial,2000,18.69819268
+Female,Förgymnasial,2001,17.7147349
+Female,Förgymnasial,2002,16.89270642
+Female,Förgymnasial,2003,16.1411896
+Female,Förgymnasial,2004,15.48248657
+Female,Förgymnasial,2005,14.82860714
+Female,Förgymnasial,2006,14.19963676
+Female,Förgymnasial,2007,13.67048337
+Female,Förgymnasial,2008,13.16612059
+Female,Förgymnasial,2009,12.67612693
+Female,Förgymnasial,2010,12.24638271
+Female,Förgymnasial,2011,11.80168816
+Female,Förgymnasial,2012,11.37304134
+Female,Förgymnasial,2013,10.98300748
+Female,Förgymnasial,2014,10.68004256
+Female,Förgymnasial,2015,10.40306237
+Female,Förgymnasial,2016,10.15934048
+Female,Förgymnasial,2017,9.9039272
+Female,Förgymnasial,2018,9.647263994
+Female,Förgymnasial,2019,9.362678614
+Female,Gymnasial,1990,43.59093249
+Female,Gymnasial,1991,44.18755419
+Female,Gymnasial,1992,45.61818315
+Female,Gymnasial,1993,45.91036721
+Female,Gymnasial,1994,46.46204662
+Female,Gymnasial,1995,46.79734761
+Female,Gymnasial,1996,46.9573769
+Female,Gymnasial,1997,47.00091932
+Female,Gymnasial,1998,46.68336412
+Female,Gymnasial,1999,46.49352966
+Female,Gymnasial,2000,47.97857201
+Female,Gymnasial,2001,47.8232429
+Female,Gymnasial,2002,47.57576911
+Female,Gymnasial,2003,47.1215191
+Female,Gymnasial,2004,46.65868588
+Female,Gymnasial,2005,46.26596634
+Female,Gymnasial,2006,45.78743899
+Female,Gymnasial,2007,45.36298127
+Female,Gymnasial,2008,44.80648484
+Female,Gymnasial,2009,44.22048888
+Female,Gymnasial,2010,43.63967437
+Female,Gymnasial,2011,43.17549303
+Female,Gymnasial,2012,42.71209042
+Female,Gymnasial,2013,42.21993436
+Female,Gymnasial,2014,41.76078803
+Female,Gymnasial,2015,41.29108167
+Female,Gymnasial,2016,40.6654434
+Female,Gymnasial,2017,40.11496363
+Female,Gymnasial,2018,39.452912
+Female,Gymnasial,2019,38.81275609
+Female,Eftergymnasial,1990,23.45942816
+Female,Eftergymnasial,1991,23.90758964
+Female,Eftergymnasial,1992,24.58394334
+Female,Eftergymnasial,1993,25.21297123
+Female,Eftergymnasial,1994,26.51797134
+Female,Eftergymnasial,1995,27.18917601
+Female,Eftergymnasial,1996,27.92869511
+Female,Eftergymnasial,1997,28.75897416
+Female,Eftergymnasial,1998,29.58622307
+Female,Eftergymnasial,1999,30.64716428
+Female,Eftergymnasial,2000,32.26670205
+Female,Eftergymnasial,2001,33.34268834
+Female,Eftergymnasial,2002,34.49588253
+Female,Eftergymnasial,2003,35.60452765
+Female,Eftergymnasial,2004,36.73428395
+Female,Eftergymnasial,2005,37.82266712
+Female,Eftergymnasial,2006,38.7427969
+Female,Eftergymnasial,2007,39.74687536
+Female,Eftergymnasial,2008,40.7109834
+Female,Eftergymnasial,2009,41.68104501
+Female,Eftergymnasial,2010,42.67470116
+Female,Eftergymnasial,2011,43.67888514
+Female,Eftergymnasial,2012,44.54014972
+Female,Eftergymnasial,2013,45.377883
+Female,Eftergymnasial,2014,46.1578403
+Female,Eftergymnasial,2015,46.88303706
+Female,Eftergymnasial,2016,47.57013073
+Female,Eftergymnasial,2017,48.23446738
+Female,Eftergymnasial,2018,49.0418622
+Female,Eftergymnasial,2019,49.83103479
+Female,Okänd utbildning,1990,0.907839889
+Female,Okänd utbildning,1991,1.312013688
+Female,Okänd utbildning,1992,1.642678062
+Female,Okänd utbildning,1993,2.180774541
+Female,Okänd utbildning,1994,1.267291717
+Female,Okänd utbildning,1995,1.267454129
+Female,Okänd utbildning,1996,1.353904897
+Female,Okänd utbildning,1997,1.250986953
+Female,Okänd utbildning,1998,1.340836231
+Female,Okänd utbildning,1999,1.169708204
+Female,Okänd utbildning,2000,1.056533259
+Female,Okänd utbildning,2001,1.119333867
+Female,Okänd utbildning,2002,1.035641939
+Female,Okänd utbildning,2003,1.132763649
+Female,Okänd utbildning,2004,1.124543596
+Female,Okänd utbildning,2005,1.082759402
+Female,Okänd utbildning,2006,1.270127354
+Female,Okänd utbildning,2007,1.219659998
+Female,Okänd utbildning,2008,1.316411176
+Female,Okänd utbildning,2009,1.42233917
+Female,Okänd utbildning,2010,1.439241771
+Female,Okänd utbildning,2011,1.343933663
+Female,Okänd utbildning,2012,1.37471853
+Female,Okänd utbildning,2013,1.419175156
+Female,Okänd utbildning,2014,1.401329119
+Female,Okänd utbildning,2015,1.422818901
+Female,Okänd utbildning,2016,1.605085391
+Female,Okänd utbildning,2017,1.746641795
+Female,Okänd utbildning,2018,1.857961804
+Female,Okänd utbildning,2019,1.993530505
+Male,Förgymnasial,1990,33.50859959
+Male,Förgymnasial,1991,32.30906183
+Male,Förgymnasial,1992,30.95122426
+Male,Förgymnasial,1993,29.75683195
+Male,Förgymnasial,1994,28.86067759
+Male,Förgymnasial,1995,27.94765248
+Male,Förgymnasial,1996,27.07258937
+Male,Förgymnasial,1997,26.41788057
+Male,Förgymnasial,1998,25.74204361
+Male,Förgymnasial,1999,25.01556472
+Male,Förgymnasial,2000,22.4145633
+Male,Förgymnasial,2001,21.53443708
+Male,Förgymnasial,2002,20.82915695
+Male,Förgymnasial,2003,20.2344822
+Male,Förgymnasial,2004,19.63917089
+Male,Förgymnasial,2005,18.9890476
+Male,Förgymnasial,2006,18.38709955
+Male,Förgymnasial,2007,17.85129457
+Male,Förgymnasial,2008,17.334101
+Male,Förgymnasial,2009,16.80465688
+Male,Förgymnasial,2010,16.28546479
+Male,Förgymnasial,2011,15.73555198
+Male,Förgymnasial,2012,15.24502997
+Male,Förgymnasial,2013,14.77626941
+Male,Förgymnasial,2014,14.40032687
+Male,Förgymnasial,2015,14.0592189
+Male,Förgymnasial,2016,13.75819085
+Male,Förgymnasial,2017,13.40609376
+Male,Förgymnasial,2018,13.00568828
+Male,Förgymnasial,2019,12.59726767
+Male,Gymnasial,1990,43.16037361
+Male,Gymnasial,1991,43.68003852
+Male,Gymnasial,1992,44.22514835
+Male,Gymnasial,1993,44.48000191
+Male,Gymnasial,1994,45.19322708
+Male,Gymnasial,1995,45.6571205
+Male,Gymnasial,1996,45.96964401
+Male,Gymnasial,1997,46.37252074
+Male,Gymnasial,1998,46.50257738
+Male,Gymnasial,1999,46.78271984
+Male,Gymnasial,2000,48.33270496
+Male,Gymnasial,2001,48.51662844
+Male,Gymnasial,2002,48.60207237
+Male,Gymnasial,2003,48.4956902
+Male,Gymnasial,2004,48.41708838
+Male,Gymnasial,2005,48.40177295
+Male,Gymnasial,2006,48.26688303
+Male,Gymnasial,2007,48.16298585
+Male,Gymnasial,2008,48.02398206
+Male,Gymnasial,2009,47.87182628
+Male,Gymnasial,2010,47.72156966
+Male,Gymnasial,2011,47.72083568
+Male,Gymnasial,2012,47.71033461
+Male,Gymnasial,2013,47.66600844
+Male,Gymnasial,2014,47.58122043
+Male,Gymnasial,2015,47.49403454
+Male,Gymnasial,2016,47.20780757
+Male,Gymnasial,2017,47.04119005
+Male,Gymnasial,2018,46.79097829
+Male,Gymnasial,2019,46.61242805
+Male,Eftergymnasial,1990,21.8838551
+Male,Eftergymnasial,1991,22.14500562
+Male,Eftergymnasial,1992,22.61453209
+Male,Eftergymnasial,1993,23.07823244
+Male,Eftergymnasial,1994,24.29936247
+Male,Eftergymnasial,1995,24.85382922
+Male,Eftergymnasial,1996,25.33126923
+Male,Eftergymnasial,1997,25.85330453
+Male,Eftergymnasial,1998,26.30494315
+Male,Eftergymnasial,1999,26.96832996
+Male,Eftergymnasial,2000,28.10692823
+Male,Eftergymnasial,2001,28.71512937
+Male,Eftergymnasial,2002,29.43176933
+Male,Eftergymnasial,2003,30.04727571
+Male,Eftergymnasial,2004,30.71057071
+Male,Eftergymnasial,2005,31.35951624
+Male,Eftergymnasial,2006,31.83906593
+Male,Eftergymnasial,2007,32.41654474
+Male,Eftergymnasial,2008,32.9570284
+Male,Eftergymnasial,2009,33.50278526
+Male,Eftergymnasial,2010,34.09268168
+Male,Eftergymnasial,2011,34.73853655
+Male,Eftergymnasial,2012,35.2036028
+Male,Eftergymnasial,2013,35.63256574
+Male,Eftergymnasial,2014,36.04837917
+Male,Eftergymnasial,2015,36.37723892
+Male,Eftergymnasial,2016,36.70636301
+Male,Eftergymnasial,2017,37.0098225
+Male,Eftergymnasial,2018,37.55741558
+Male,Eftergymnasial,2019,37.93519389
+Male,Okänd utbildning,1990,1.447171699
+Male,Okänd utbildning,1991,1.865894032
+Male,Okänd utbildning,1992,2.209095301
+Male,Okänd utbildning,1993,2.684933706
+Male,Okänd utbildning,1994,1.646732861
+Male,Okänd utbildning,1995,1.541397795
+Male,Okänd utbildning,1996,1.626497397
+Male,Okänd utbildning,1997,1.356294159
+Male,Okänd utbildning,1998,1.45043585
+Male,Okänd utbildning,1999,1.233385476
+Male,Okänd utbildning,2000,1.145803507
+Male,Okänd utbildning,2001,1.233805108
+Male,Okänd utbildning,2002,1.137001352
+Male,Okänd utbildning,2003,1.222551894
+Male,Okänd utbildning,2004,1.233170015
+Male,Okänd utbildning,2005,1.249663201
+Male,Okänd utbildning,2006,1.506951494
+Male,Okänd utbildning,2007,1.569174841
+Male,Okänd utbildning,2008,1.684888533
+Male,Okänd utbildning,2009,1.82073159
+Male,Okänd utbildning,2010,1.900283868
+Male,Okänd utbildning,2011,1.805075789
+Male,Okänd utbildning,2012,1.841032617
+Male,Okänd utbildning,2013,1.925156416
+Male,Okänd utbildning,2014,1.970073533
+Male,Okänd utbildning,2015,2.069507647
+Male,Okänd utbildning,2016,2.327638578
+Male,Okänd utbildning,2017,2.542893686
+Male,Okänd utbildning,2018,2.645917855
+Male,Okänd utbildning,2019,2.855110386
