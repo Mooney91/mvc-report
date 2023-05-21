@@ -204,7 +204,7 @@ class AgeEconomicRepository extends ServiceEntityRepository
      * Creates a bar chart showing data by gender and age-group in 2018
      *
      * @param ChartBuilderInterface $chartBuilder The chart builder object.
-     * @param array<object>$data The data used to generate the chart.
+     * @param array<object> $data The data used to generate the chart.
      *
      * @return object The created chart
      */
