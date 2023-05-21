@@ -1,6 +1,6 @@
 # MVC - Report for Zachary Mooney
 
-This repository by Zachary Mooney is the report repository for the MVC (Objektorienterad webbteknologier) course at *Blekinge Tekniska Högskola*.
+This repository created by Zachary Mooney is his report repository for the MVC (Objektorienterad webbteknologier) course at *Blekinge Tekniska Högskola*.
 
 <a href="https://scrutinizer-ci.com/g/Mooney91/mvc-report/build-status/master"><img src="https://scrutinizer-ci.com/g/Mooney91/mvc-report/badges/build.png?b=main" alt="Build Status" /></a>
 <a href="https://scrutinizer-ci.com/g/Mooney91/mvc-report/?branch=master"><img src="https://scrutinizer-ci.com/g/Mooney91/mvc-report/badges/coverage.png?b=main" alt="Code Coverage" /></a> 
@@ -32,7 +32,7 @@ phpcs -sw --standard=PSR1 file.php
 ### CLONING
 
 For more information on how to clone to this site, you can visit https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
-Once cloned you can test it locally bu using *php -S localhost:8888 -t public*. 
+Once cloned you can test it locally bu using *php -S localhost:8888 -t public* in your terminal. 
 
 ### DETECT STYLE ISSUES
 
