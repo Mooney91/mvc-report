@@ -3,7 +3,30 @@
 {% block title %}Database{% endblock %}
 
 {% block body %}
-    <h1 class="proj-header">ORM and Databases</h1>
+    <h1 class="proj-header">Database</h1>
     
-    <p>This is all about that database</p>
+    <p>This database and the following tables are stored using SQLite. SQLite is lightweight, simple to set-up, and portable for testing localling and uploading to the student server - all reasons why this was the platform of choice.</p>
+    <p>Unit tests were created for all entity methods. Symfony/Doctrine do not recommend testing against the Repository folder as it should be tested using the database alone. There could also be a risk of introducing errors to the database. 
+    Mocking could be used for this purpose, but it would not necessarily give a true indication on whether the methods are producing the correct result. This risk in omitting these methods is minimal since these are standard methods created directly by <i>Doctrine</i>.</p>
+    <p>There were no issues with <i>Scrutinizer</i> in regards to the unit tests; however, the untested methods were purposely not excluded from the final analysis. This is to show an accurate picture of the current state of the entire website.
+    If continued development were required in the future, it would be easier to see which areas could be improved or testing by leaving all files to be...scrutinised.</p> 
+
+    <h2>Education</h2>
+    <img src="{{ asset('img/erEducation.svg') }}" alt="ER Diagram - Education" class="proj-img">
+    <p>The <code>Education</code> tabe contains data concerning the highest level of education attained by each gender for a given year over a 30 year period as a percentage. The data begins in 1990 and the final year of data is from 2019.</p>
+    
+    <h2>LowEconomic</h2>
+    <img src="{{ asset('img/erLowEconomic.svg') }}" alt="ER Diagram - LowEconomic" class="proj-img">
+    <p>The <code>LowEconomic</code> table was used for the analysis of <i>Reduced Inequalities</i>.</p>
+    <p>This table contains data regarding the percentage of people, broken down by global region of birth, who live in what is deemed as "low economic standards". The data is from an eight year period.</p>
+
+    <h2>AgeEconomic</h2>
+    <img src="{{ asset('img/erAgeEconomic.svg') }}" alt="ER Diagram - AgeEconomic" class="proj-img">
+    <p>The <code>AgeEconomic</code> table was used for the analysis of <i>Reduced Inequalities</i>. This table also contains data related to the percentage of people living in "low economic standards" over an eight year period, but this dataset is broken down by gender and age group.</p>
+
+    <h2>Relationships between the Tables</h2>
+    <p>Since the data from SCB was not raw data but instead a summary of percentages, it was not possible to create any relationships between the tables. 
+    Although <code>LowEconomic</code> and <code>AgeEconomic</code> come from the same source, they do not use the same data. It is not certain how these tables are related or how the data was collected.</p>
+
+    <p><b>For more information regarding benefits, drawbacks, and differences between ORM and the way data was accessed during the <i>databas</i> course, can be found in the report associated with this project.</b></p>
 {% endblock %}

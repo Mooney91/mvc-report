@@ -6,8 +6,30 @@
     <h1 class="proj-header">Quality Education</h1>
     
     <p>All data should be attributed to SCB (Statistics Sweden). You can find more tables on the 2020 snapshot for Agenda 2030 on SCB's <a href="https://www.scb.se/hitta-statistik/statistik-efter-amne/miljo/miljoekonomi-och-hallbar-utveckling/indikatorer-for-hallbar-utveckling/pong/tabell-och-diagram/agenda-2030-lagesbild-2020--tabellbilagor2/">website</a>.</p>
-    <p>For education, this <a href="https://www.scb.se/contentassets/c9a909d7121b4968ad0324c20abe1d4f/likvardig-utbildning.xlsx">table</a> has been used.</p>
+    <p>This section regarding Quality Education uses this <a href="https://www.scb.se/contentassets/c9a909d7121b4968ad0324c20abe1d4f/likvardig-utbildning.xlsx">table</a> as its main data source.</p>
 
-    {{ render_chart(chart, {'class': 'my-chart'}) }}
-    
+    <h2>Women in Education</h2>
+    <p>The chart below shows the percentage of women between the ages 25-64 whose highest level of education is post-college (after Sixth Form or <i>Eftergymnasial</i>)</p>
+    <p>As you can see there has been a steady increase in the number of women in "eftergymnasial" education during the last 30 years, going from 23.5% in 1990 to 49.8% in 2019.</p>
+
+    {{ render_chart(feUni, {'class': 'my-chart'}) }}
+
+    <p>The pie diagram below shows the level of education that women between the ages of 25-64 have attained in 1990 and in 2019.</p>
+    <h3>1990</h3>
+    {{ render_chart(fePie1990, {'class': 'my-chart'}) }}
+    <h3>2019</h3>
+    {{ render_chart(fePie2019, {'class': 'my-chart'}) }}
+
+    <p>From the above charts, you can see a dramatic shift in the education attainment of women during this 30 year period. This is a positive change where not only more women are in post-secondary education, but the proportion of women who only have "förgymnasial" education has decreased.</p>
+
+    <h2>Men's Educational Attainment</h2>
+    <p>In contrast, we see a very different story for men. If we compare the percentage of men who have "eftergymnasial" education with women, we see that a greater proportion of women have attained this level of education today.</p>
+    <p>In 1990, the proportion was almost equal. Although there has been improvement for men, improvement has not been equal between the sexes.</p>
+
+     {{ render_chart(bothSexesLine, {'class': 'my-chart'}) }}
+
+    <p>The chart below shows a clear difference between the educational attainment between the sexes in <b>2019</b>. In 1990, the differences were negligible. </p>
+
+     {{ render_chart(bothSexes2019, {'class': 'my-chart'}) }}
+
 {% endblock %}

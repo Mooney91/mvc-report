@@ -137,9 +137,9 @@ p {
 }
 
 .proj-box ul {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margins */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .proj-box p {
@@ -195,7 +195,6 @@ p {
   color: #F2DEA0;
   border: none;
   font-size: 18px;
-  /* font-family: Georgia, serif; */
   padding: 10px 15px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -303,7 +302,6 @@ p {
 
 /* FORM */
 .form {
-  /* font: 95% Arial, Helvetica, sans-serif; */
   max-width: 400px;
   margin: 10px auto;
   padding: 16px;
@@ -311,7 +309,6 @@ p {
 }
 
 .form h1 {
-  /* background: #43D1AF; */
   padding: 20px 0;
   font-size: 140%;
   font-weight: 300;
@@ -433,7 +430,6 @@ p {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  /* background-color: #04AA6D; */
   color: white;
 }
 
@@ -470,7 +466,6 @@ p {
   padding: 0;
   overflow: hidden;
   background-color: #008000;
-  /* background-color: #230aae; */
   text-align: center;
 }
 

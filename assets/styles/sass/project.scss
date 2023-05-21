@@ -37,7 +37,6 @@ $edu-colour: #27BBDF;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    // background-color: #591202;
     text-align: center;
 }
 
@@ -91,9 +90,9 @@ $edu-colour: #27BBDF;
 }
 
 .proj-box ul {
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margins */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .proj-box p {
@@ -129,9 +128,3 @@ $edu-colour: #27BBDF;
     text-decoration: none;
     color: white;
 }
-
-// .proj-button div{
-//     text-decoration: none;
-//     color: white;
-// }
-

@@ -398,11 +398,19 @@
     <service id="App\Game\Banker" class="App\Game\Banker" autowire="true" autoconfigure="true"/>
     <service id="App\Game\Game" class="App\Game\Game" autowire="true" autoconfigure="true"/>
     <service id="App\Game\Player" class="App\Game\Player" autowire="true" autoconfigure="true"/>
+    <service id="App\Repository\AgeEconomicRepository" class="App\Repository\AgeEconomicRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\EducationRepository" class="App\Repository\EducationRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\LibraryRepository" class="App\Repository\LibraryRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\LowEconomicRepository" class="App\Repository\LowEconomicRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -4136,7 +4144,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.SI2ihmY"/>
+      <argument type="service" id=".service_locator.isq1Jqr"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6090,10 +6098,14 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ReportController" class="App\Controller\ReportController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ReportController" class="App\Controller\ReportController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ReportController" class="App\Controller\ReportController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AgeEconomicRepository" class="App\Repository\AgeEconomicRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AgeEconomicRepository" class="App\Repository\AgeEconomicRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EducationRepository" class="App\Repository\EducationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EducationRepository" class="App\Repository\EducationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LibraryRepository" class="App\Repository\LibraryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\LibraryRepository" class="App\Repository\LibraryRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LowEconomicRepository" class="App\Repository\LowEconomicRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\LowEconomicRepository" class="App\Repository\LowEconomicRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6479,11 +6491,13 @@
         <argument key="productRepository" type="service_closure" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.E2ZIc3Q" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.UktvWW5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="ageEconomicRepository" type="service_closure" id="App\Repository\AgeEconomicRepository"/>
         <argument key="doctrine" type="service_closure" id="doctrine"/>
         <argument key="educationRepository" type="service_closure" id="App\Repository\EducationRepository"/>
+        <argument key="lowEconomicRepository" type="service_closure" id="App\Repository\LowEconomicRepository"/>
       </argument>
     </service>
     <service id=".service_locator.VeNnQ25" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6494,13 +6508,41 @@
         <argument key="educationRepository" type="service_closure" id="App\Repository\EducationRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.ocTWQYJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="ageEconomicRepository" type="service_closure" id="App\Repository\AgeEconomicRepository"/>
+        <argument key="chartBuilder" type="service_closure" id="chartjs.builder"/>
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="lowEconomicRepository" type="service_closure" id="App\Repository\LowEconomicRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.E2ZIc3Q" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="educationRepository" type="service_closure" id="App\Repository\EducationRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.pnWqSG5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="educationRepository" type="service_closure" id="App\Repository\EducationRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.jH.M_zu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.nqGi9xF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="lowEconomicRepository" type="service_closure" id="App\Repository\LowEconomicRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.OjoSkxy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="ageEconomicRepository" type="service_closure" id="App\Repository\AgeEconomicRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.G_Zf.I6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\APIController::apiBookByIsbn" type="service_closure" id=".service_locator.TBgEv1t"/>
@@ -6521,10 +6563,17 @@
         <argument key="App\Controller\ProductController::showAllProduct" type="service_closure" id=".service_locator.0Fb1YCW"/>
         <argument key="App\Controller\ProductController::showProductById" type="service_closure" id=".service_locator.0Fb1YCW"/>
         <argument key="App\Controller\ProductController::updateProduct" type="service_closure" id=".service_locator.0Fb1YCW"/>
+        <argument key="App\Controller\ProjectController::economy" type="service_closure" id=".service_locator.ocTWQYJ"/>
         <argument key="App\Controller\ProjectController::education" type="service_closure" id=".service_locator.VeNnQ25"/>
-        <argument key="App\Controller\ProjectController::index" type="service_closure" id=".service_locator.E2ZIc3Q"/>
+        <argument key="App\Controller\ProjectController::index" type="service_closure" id=".service_locator.UktvWW5"/>
         <argument key="App\Controller\ProjectController::projApi" type="service_closure" id=".service_locator.E2ZIc3Q"/>
+        <argument key="App\Controller\ProjectController::projApiAgeEconomic" type="service_closure" id=".service_locator.OjoSkxy"/>
         <argument key="App\Controller\ProjectController::projApiEducation" type="service_closure" id=".service_locator.pnWqSG5"/>
+        <argument key="App\Controller\ProjectController::projApiEducationFemale" type="service_closure" id=".service_locator.pnWqSG5"/>
+        <argument key="App\Controller\ProjectController::projApiEducationMale" type="service_closure" id=".service_locator.pnWqSG5"/>
+        <argument key="App\Controller\ProjectController::projApiEducationYear" type="service_closure" id=".service_locator.pnWqSG5"/>
+        <argument key="App\Controller\ProjectController::projApiLowEconomic" type="service_closure" id=".service_locator.nqGi9xF"/>
+        <argument key="App\Controller\ProjectController::projApiLowEconomicBirthplace" type="service_closure" id=".service_locator.nqGi9xF"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
@@ -6547,10 +6596,17 @@
         <argument key="App\Controller\ProductController:showAllProduct" type="service_closure" id=".service_locator.0Fb1YCW"/>
         <argument key="App\Controller\ProductController:showProductById" type="service_closure" id=".service_locator.0Fb1YCW"/>
         <argument key="App\Controller\ProductController:updateProduct" type="service_closure" id=".service_locator.0Fb1YCW"/>
+        <argument key="App\Controller\ProjectController:economy" type="service_closure" id=".service_locator.ocTWQYJ"/>
         <argument key="App\Controller\ProjectController:education" type="service_closure" id=".service_locator.VeNnQ25"/>
-        <argument key="App\Controller\ProjectController:index" type="service_closure" id=".service_locator.E2ZIc3Q"/>
+        <argument key="App\Controller\ProjectController:index" type="service_closure" id=".service_locator.UktvWW5"/>
         <argument key="App\Controller\ProjectController:projApi" type="service_closure" id=".service_locator.E2ZIc3Q"/>
+        <argument key="App\Controller\ProjectController:projApiAgeEconomic" type="service_closure" id=".service_locator.OjoSkxy"/>
         <argument key="App\Controller\ProjectController:projApiEducation" type="service_closure" id=".service_locator.pnWqSG5"/>
+        <argument key="App\Controller\ProjectController:projApiEducationFemale" type="service_closure" id=".service_locator.pnWqSG5"/>
+        <argument key="App\Controller\ProjectController:projApiEducationMale" type="service_closure" id=".service_locator.pnWqSG5"/>
+        <argument key="App\Controller\ProjectController:projApiEducationYear" type="service_closure" id=".service_locator.pnWqSG5"/>
+        <argument key="App\Controller\ProjectController:projApiLowEconomic" type="service_closure" id=".service_locator.nqGi9xF"/>
+        <argument key="App\Controller\ProjectController:projApiLowEconomicBirthplace" type="service_closure" id=".service_locator.nqGi9xF"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -6806,11 +6862,13 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.SI2ihmY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.isq1Jqr" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\AgeEconomicRepository" type="service_closure" id="App\Repository\AgeEconomicRepository"/>
         <argument key="App\Repository\EducationRepository" type="service_closure" id="App\Repository\EducationRepository"/>
         <argument key="App\Repository\LibraryRepository" type="service_closure" id="App\Repository\LibraryRepository"/>
+        <argument key="App\Repository\LowEconomicRepository" type="service_closure" id="App\Repository\LowEconomicRepository"/>
         <argument key="App\Repository\ProductRepository" type="service_closure" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
@@ -7384,12 +7442,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.jH.M_zu"/>
+      <argument type="service" id=".service_locator.G_Zf.I6"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.jH.M_zu"/>
+      <argument type="service" id=".service_locator.G_Zf.I6"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8333,7 +8391,7 @@
     <service id="Symfony\UX\Chartjs\Builder\ChartBuilderInterface" alias="chartjs.builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jH.M_zu"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.G_Zf.I6"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8359,9 +8417,11 @@
     <service id=".service_locator.xpfZVoj" alias=".service_locator.gPHttvX"/>
     <service id=".service_locator.AZT2IGG" alias=".service_locator.tCJe9UG"/>
     <service id=".service_locator.nLzTFMn" alias=".service_locator.pFKXCGK"/>
-    <service id=".service_locator.UxEOy63" alias=".service_locator.E2ZIc3Q"/>
+    <service id=".service_locator.S81oBuA" alias=".service_locator.UktvWW5"/>
     <service id=".service_locator.yzY_fXk" alias=".service_locator.VeNnQ25"/>
-    <service id=".service_locator.e6bDQdb" alias=".service_locator.jH.M_zu"/>
+    <service id=".service_locator.IodVtmJ" alias=".service_locator.ocTWQYJ"/>
+    <service id=".service_locator.UxEOy63" alias=".service_locator.E2ZIc3Q"/>
+    <service id=".service_locator.zc4ZpeG" alias=".service_locator.G_Zf.I6"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
@@ -8418,9 +8478,13 @@
     <service id=".service_locator.FPFiL9q" alias=".service_locator.GQZbvNR"/>
     <service id=".service_locator.2oqknbk" alias=".service_locator.pFKXCGK"/>
     <service id=".service_locator.sa.k_vl" alias=".service_locator.0Fb1YCW"/>
-    <service id=".service_locator.4BKR_SE" alias=".service_locator.E2ZIc3Q"/>
+    <service id=".service_locator.UoYv71K" alias=".service_locator.UktvWW5"/>
     <service id=".service_locator.g4eQbKJ" alias=".service_locator.VeNnQ25"/>
+    <service id=".service_locator.VmfJ8Ez" alias=".service_locator.ocTWQYJ"/>
+    <service id=".service_locator.4BKR_SE" alias=".service_locator.E2ZIc3Q"/>
     <service id=".service_locator.A.96J0s" alias=".service_locator.pnWqSG5"/>
+    <service id=".service_locator.f6S54Vd" alias=".service_locator.nqGi9xF"/>
+    <service id=".service_locator.TA_rrc." alias=".service_locator.OjoSkxy"/>
     <service id=".service_locator.eAaUVIw" alias=".service_locator.jIxfAsi"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>
     <service id=".service_locator.pFwChgS" alias=".service_locator.UkE3SaZ"/>

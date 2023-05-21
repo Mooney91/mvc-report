@@ -13,6 +13,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Education;
 use App\Repository\EducationRepository;
+use App\Entity\LowEconomic;
+use App\Repository\LowEconomicRepository;
+use App\Entity\AgeEconomic;
+use App\Repository\AgeEconomicRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
@@ -23,37 +27,25 @@ class ProjectController extends AbstractController
     #[Route('/proj', name: 'proj')]
     public function index(
         EducationRepository $educationRepository,
+        LowEconomicRepository $lowEconomicRepository,
+        AgeEconomicRepository $ageEconomicRepository,
         ManagerRegistry $doctrine
-    ): Response
-    {
-        $data= $educationRepository
-        ->findAll();
-
-        foreach ($data as $value) {
-            $educationRepository->remove($value, true);
-        }
-
-        // ADD ALL DATA USING THE JSON FILE
-        // $json = 
-        // $json = file_get_contents('../library.json');
-        // $json = $this->csvJSON(file_get_contents('../education.csv'));
-        $json = $this->csvJSON('../education.csv');
-        $jsonData = json_decode($json, true);
-        // var_dump($jsonData[0]);
-        $entityManager = $doctrine->getManager();
-
-        foreach ($jsonData as $educationData) {
-            // var_dump($educationData);
-            $value = new Education();
-            $value->setGender($educationData['gender']);
-            $value->setEducationLevel($educationData['education_level']);
-            $value->setYear($educationData['year']);
-            $value->setPercentage($educationData['percentage']);
-
-            $entityManager->persist($value);
-        }
-
-        $entityManager->flush();
+    ): Response {
+        $educationRepository->setUp(
+            $educationRepository,
+            $this,
+            $doctrine
+        );
+        $lowEconomicRepository->setUp(
+            $lowEconomicRepository,
+            $this,
+            $doctrine
+        );
+        $ageEconomicRepository->setUp(
+            $ageEconomicRepository,
+            $this,
+            $doctrine
+        );
 
         return $this->render('project/index.html.twig', [
             'controller_name' => 'ProjectController',
@@ -76,44 +68,60 @@ class ProjectController extends AbstractController
     #[Route('/proj/education', name: 'proj-education')]
     public function education(
         EducationRepository $educationRepository,
-        ManagerRegistry $doctrine,
+        // ManagerRegistry $doctrine,
         ChartBuilderInterface $chartBuilder
-    ): Response
-    {
-        $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
+    ): Response {
+        $data = $educationRepository
+            ->findAll();
 
-        $chart->setData([
-            'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            'datasets' => [
-                [
-                    'label' => 'My First dataset',
-                    'backgroundColor' => 'rgb(255, 99, 132)',
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [0, 10, 5, 2, 20, 30, 45],
-                ],
-            ],
-        ]);
-
-        $chart->setOptions([
-            'scales' => [
-                'y' => [
-                    'suggestedMin' => 0,
-                    'suggestedMax' => 100,
-                ],
-            ],
-        ]);
+        // FEMALE - UNIVERSITY
+        $feUni = $educationRepository->feUni($chartBuilder, $data);
+        // FEMALE - PIE CHART 1990
+        $fePie1990 = $educationRepository->fePie1990($chartBuilder, $data);
+        // FEMALE - PIE CHART 2019
+        $fePie2019 = $educationRepository->fePie2019($chartBuilder, $data);
+        // UNIVERSITY - BOTH SEXES
+        $bothSexesLine = $educationRepository->bothSexesLine($chartBuilder, $data);
+        // EDUCATION - BOTH SEXES
+        $bothSexes2019 = $educationRepository->bothSexes2019($chartBuilder, $data);
 
         return $this->render('project/edu.html.twig', [
-            'chart' => $chart,
+            'feUni' => $feUni, 'fePie1990' => $fePie1990, 'fePie2019' => $fePie2019, 'bothSexesLine' => $bothSexesLine, 'bothSexes2019' => $bothSexes2019
+        ]);
+    }
+
+    #[Route('/proj/economy', name: 'proj-economy')]
+    public function economy(
+        LowEconomicRepository $lowEconomicRepository,
+        AgeEconomicRepository $ageEconomicRepository,
+        // ManagerRegistry $doctrine,
+        ChartBuilderInterface $chartBuilder
+    ): Response {
+
+        $data = $lowEconomicRepository
+            ->findAll();
+
+        // PERCENTAGE OF LOW ECONOMIC STANDARD BY BIRTHPLACE
+        $povertyCountries = $lowEconomicRepository->povertyCountries($chartBuilder, $data);
+
+        $data2 = $ageEconomicRepository
+            ->findAll();
+
+        // GENDER - ECONOMIC STANDARD
+        $bothSexesLine = $ageEconomicRepository->bothSexesLine($chartBuilder, $data2);
+        // ECONOMIC STANDARDS IN 2018 - GENDER AND AGE
+        $ageGender2018 = $ageEconomicRepository->ageGender2018($chartBuilder, $data2);
+
+        return $this->render('project/eco.html.twig', [
+            'povertyCountries' => $povertyCountries, 'bothSexesLine' => $bothSexesLine, 'ageGender2018' => $ageGender2018
         ]);
     }
 
     #[Route('/proj/api', name: 'proj-api')]
     public function projApi(
-        EducationRepository $educationRepository,
-        ManagerRegistry $doctrine
-    ): Response
-    {
+        // EducationRepository $educationRepository,
+        // ManagerRegistry $doctrine
+    ): Response {
         return $this->render('project/api.html.twig');
     }
 
@@ -131,47 +139,160 @@ class ProjectController extends AbstractController
         return $response;
     }
 
+    #[Route('/proj/api/education/male', name: 'proj_api_education_male')]
+    public function projApiEducationMale(
+        EducationRepository $educationRepository
+    ): Response {
+        $data = $educationRepository
+            ->findAll();
 
-    //var csv is the CSV file with headers
-    //Adapted from Javascript to PHP. Original code accredited to http://techslides.com/convert-csv-to-json-in-javascript
-    // Adapted from https://www.w3schools.in/php/examples/convert-csv-to-json-in-php 
-    public function csvJSON($csv) {
-        // $lines = explode("\n", $csv);
-    
-        // $result = [];
-    
-        // $headers = str_getcsv($lines[0]);
-    
-        // for ($i = 1; $i < count($lines); $i++) {
-        //     $obj = [];
-        //     $currentLine = str_getcsv($lines[$i]);
-    
-        //     for ($j = 0; $j < count($headers); $j++) {
-        //         // $obj[$headers[$j]] = $currentLine[$j];
-        //         $key = trim($headers[$j]);
-        //         $obj[$key] = $currentLine[$j];
-        //     }
-    
-        //     $result[] = $obj;
-        //     // var_dump($result);
-        // }
+        $result = [];
 
-        $fp = fopen($csv, 'r');
-        $headers = fgetcsv($fp); // Get column headers
+        foreach ($data as $row) {
+            $gender = $row->getGender();
+            if ($gender === 'Male') {
+                $result[] = $row;
+            }
+        }
 
-        // Remove BOM character from the first header
+        $response = $this->json($result);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+
+        return $response;
+    }
+
+    #[Route('/proj/api/education/female', name: 'proj_api_education_female')]
+    public function projApiEducationFemale(
+        EducationRepository $educationRepository
+    ): Response {
+        $data = $educationRepository
+            ->findAll();
+
+        $result = [];
+
+        foreach ($data as $row) {
+            $gender = $row->getGender();
+            if ($gender === 'Female') {
+                $result[] = $row;
+            }
+        }
+
+        $response = $this->json($result);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route('/proj/api/education/year', name: 'proj_api_education_year', methods: ['POST'])]
+    public function projApiEducationYear(
+        EducationRepository $educationRepository,
+        Request $request,
+    ): Response {
+
+        $postYear = $request->request->get('year');
+
+        $data = $educationRepository
+        ->findAll();
+
+        $result = [];
+
+        foreach ($data as $row) {
+            $year = $row->getYear();
+            if ($year == $postYear) {
+                $result[] = $row;
+            }
+        }
+
+        $response = $this->json($result);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route('/proj/api/loweconomic', name: 'proj_api_loweconomic')]
+    public function projApiLowEconomic(
+        LowEconomicRepository $lowEconomicRepository
+    ): Response {
+        $data = $lowEconomicRepository
+            ->findAll();
+
+        $response = $this->json($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+
+    #[Route('/proj/api/loweconomic/birthplace', name: 'proj_api_loweconomic_birthplace', methods: ['POST'])]
+    public function projApiLowEconomicBirthplace(
+        LowEconomicRepository $lowEconomicRepository,
+        Request $request,
+    ): Response {
+
+        $postBirthplace = $request->request->get('birthplace');
+
+        $data = $lowEconomicRepository
+        ->findAll();
+
+        $result = [];
+
+        foreach ($data as $row) {
+            $birthplace = $row->getBirthplace();
+            if ($birthplace == $postBirthplace) {
+                $result[] = $row;
+            }
+        }
+
+        $response = $this->json($result);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route('/proj/api/ageeconomic', name: 'proj_api_ageeconomic')]
+    public function projApiAgeEconomic(
+        AgeEconomicRepository $ageEconomicRepository
+    ): Response {
+        $data = $ageEconomicRepository
+            ->findAll();
+
+        $response = $this->json($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    /**
+     * Converts a CSV file to JSON format.
+     * Adapted from https://www.w3schools.in/php/examples/convert-csv-to-json-in-php
+     *
+     * @param string $csv The path to the CSV file.
+     *
+     * @return string The JSON representation of the CSV data.
+     */
+    public function csvJSON($csv)
+    {
+        $file = fopen($csv, 'r');
+        $headers = fgetcsv($file);
+
+        // REMOVE HIDDEN CHARACTERS FROM THE HEADERS
         foreach ($headers as &$header) {
             $header = trim($header, "\xEF\xBB\xBF");
         }
 
         $data = array();
-        while (($row = fgetcsv($fp))) {
+        while (($row = fgetcsv($file))) {
             $data[] = array_combine($headers, $row);
-            // var_dump($headers);
-            // var_dump($row);
         }
-        fclose($fp);
-    
+        fclose($file);
+
         return json_encode($data);
     }
 }

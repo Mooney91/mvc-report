@@ -7,5 +7,40 @@
     
     <p>Here you can find the raw data, in JSON format, of all the tables used in this study.</p>
 
-    <div class="proj-button"><a href="{{ path('proj_api_education') }}">All data in Education</a></div>
+    <h2>Education</h2>
+    <div class="proj-button"><a href="{{ path('proj_api_education') }}">All Data</a></div>
+    <div class="proj-button"><a href="{{ path('proj_api_education_male') }}">Only Male Data</a></div>
+    <div class="proj-button"><a href="{{ path('proj_api_education_female') }}">Only Female Data</a></div>
+
+    <form method="post" action="{{ path('proj_api_education_year')}}">
+        <label for="year"><b>Year:</b></label>
+        <input type="number" name="year" min="1990" max="2019" value="1990">
+        <input type="submit" name="do_it" value="Data for Year" class="proj-button">
+    </form>
+
+    <h2>Reduced Inequalities</h2>
+    <p>Data regarding birth places is taken from the <code>LowEconomic</code> and the data regarding gender and age is from the <code>AgeEconomic</code> table.</p>
+
+    <div class="proj-button"><a href="{{ path('proj_api_loweconomic') }}">All Low Economic Data by Birth Place</a></div>
+    
+    <form method="post" action="{{ path('proj_api_loweconomic_birthplace')}}">
+        <label for="birthplace"><b>Birth Place:</b></label>
+        <select id="birthplace" name="birthplace">
+            <option value="Födda i Sverige">Födda i Sverige</option>
+            <option value="Norden exkl. Sverige">Norden exkl. Sverige</option>
+            <option value="EU28 exkl. Norden">EU28 exkl. Norden</option>
+            <option value="Europa exkl. EU28 och Norden">Europa exkl. EU28 och Norden</option>
+            <option value="Övriga Länder">Övriga Länder</option>
+            <option value="Därav Afrika">Därav Afrika</option>
+            <option value="Nordamerika">Nordamerika</option>
+            <option value="Sydamerika">Sydamerika</option>
+            <option value="Asien">Asien</option>
+            <option value="Oceanien">Oceanien</option>
+        </select>
+        <input type="submit" name="do_it" value="Data for Birth Place" class="proj-button">
+    </form>
+
+    <div class="proj-button"><a href="{{ path('proj_api_ageeconomic') }}">All Age and Gender Data</a></div>
+
+
 {% endblock %}
