@@ -18,6 +18,7 @@ use App\Repository\LowEconomicRepository;
 use App\Entity\AgeEconomic;
 use App\Repository\AgeEconomicRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\EntityManagerInterface;
 
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
@@ -63,7 +64,6 @@ class ProjectController extends AbstractController
     {
         return $this->render('project/data.html.twig');
     }
-
 
     #[Route('/proj/education', name: 'proj-education')]
     public function education(
@@ -141,21 +141,28 @@ class ProjectController extends AbstractController
 
     #[Route('/proj/api/education/male', name: 'proj_api_education_male')]
     public function projApiEducationMale(
-        EducationRepository $educationRepository
+        // EducationRepository $educationRepository,
+        EntityManagerInterface $em
     ): Response {
-        $data = $educationRepository
-            ->findAll();
+        // $data = $educationRepository
+        //     ->findAll();
 
-        $result = [];
+        // $result = [];
 
-        foreach ($data as $row) {
-            $gender = $row->getGender();
-            if ($gender === 'Male') {
-                $result[] = $row;
-            }
-        }
+        // foreach ($data as $row) {
+        //     $gender = $row->getGender();
+        //     if ($gender === 'Male') {
+        //         $result[] = $row;
+        //     }
+        // }
 
+        // $response = $this->json($result);
+
+        $query = $em->createQuery('SELECT edu FROM App:Education edu WHERE edu.gender = :gender');
+        $query->setParameter('gender', 'Male');
+        $result = $query->getResult();
         $response = $this->json($result);
+
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
@@ -165,21 +172,29 @@ class ProjectController extends AbstractController
 
     #[Route('/proj/api/education/female', name: 'proj_api_education_female')]
     public function projApiEducationFemale(
-        EducationRepository $educationRepository
+        // EducationRepository $educationRepository,
+        EntityManagerInterface $em
     ): Response {
-        $data = $educationRepository
-            ->findAll();
+        // $data = $educationRepository
+        //     ->findAll();
 
-        $result = [];
+        // $result = [];
 
-        foreach ($data as $row) {
-            $gender = $row->getGender();
-            if ($gender === 'Female') {
-                $result[] = $row;
-            }
-        }
+        // foreach ($data as $row) {
+        //     $gender = $row->getGender();
+        //     if ($gender === 'Female') {
+        //         $result[] = $row;
+        //     }
+        // }
 
+        // $response = $this->json($result);
+        $query = $em->createQuery('SELECT edu FROM App:Education edu WHERE edu.gender = :gender');
+        $query->setParameter('gender', 'Female');
+        $result = $query->getResult();
+
+        // $response = $this->json($data);
         $response = $this->json($result);
+
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
@@ -188,25 +203,30 @@ class ProjectController extends AbstractController
 
     #[Route('/proj/api/education/year', name: 'proj_api_education_year', methods: ['POST'])]
     public function projApiEducationYear(
-        EducationRepository $educationRepository,
+        // EducationRepository $educationRepository,
         Request $request,
+        EntityManagerInterface $em,
     ): Response {
 
         $postYear = $request->request->get('year');
 
-        $data = $educationRepository
-        ->findAll();
+        // $data = $educationRepository
+        // ->findAll();
 
-        $result = [];
+        // $result = [];
 
-        foreach ($data as $row) {
-            $year = $row->getYear();
-            if ($year == $postYear) {
-                $result[] = $row;
-            }
-        }
+        // foreach ($data as $row) {
+        //     $year = $row->getYear();
+        //     if ($year == $postYear) {
+        //         $result[] = $row;
+        //     }
 
+        // $response = $this->json($result);
+        $query = $em->createQuery('SELECT edu FROM App:Education edu WHERE edu.year = :year');
+        $query->setParameter('year', $postYear);
+        $result = $query->getResult();
         $response = $this->json($result);
+
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
@@ -227,28 +247,34 @@ class ProjectController extends AbstractController
         return $response;
     }
 
-
     #[Route('/proj/api/loweconomic/birthplace', name: 'proj_api_loweconomic_birthplace', methods: ['POST'])]
     public function projApiLowEconomicBirthplace(
-        LowEconomicRepository $lowEconomicRepository,
+        // LowEconomicRepository $lowEconomicRepository,
         Request $request,
+        EntityManagerInterface $em,
     ): Response {
 
         $postBirthplace = $request->request->get('birthplace');
 
-        $data = $lowEconomicRepository
-        ->findAll();
+        // $data = $lowEconomicRepository
+        // ->findAll();
 
-        $result = [];
+        // $result = [];
 
-        foreach ($data as $row) {
-            $birthplace = $row->getBirthplace();
-            if ($birthplace == $postBirthplace) {
-                $result[] = $row;
-            }
-        }
+        // foreach ($data as $row) {
+        //     $birthplace = $row->getBirthplace();
+        //     if ($birthplace == $postBirthplace) {
+        //         $result[] = $row;
+        //     }
+        // }
 
+        // $response = $this->json($result);
+
+        $query = $em->createQuery('SELECT le FROM App:LowEconomic le WHERE le.birthplace = :birthplace');
+        $query->setParameter('birthplace', $postBirthplace);
+        $result = $query->getResult();
         $response = $this->json($result);
+
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
@@ -257,12 +283,18 @@ class ProjectController extends AbstractController
 
     #[Route('/proj/api/ageeconomic', name: 'proj_api_ageeconomic')]
     public function projApiAgeEconomic(
-        AgeEconomicRepository $ageEconomicRepository
+        // AgeEconomicRepository $ageEconomicRepository,
+        EntityManagerInterface $em
     ): Response {
-        $data = $ageEconomicRepository
-            ->findAll();
+        // $data = $ageEconomicRepository
+        //     ->findAll();
 
-        $response = $this->json($data);
+        // $query = $em->createQuery('SELECT * FROM App\Repository\AgeEconomicRepository');
+        $query = $em->createQuery('SELECT ae FROM App:AgeEconomic ae');
+        $result = $query->getResult();
+
+        // $response = $this->json($data);
+        $response = $this->json($result);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
